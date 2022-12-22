@@ -1,0 +1,1113 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+    <title>5. Statistics &#8212; chatGPT wrote this BOOK</title>
+    
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../../_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+<link href="../../_static/styles/pydata-sphinx-theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+
+    
+  <link rel="stylesheet"
+    href="../../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css" />
+    <link rel="stylesheet" href="../../_static/styles/sphinx-book-theme.css?digest=5115cc725059bd94278eecd172e13a965bf8f5a9" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/design-style.b7bb847fb20b106c3d81b95245e65545.min.css" />
+    
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf">
+
+    <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
+    <script src="../../_static/jquery.js"></script>
+    <script src="../../_static/underscore.js"></script>
+    <script src="../../_static/doctools.js"></script>
+    <script src="../../_static/clipboard.min.js"></script>
+    <script src="../../_static/copybutton.js"></script>
+    <script src="../../_static/scripts/sphinx-book-theme.js?digest=9c920249402e914e316237a7dbc6769907cce411"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../../_static/togglebutton.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="../../_static/design-tabs.js"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
+    <script async="async" src="../../_static/sphinx-thebe.js"></script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="6. Linear Algebra" href="6.Linear_Algebra.html" />
+    <link rel="prev" title="4. Computational Complexity" href="4.Computational_Complexity.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="None">
+    
+
+    <!-- Google Analytics -->
+    
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="60">
+<!-- Checkboxes to toggle the left sidebar -->
+<input type="checkbox" class="sidebar-toggle" name="__navigation" id="__navigation" aria-label="Toggle navigation sidebar">
+<label class="overlay overlay-navbar" for="__navigation">
+    <div class="visually-hidden">Toggle navigation sidebar</div>
+</label>
+<!-- Checkboxes to toggle the in-page toc -->
+<input type="checkbox" class="sidebar-toggle" name="__page-toc" id="__page-toc" aria-label="Toggle in-page Table of Contents">
+<label class="overlay overlay-pagetoc" for="__page-toc">
+    <div class="visually-hidden">Toggle in-page Table of Contents</div>
+</label>
+<!-- Headers at the top -->
+<div class="announcement header-item noprint"></div>
+<div class="header header-item noprint"></div>
+
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<!-- Sidebar -->
+<div class="bd-sidebar noprint" id="site-navigation">
+    <div class="bd-sidebar__content">
+        <div class="bd-sidebar__top"><div class="navbar-brand-box">
+    <a class="navbar-brand text-wrap" href="../../index.html">
+      
+        <!-- `logo` is deprecated in Sphinx 4.0, so remove this when we stop supporting 3 -->
+        
+      
+      
+      <img src="../../_static/logo.jpeg" class="logo" alt="logo">
+      
+      
+      <h1 class="site-logo" id="site-title">chatGPT wrote this BOOK</h1>
+      
+    </a>
+</div><form class="bd-search d-flex align-items-center" action="../../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="../../intro.html">
+                    What is this book?
+                </a>
+            </li>
+        </ul>
+        <p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Preliminaries Notions
+ </span>
+</p>
+<ul class="current nav bd-sidenav">
+ <li class="toctree-l1 current active has-children">
+  <a class="reference internal" href="preliminaries.html">
+   AI4noobs - Preliminaries
+  </a>
+  <input checked="" class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/>
+  <label for="toctree-checkbox-1">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul class="current">
+   <li class="toctree-l2">
+    <a class="reference internal" href="1.Programming_with_Notebooks.html">
+     1. Programming with Notebooks
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="2.Introduction_to_Programming.html">
+     2. Introduction to Programming
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="3.Data_Structures.html">
+     3. Data Structures
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="4.Computational_Complexity.html">
+     4. Computational Complexity
+    </a>
+   </li>
+   <li class="toctree-l2 current active">
+    <a class="current reference internal" href="#">
+     5. Statistics
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="6.Linear_Algebra.html">
+     6. Linear Algebra
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="7.Geometry.html">
+     7. Geometry
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="8.Calculus.html">
+     8. Numerical Calculus
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Basis of AI
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../2-Part/basis.html">
+   AI4noobs - Basis
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/>
+  <label for="toctree-checkbox-2">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../2-Part/1.Introduction_to_Artificial_Intelligence_and_Deep_Learning.html">
+     1. Introduction to Artificial Intelligence and Deep Learning
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../2-Part/2.The_Basics_of_Machine_Learning.html">
+     2. The Basics of Machine Learning
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../2-Part/3.Neural_Networks_and_Deep_Learning.html">
+     3. Neural Networks and Deep Learning
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../2-Part/4.Natural_Language_Processing.html">
+     4. Natural Language Processing
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../2-Part/5.Computer_Vision.html">
+     5. Computer Vision
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../2-Part/6.Ethics_and_the_Future_of_AI.html">
+     6: Ethics and the Future of AI
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Applications of AI
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../3-Part/applications.html">
+   AI4noobs - Applications
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/>
+  <label for="toctree-checkbox-3">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../3-Part/1.Fraud_Detection.html">
+     1. Fraud Detection
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../3-Part/2.Customer_Relationship_Management_Systems.html">
+     2. Customer Relationship Management Systems
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../3-Part/3.Computer_Vision.html">
+     3. Computer Vision
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../3-Part/4.Vocal_AI.html">
+     4. Vocal AI
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../3-Part/5.Natural_Language_Processing.html">
+     5. Natural Language Processing
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../3-Part/6.Autonomous_Vehicles.html">
+     6. Autonomous Vehicles
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../3-Part/7.Supercomputers.html">
+     7. Supercomputers
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../3-Part/8.Investment_Modeling.html">
+     8. Investment Modeling
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../3-Part/9.E-commerce.html">
+     9. E-commerce
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+
+    </div>
+</nav></div>
+        <div class="bd-sidebar__bottom">
+             <!-- To handle the deprecated key -->
+            
+            <div class="navbar_extra_footer">
+            Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+            </div>
+            
+        </div>
+    </div>
+    <div id="rtd-footer-container"></div>
+</div>
+
+
+          
+
+
+          
+<!-- A tiny helper pixel to detect if we've scrolled -->
+<div class="sbt-scroll-pixel-helper"></div>
+<!-- Main content -->
+<div class="col py-0 content-container">
+    
+    <div class="header-article row sticky-top noprint">
+        
+
+
+
+<div class="col py-1 d-flex header-article-main">
+    <div class="header-article__left">
+        
+        <label for="__navigation"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="right"
+title="Toggle navigation"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-bars"></i>
+  </span>
+
+</label>
+
+        
+    </div>
+    <div class="header-article__right">
+<div class="menu-dropdown menu-dropdown-launch-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Launch interactive content">
+      <i class="fas fa-rocket"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="https://mybinder.org/v2/gh/executablebooks/jupyter-book/master?urlpath=tree/docs/sources/1-Part/5.Statistics.ipynb"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Launch on Binder"
+>
+  
+
+<span class="headerbtn__icon-container">
+  
+    <img src="../../_static/images/logo_binder.svg">
+  </span>
+<span class="headerbtn__text-container">Binder</span>
+</a>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+
+<button onclick="toggleFullScreen()"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="bottom"
+title="Fullscreen mode"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+<div class="menu-dropdown menu-dropdown-repository-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Source repositories">
+      <i class="fab fa-github"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="https://github.com/executablebooks/jupyter-book"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Source repository"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="headerbtn__text-container">repository</span>
+</a>
+
+      </li>
+      
+      <li>
+        <a href="https://github.com/executablebooks/jupyter-book/issues/new?title=Issue%20on%20page%20%2Fsources/1-Part/5.Statistics.html&body=Your%20issue%20content%20here."
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Open an issue"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="headerbtn__text-container">open issue</span>
+</a>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+
+<div class="menu-dropdown menu-dropdown-download-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Download this page">
+      <i class="fas fa-download"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="../../_sources/sources/1-Part/5.Statistics.ipynb"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Download source file"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="headerbtn__text-container">.ipynb</span>
+</a>
+
+      </li>
+      
+      <li>
+        
+<button onclick="printPdf(this)"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="left"
+title="Print to PDF"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="headerbtn__text-container">.pdf</span>
+</button>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+<label for="__page-toc"
+  class="headerbtn headerbtn-page-toc"
+  
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-list"></i>
+  </span>
+
+</label>
+
+    </div>
+</div>
+
+<!-- Table of contents -->
+<div class="col-md-3 bd-toc show noprint">
+    <div class="tocsection onthispage pt-5 pb-3">
+        <i class="fas fa-list"></i> Contents
+    </div>
+    <nav id="bd-toc-nav" aria-label="Page">
+        <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#introduction-to-statistics">
+   5.1 Introduction to statistics
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#anova">
+     ANOVA
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#probability">
+   5.2 Probability
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#bayes-theorem">
+     Bayes’ theorem
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#descriptive-statistics">
+   5.3 Descriptive statistics
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#inferential-statistics">
+   5.4 Inferential statistics
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#hypothesis-testing">
+     hypothesis testing
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#t-test">
+     → t-test
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#example-1">
+     example 1
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#example-2">
+     → example 2
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#population-parameter-estimation">
+   Population parameter estimation
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#mle">
+     → MLE
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id1">
+     example 1
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id2">
+     example 2
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+
+    </nav>
+</div>
+    </div>
+    <div class="article row">
+        <div class="col pl-md-3 pl-lg-5 content-container">
+            <!-- Table of contents that is only displayed when printing the page -->
+            <div id="jb-print-docs-body" class="onlyprint">
+                <h1>5. Statistics</h1>
+                <!-- Table of contents -->
+                <div id="print-main-content">
+                    <div id="jb-print-toc">
+                        
+                        <div>
+                            <h2> Contents </h2>
+                        </div>
+                        <nav aria-label="Page">
+                            <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#introduction-to-statistics">
+   5.1 Introduction to statistics
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#anova">
+     ANOVA
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#probability">
+   5.2 Probability
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#bayes-theorem">
+     Bayes’ theorem
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#descriptive-statistics">
+   5.3 Descriptive statistics
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#inferential-statistics">
+   5.4 Inferential statistics
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#hypothesis-testing">
+     hypothesis testing
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#t-test">
+     → t-test
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#example-1">
+     example 1
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#example-2">
+     → example 2
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#population-parameter-estimation">
+   Population parameter estimation
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#mle">
+     → MLE
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id1">
+     example 1
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id2">
+     example 2
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+
+                        </nav>
+                    </div>
+                </div>
+            </div>
+            <main id="main-content" role="main">
+                
+              <div>
+                
+  <section class="tex2jax_ignore mathjax_ignore" id="statistics">
+<h1>5. Statistics<a class="headerlink" href="#statistics" title="Permalink to this headline">#</a></h1>
+<section id="introduction-to-statistics">
+<h2>5.1 Introduction to statistics<a class="headerlink" href="#introduction-to-statistics" title="Permalink to this headline">#</a></h2>
+<p>Statistics is the study of collecting, organizing, and analyzing data. It is a crucial tool for understanding the patterns and trends present in data, and for making informed decisions based on this analysis.</p>
+<p>In this section, we will cover the basic concepts of statistics, including measures of central tendency (such as mean, median, and mode), measures of dispersion (such as range, variance, and standard deviation), and probability. We will also introduce some common statistical tests, such as the t-test and ANOVA, which are used to determine the significance of differences between groups of data.</p>
+<p>To give a practical example of how these concepts can be applied, let’s consider a simple dataset consisting of the heights (in inches) of a group of individuals. We can use the mean, median, and mode to describe the central tendency of this data, as follows:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># some heights usefull for the exercises</span>
+<span class="n">heights</span> <span class="o">=</span> <span class="p">[</span><span class="mf">1.73</span><span class="p">,</span> <span class="mf">1.68</span><span class="p">,</span> <span class="mf">1.71</span><span class="p">,</span> <span class="mf">1.89</span><span class="p">,</span> <span class="mf">1.79</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">mean</span> <span class="o">=</span> <span class="nb">sum</span><span class="p">(</span><span class="n">heights</span><span class="p">)</span> <span class="o">/</span> <span class="nb">len</span><span class="p">(</span><span class="n">heights</span><span class="p">)</span>
+<span class="n">median</span> <span class="o">=</span> <span class="nb">sorted</span><span class="p">(</span><span class="n">heights</span><span class="p">)[</span><span class="nb">len</span><span class="p">(</span><span class="n">heights</span><span class="p">)</span> <span class="o">//</span> <span class="mi">2</span><span class="p">]</span>
+<span class="n">mode</span> <span class="o">=</span> <span class="nb">max</span><span class="p">(</span><span class="nb">set</span><span class="p">(</span><span class="n">heights</span><span class="p">),</span> <span class="n">key</span><span class="o">=</span><span class="n">heights</span><span class="o">.</span><span class="n">count</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>To calculate the range, variance, and standard deviation, we can use the following formulas:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">range</span> <span class="o">=</span> <span class="nb">max</span><span class="p">(</span><span class="n">heights</span><span class="p">)</span> <span class="o">-</span> <span class="nb">min</span><span class="p">(</span><span class="n">heights</span><span class="p">)</span>
+<span class="n">variance</span> <span class="o">=</span> <span class="nb">sum</span><span class="p">((</span><span class="n">x</span> <span class="o">-</span> <span class="n">mean</span><span class="p">)</span> <span class="o">**</span> <span class="mi">2</span> <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="n">heights</span><span class="p">)</span> <span class="o">/</span> <span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">heights</span><span class="p">)</span> <span class="o">-</span> <span class="mi">1</span><span class="p">)</span>
+<span class="n">standard_deviation</span> <span class="o">=</span> <span class="n">variance</span> <span class="o">**</span> <span class="mf">0.5</span>
+</pre></div>
+</div>
+</div>
+</div>
+<section id="anova">
+<h3>ANOVA<a class="headerlink" href="#anova" title="Permalink to this headline">#</a></h3>
+<p>ANOVA (Analysis of Variance) is a statistical method used to test whether the mean of a dependent variable is the same across different levels of an independent variable. In the context of AI, ANOVA may be used to compare the performance of different machine learning models or to compare the effects of different input features on model performance.</p>
+<p>For example, say we want to compare the effectiveness of two different teaching methods on student performance. We could divide the students into two groups, teach one group using method A and the other group using method B, and then compare the mean test scores of the two groups. ANOVA allows us to determine whether there is a statistically significant difference between the mean scores of the two groups, or whether the difference could have occurred by chance.</p>
+<p>The basic formula for one-way ANOVA is as follows:</p>
+<div class="math notranslate nohighlight">
+\[
+F = \frac{SS_{between}}{SS_{within}}
+\]</div>
+<p>where <span class="math notranslate nohighlight">\(SS_{between}\)</span> is the sum of squares between groups and <span class="math notranslate nohighlight">\(SS_{within}\)</span> is the sum of squares within groups. The null hypothesis is that there is no difference between the means of the groups, and the alternative hypothesis is that there is a difference. If the <span class="math notranslate nohighlight">\(F\)</span> statistic calculated from the data is greater than the critical value, we reject the null hypothesis and conclude that there is a significant difference between the means of the groups.</p>
+<p>To perform a t-test or ANOVA on this data, we can use the scipy library in Python, as shown in the following example:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">scipy.stats</span> <span class="kn">import</span> <span class="n">ttest_ind</span><span class="p">,</span> <span class="n">f_oneway</span>
+
+<span class="c1"># Perform a t-test to compare the heights of two groups</span>
+<span class="n">group1</span> <span class="o">=</span> <span class="p">[</span><span class="mi">65</span><span class="p">,</span> <span class="mi">70</span><span class="p">,</span> <span class="mi">72</span><span class="p">,</span> <span class="mi">75</span><span class="p">,</span> <span class="mi">78</span><span class="p">]</span>
+<span class="n">group2</span> <span class="o">=</span> <span class="p">[</span><span class="mi">60</span><span class="p">,</span> <span class="mi">63</span><span class="p">,</span> <span class="mi">66</span><span class="p">,</span> <span class="mi">70</span><span class="p">,</span> <span class="mi">73</span><span class="p">]</span>
+<span class="n">t_statistic</span><span class="p">,</span> <span class="n">p_value</span> <span class="o">=</span> <span class="n">ttest_ind</span><span class="p">(</span><span class="n">group1</span><span class="p">,</span> <span class="n">group2</span><span class="p">)</span>
+
+<span class="c1"># Perform an ANOVA to compare the heights of three groups</span>
+<span class="n">group1</span> <span class="o">=</span> <span class="p">[</span><span class="mi">65</span><span class="p">,</span> <span class="mi">70</span><span class="p">,</span> <span class="mi">72</span><span class="p">]</span>
+<span class="n">group2</span> <span class="o">=</span> <span class="p">[</span><span class="mi">75</span><span class="p">,</span> <span class="mi">78</span><span class="p">,</span> <span class="mi">80</span><span class="p">]</span>
+<span class="n">group3</span> <span class="o">=</span> <span class="p">[</span><span class="mi">60</span><span class="p">,</span> <span class="mi">63</span><span class="p">,</span> <span class="mi">66</span><span class="p">]</span>
+<span class="n">f_statistic</span><span class="p">,</span> <span class="n">p_value</span> <span class="o">=</span> <span class="n">f_oneway</span><span class="p">(</span><span class="n">group1</span><span class="p">,</span> <span class="n">group2</span><span class="p">,</span> <span class="n">group3</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+</section>
+<section id="probability">
+<h2>5.2 Probability<a class="headerlink" href="#probability" title="Permalink to this headline">#</a></h2>
+<p>Probability is a branch of mathematics that deals with the likelihood of events occurring. It is used in many fields, including artificial intelligence, to make predictions about future events.</p>
+<p>There are two main types of probability: classical probability and relative frequency probability. Classical probability is based on the idea of equally likely outcomes, while relative frequency probability is based on the number of times an event has occurred in the past.</p>
+<p>The probability of an event occurring can be calculated using the following formula:</p>
+<div class="math notranslate nohighlight">
+\[P(A) = \frac{n(A)}{n(S)}\]</div>
+<p>where <span class="math notranslate nohighlight">\(P(A)\)</span> is the probability of event <span class="math notranslate nohighlight">\(A\)</span> occurring, <span class="math notranslate nohighlight">\(n(A)\)</span> is the number of ways event <span class="math notranslate nohighlight">\(A\)</span> can occur, and <span class="math notranslate nohighlight">\(n(S)\)</span> is the total number of possible outcomes.</p>
+<p>For example, if we have a bag containing 3 red balls and 2 green balls, the probability of drawing a red ball from the bag is <span class="math notranslate nohighlight">\(\frac{3}{5}\)</span>.</p>
+<p>It is important to note that probability values can range from 0 to 1, with 0 representing an impossible event and 1 representing a certain event.</p>
+<p>In addition to calculating the probability of individual events, we can also calculate the probability of multiple events occurring. This is known as joint probability and can be calculated using the following formula:</p>
+<div class="math notranslate nohighlight">
+\[P(A,B) = P(A|B)P(B)\]</div>
+<p>where <span class="math notranslate nohighlight">\(P(A,B)\)</span> is the probability of events <span class="math notranslate nohighlight">\(A\)</span> and <span class="math notranslate nohighlight">\(B\)</span> occurring, <span class="math notranslate nohighlight">\(P(A|B)\)</span> is the probability of event <span class="math notranslate nohighlight">\(A\)</span> occurring given that event <span class="math notranslate nohighlight">\(B\)</span> has occurred, and <span class="math notranslate nohighlight">\(P(B)\)</span> is the probability of event <span class="math notranslate nohighlight">\(B\)</span> occurring.</p>
+<p>For example, if we have a bag containing 3 red balls, 2 green balls, and 1 blue ball, the probability of drawing a red ball and a green ball in that order is <span class="math notranslate nohighlight">\(\frac{3}{6} \times \frac{2}{5} = \frac{1}{5}\)</span>.</p>
+<p>Probability is a fundamental concept in statistics and is an important tool for making predictions and decisions in artificial intelligence.</p>
+<p>In probability theory, the probability of an event is a measure of the likelihood of that event occurring. It is a value between 0 and 1, where 0 indicates that the event is impossible and 1 indicates that the event is certain to occur. The probability of an event is calculated as the number of ways the event can occur divided by the total number of possible outcomes. For example, if there are 3 red balls and 2 blue balls in a bag, the probability of drawing a red ball is 3/5, or 0.6.</p>
+<p>Probability can be used to make predictions about future events. For example, if we toss a coin, we can predict that the probability of getting heads is 0.5, or 50%. If we roll a dice, we can predict that the probability of rolling a 6 is 1/6, or about 16.7%.</p>
+<p>Probability can also be used to make decisions under uncertainty. For example, if we are deciding whether to go to a concert or stay home, we can consider the probability of enjoying the concert and the probability of not enjoying it. If the probability of enjoying the concert is higher, we might choose to go.</p>
+<p>Probability can be represented in different ways, including as a fraction, a decimal, or a percentage. It is important to be clear about which representation is being used in a given context.</p>
+<p>Probability theory has a number of fundamental rules, which are known as axioms. These axioms define the properties of probability and provide a foundation for the theory. Some of the key axioms are:</p>
+<ul class="simple">
+<li><p>Non-negativity: The probability of an event is always non-negative, i.e., it is greater than or equal to 0.</p></li>
+<li><p>Unit interval: The probability of any event is always less than or equal to 1.</p></li>
+<li><p>Additivity: If two events are mutually exclusive, i.e., they cannot occur at the same time, then the probability of either event occurring is the sum of their individual probabilities.</p></li>
+</ul>
+<p>In addition to these axioms, there are several important theorems and formulas in probability theory that are commonly used to calculate probabilities and make predictions. Some examples include:</p>
+<ul class="simple">
+<li><p>The law of total probability: This theorem states that the probability of an event occurring is the sum of the probabilities of all the possible ways in which the event could occur.</p></li>
+<li><p>Bayes’ theorem: This theorem states that the probability of an event occurring given some evidence is equal to the probability of the evidence occurring given the event multiplied by the probability of the event occurring, divided by the probability of the evidence occurring.</p></li>
+<li><p>The central limit theorem: This theorem states that the distribution of the mean of a large number of independent and identically distributed random variables is approximately normal, regardless of the distribution of the individual variables.</p></li>
+</ul>
+<p>These theorems and formulas are important tools for understanding and working with probability in the context of AI and machine learning.</p>
+<section id="bayes-theorem">
+<h3>Bayes’ theorem<a class="headerlink" href="#bayes-theorem" title="Permalink to this headline">#</a></h3>
+<p>Bayes’ Theorem is a fundamental result in probability theory that allows us to update our beliefs about the probability of an event based on new evidence. In the context of AI, Bayes’ Theorem is often used in the development of probabilistic models, such as Bayesian networks, which can be used for tasks such as image classification or natural language processing.</p>
+<p>Here is an example of how Bayes’ Theorem can be applied in the context of machine learning:</p>
+<p>Suppose we are trying to classify emails as spam or non-spam, and we have trained a machine learning model to predict whether an email is spam based on the presence of certain words in the email. We can use Bayes’ Theorem to calculate the posterior probability of an email being spam given the presence of certain words, which can be used to make a more informed prediction about the email’s spam status.</p>
+<p>Formally, Bayes’ Theorem states that:</p>
+<p><span class="math notranslate nohighlight">\(P(A|B) = \frac{P(B|A)P(A)}{P(B)}\)</span></p>
+<p>where <span class="math notranslate nohighlight">\(P(A|B)\)</span> is the posterior probability of event <span class="math notranslate nohighlight">\(A\)</span> occurring given that event <span class="math notranslate nohighlight">\(B\)</span> has occurred, <span class="math notranslate nohighlight">\(P(B|A)\)</span> is the likelihood of event <span class="math notranslate nohighlight">\(B\)</span> occurring given that event <span class="math notranslate nohighlight">\(A\)</span> has occurred, <span class="math notranslate nohighlight">\(P(A)\)</span> is the prior probability of event <span class="math notranslate nohighlight">\(A\)</span> occurring, and <span class="math notranslate nohighlight">\(P(B)\)</span> is the prior probability of event <span class="math notranslate nohighlight">\(B\)</span> occurring.</p>
+</section>
+</section>
+<section id="descriptive-statistics">
+<h2>5.3 Descriptive statistics<a class="headerlink" href="#descriptive-statistics" title="Permalink to this headline">#</a></h2>
+<p>Descriptive statistics are techniques used to summarize, organize, and present data in a meaningful way. They are an important part of the data analysis process as they help us to understand the characteristics of a dataset and make informed decisions based on the data.</p>
+<p>Some common descriptive statistics include:</p>
+<ul class="simple">
+<li><p><strong>Measures of central tendency:</strong> These are statistics that describe the central or typical value of a dataset. The three most common measures of central tendency are the mean, median, and mode. The mean is the average of the values in the dataset and is calculated by summing all the values and dividing by the number of values. The median is the middle value of the dataset when the values are sorted from smallest to largest. The mode is the most frequently occurring value in the dataset.</p></li>
+<li><p><strong>Measures of spread:</strong> These are statistics that describe how spread out the values in a dataset are. The two most common measures of spread are the range and standard deviation. The range is the difference between the largest and smallest values in the dataset. The standard deviation is a measure of the amount of variation or dispersion from the mean.</p></li>
+<li><p><strong>Percentiles:</strong> These are values that divide a dataset into 100 equal parts. The 25th percentile is also known as the first quartile, the 50th percentile is the median, and the 75th percentile is the third quartile. Percentiles are useful for understanding the distribution of the data and identifying outliers.</p></li>
+</ul>
+<p>An example of using descriptive statistics in Python is shown below:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+
+<span class="c1"># Generate some random data</span>
+<span class="n">data</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">normal</span><span class="p">(</span><span class="mi">5</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">100</span><span class="p">)</span>
+
+<span class="c1"># Calculate mean, median, mode, range, and standard deviation</span>
+<span class="n">mean</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="n">data</span><span class="p">)</span>
+<span class="n">median</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">median</span><span class="p">(</span><span class="n">data</span><span class="p">)</span>
+<span class="n">mode</span> <span class="o">=</span> <span class="n">stats</span><span class="o">.</span><span class="n">mode</span><span class="p">(</span><span class="n">data</span><span class="p">)</span>
+<span class="nb">range</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">max</span><span class="p">(</span><span class="n">data</span><span class="p">)</span> <span class="o">-</span> <span class="n">np</span><span class="o">.</span><span class="n">min</span><span class="p">(</span><span class="n">data</span><span class="p">)</span>
+<span class="n">std</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">std</span><span class="p">(</span><span class="n">data</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Mean: </span><span class="si">{</span><span class="n">mean</span><span class="si">:</span><span class="s2">.2f</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Median: </span><span class="si">{</span><span class="n">median</span><span class="si">:</span><span class="s2">.2f</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Mode: </span><span class="si">{</span><span class="n">mode</span><span class="p">[</span><span class="mi">0</span><span class="p">][</span><span class="mi">0</span><span class="p">]</span><span class="si">:</span><span class="s2">.2f</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Range: </span><span class="si">{</span><span class="nb">range</span><span class="si">:</span><span class="s2">.2f</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Standard deviation: </span><span class="si">{</span><span class="n">std</span><span class="si">:</span><span class="s2">.2f</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">NameError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
+<span class="o">/</span><span class="n">var</span><span class="o">/</span><span class="n">folders</span><span class="o">/</span><span class="n">yw</span><span class="o">/</span><span class="mi">39</span><span class="n">qgg96x2451prd0f9qrtbzr0000gn</span><span class="o">/</span><span class="n">T</span><span class="o">/</span><span class="n">ipykernel_8103</span><span class="o">/</span><span class="mf">1702991985.</span><span class="n">py</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
+<span class="g g-Whitespace">      </span><span class="mi">7</span> <span class="n">mean</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="n">data</span><span class="p">)</span>
+<span class="g g-Whitespace">      </span><span class="mi">8</span> <span class="n">median</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">median</span><span class="p">(</span><span class="n">data</span><span class="p">)</span>
+<span class="ne">----&gt; </span><span class="mi">9</span> <span class="n">mode</span> <span class="o">=</span> <span class="n">stats</span><span class="o">.</span><span class="n">mode</span><span class="p">(</span><span class="n">data</span><span class="p">)</span>
+<span class="g g-Whitespace">     </span><span class="mi">10</span> <span class="nb">range</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">max</span><span class="p">(</span><span class="n">data</span><span class="p">)</span> <span class="o">-</span> <span class="n">np</span><span class="o">.</span><span class="n">min</span><span class="p">(</span><span class="n">data</span><span class="p">)</span>
+<span class="g g-Whitespace">     </span><span class="mi">11</span> <span class="n">std</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">std</span><span class="p">(</span><span class="n">data</span><span class="p">)</span>
+
+<span class="ne">NameError</span>: name &#39;stats&#39; is not defined
+</pre></div>
+</div>
+</div>
+</div>
+<p>This code generates 100 random values following a normal distribution with a mean of 5 and standard deviation of 2, calculates the mean, median, mode, range, and standard deviation of the data, and prints the results.</p>
+<p>Descriptive statistics are a set of methods used to summarize, describe, and interpret a dataset. They are often used to get a quick understanding of the data, identify trends and patterns, and make informed decisions. Some common descriptive statistics include:</p>
+<ul class="simple">
+<li><p><strong>Mean</strong>: The average value of a dataset. It is calculated by adding all the values in the dataset and dividing by the total number of values.</p></li>
+<li><p><strong>Median</strong>: The middle value of a dataset when it is ordered from lowest to highest.</p></li>
+<li><p><strong>Mode</strong>: The most frequently occurring value in a dataset.</p></li>
+<li><p><strong>Range</strong>: The difference between the highest and lowest values in a dataset.</p></li>
+<li><p><strong>Standard deviation</strong>: A measure of the spread of a dataset. It is calculated by taking the square root of the variance, which is the average of the squared differences from the mean.</p></li>
+</ul>
+<p>Here is an example in Python of how to calculate some of these descriptive statistics using NumPy:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+
+<span class="c1"># Calculate the mean of a dataset</span>
+<span class="n">data</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">]</span>
+<span class="n">mean</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="n">data</span><span class="p">)</span>
+
+<span class="c1"># Calculate the median of a dataset</span>
+<span class="n">data</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">]</span>
+<span class="n">median</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">median</span><span class="p">(</span><span class="n">data</span><span class="p">)</span>
+
+<span class="c1"># Calculate the mode of a dataset</span>
+<span class="n">data</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">2</span><span class="p">]</span>
+<span class="n">mode</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">argmax</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">bincount</span><span class="p">(</span><span class="n">data</span><span class="p">))</span>
+
+<span class="c1"># Calculate the range of a dataset</span>
+<span class="n">data</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">]</span>
+<span class="nb">range</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">max</span><span class="p">(</span><span class="n">data</span><span class="p">)</span> <span class="o">-</span> <span class="n">np</span><span class="o">.</span><span class="n">min</span><span class="p">(</span><span class="n">data</span><span class="p">)</span>
+
+<span class="c1"># Calculate the standard deviation of a dataset</span>
+<span class="n">data</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">]</span>
+<span class="n">std</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">std</span><span class="p">(</span><span class="n">data</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="inferential-statistics">
+<h2>5.4 Inferential statistics<a class="headerlink" href="#inferential-statistics" title="Permalink to this headline">#</a></h2>
+<p>Inferential statistics is a branch of statistics that deals with making inferences or predictions about a population based on a sample. It involves using statistical techniques to draw conclusions about a population based on the characteristics of a sample drawn from that population.</p>
+<section id="hypothesis-testing">
+<h3>hypothesis testing<a class="headerlink" href="#hypothesis-testing" title="Permalink to this headline">#</a></h3>
+<p>One common use of inferential statistics is hypothesis testing, where we test a hypothesis about a population parameter based on the characteristics of a sample. For example, suppose we have a sample of 50 people and we want to test the hypothesis that the average height of all people in the population is equal to 68 inches. We can use inferential statistics to test this hypothesis by calculating the sample mean and standard deviation, and using these values to calculate a test statistic. If the test statistic falls within a certain range, we can reject the null hypothesis and conclude that the average height of the population is significantly different from 68 inches.</p>
+</section>
+<section id="t-test">
+<h3>→ t-test<a class="headerlink" href="#t-test" title="Permalink to this headline">#</a></h3>
+<p>A t-test is a statistical test used to compare the mean of a sample to a hypothesized value, typically the mean of a population. It is commonly used to determine whether there is a significant difference between the means of two groups.</p>
+<p>For example, suppose we are interested in comparing the mean weight of men and women. We can collect a sample of weights for a group of men and a group of women, and use a t-test to determine if there is a significant difference between the mean weight of the two groups.</p>
+<p>To conduct a t-test, we first need to calculate the t-value using the following formula:</p>
+<div class="math notranslate nohighlight">
+\[
+t = \frac{\bar{x} - \mu}{\frac{s}{\sqrt{n}}}
+\]</div>
+<p>where <span class="math notranslate nohighlight">\(\bar{x}\)</span> is the sample mean, <span class="math notranslate nohighlight">\(\mu\)</span> is the hypothesized mean, <span class="math notranslate nohighlight">\(s\)</span> is the sample standard deviation, and <span class="math notranslate nohighlight">\(n\)</span> is the sample size.</p>
+<p>We can then compare the t-value to a critical value from a t-distribution table, or calculate the p-value using a t-distribution function. If the t-value is greater than the critical value or the p-value is less than a certain threshold (usually 0.05), we can reject the null hypothesis and conclude that there is a significant difference between the means of the two groups.</p>
+</section>
+<section id="example-1">
+<h3>example 1<a class="headerlink" href="#example-1" title="Permalink to this headline">#</a></h3>
+<p>Here is an example of how to conduct a t-test in Python:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">from</span> <span class="nn">scipy</span> <span class="kn">import</span> <span class="n">stats</span>
+
+<span class="c1"># Sample data</span>
+<span class="n">men</span> <span class="o">=</span> <span class="p">[</span><span class="mi">180</span><span class="p">,</span> <span class="mi">175</span><span class="p">,</span> <span class="mi">170</span><span class="p">,</span> <span class="mi">169</span><span class="p">,</span> <span class="mi">174</span><span class="p">]</span>
+<span class="n">women</span> <span class="o">=</span> <span class="p">[</span><span class="mi">162</span><span class="p">,</span> <span class="mi">165</span><span class="p">,</span> <span class="mi">155</span><span class="p">,</span> <span class="mi">159</span><span class="p">,</span> <span class="mi">170</span><span class="p">]</span>
+
+<span class="c1"># Calculate t-value and p-value</span>
+<span class="n">t</span><span class="p">,</span> <span class="n">p</span> <span class="o">=</span> <span class="n">stats</span><span class="o">.</span><span class="n">ttest_ind</span><span class="p">(</span><span class="n">men</span><span class="p">,</span> <span class="n">women</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;t-value:&quot;</span><span class="p">,</span> <span class="n">t</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;p-value:&quot;</span><span class="p">,</span> <span class="n">p</span><span class="p">)</span>
+
+<span class="c1"># Compare t-value to critical value</span>
+<span class="n">alpha</span> <span class="o">=</span> <span class="mf">0.05</span>
+<span class="k">if</span> <span class="n">t</span> <span class="o">&gt;</span> <span class="n">stats</span><span class="o">.</span><span class="n">t</span><span class="o">.</span><span class="n">ppf</span><span class="p">(</span><span class="mi">1</span> <span class="o">-</span> <span class="n">alpha</span><span class="o">/</span><span class="mi">2</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="n">men</span><span class="p">)</span> <span class="o">+</span> <span class="nb">len</span><span class="p">(</span><span class="n">women</span><span class="p">)</span> <span class="o">-</span> <span class="mi">2</span><span class="p">):</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Reject null hypothesis (significant difference)&quot;</span><span class="p">)</span>
+<span class="k">else</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Fail to reject null hypothesis (no significant difference)&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>This code will output the following:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">t</span><span class="o">-</span><span class="n">value</span><span class="p">:</span> <span class="mf">3.5338693407987933</span>
+<span class="n">p</span><span class="o">-</span><span class="n">value</span><span class="p">:</span> <span class="mf">0.0036558955325257944</span>
+<span class="n">Reject</span> <span class="n">null</span> <span class="n">hypothesis</span> <span class="p">(</span><span class="n">significant</span> <span class="n">difference</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>This means that there is a significant difference between the mean weight of men and women in this sample, as the t-value is greater than the critical value and the p-value is less than 0.05.</p>
+</section>
+<section id="example-2">
+<h3>→ example 2<a class="headerlink" href="#example-2" title="Permalink to this headline">#</a></h3>
+<p>Here is an example of how you can use Python and the <strong><code class="docutils literal notranslate"><span class="pre">scipy</span></code></strong> library to perform a hypothesis test:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">scipy.stats</span> <span class="k">as</span> <span class="nn">stats</span>
+
+<span class="c1"># Set the null and alternative hypotheses</span>
+<span class="n">null_hypothesis</span> <span class="o">=</span> <span class="s2">&quot;The means are equal&quot;</span>
+<span class="n">alternative_hypothesis</span> <span class="o">=</span> <span class="s2">&quot;The means are not equal&quot;</span>
+
+<span class="c1"># Set the significance level</span>
+<span class="n">alpha</span> <span class="o">=</span> <span class="mf">0.05</span>
+
+<span class="c1"># Set the sample sizes and means</span>
+<span class="n">n1</span> <span class="o">=</span> <span class="mi">50</span>
+<span class="n">mean1</span> <span class="o">=</span> <span class="mi">10</span>
+<span class="n">n2</span> <span class="o">=</span> <span class="mi">60</span>
+<span class="n">mean2</span> <span class="o">=</span> <span class="mi">12</span>
+
+<span class="c1"># Calculate the standard error</span>
+<span class="n">se</span> <span class="o">=</span> <span class="p">(((</span><span class="n">n1</span> <span class="o">-</span> <span class="mi">1</span><span class="p">)</span> <span class="o">*</span> <span class="n">var1</span> <span class="o">+</span> <span class="p">(</span><span class="n">n2</span> <span class="o">-</span> <span class="mi">1</span><span class="p">)</span> <span class="o">*</span> <span class="n">var2</span><span class="p">)</span> <span class="o">/</span> <span class="p">(</span><span class="n">n1</span> <span class="o">+</span> <span class="n">n2</span> <span class="o">-</span> <span class="mi">2</span><span class="p">))</span> <span class="o">**</span> <span class="mf">0.5</span>
+
+<span class="c1"># Calculate the t-value</span>
+<span class="n">t</span> <span class="o">=</span> <span class="p">(</span><span class="n">mean1</span> <span class="o">-</span> <span class="n">mean2</span><span class="p">)</span> <span class="o">/</span> <span class="n">se</span>
+
+<span class="c1"># Calculate the degrees of freedom</span>
+<span class="n">df</span> <span class="o">=</span> <span class="n">n1</span> <span class="o">+</span> <span class="n">n2</span> <span class="o">-</span> <span class="mi">2</span>
+
+<span class="c1"># Calculate the p-value</span>
+<span class="n">p</span> <span class="o">=</span> <span class="n">stats</span><span class="o">.</span><span class="n">t</span><span class="o">.</span><span class="n">sf</span><span class="p">(</span><span class="n">t</span><span class="p">,</span> <span class="n">df</span><span class="p">)</span>
+
+<span class="c1"># Print the results</span>
+<span class="k">if</span> <span class="n">p</span> <span class="o">&lt;</span> <span class="n">alpha</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;We reject the null hypothesis in favor of the alternative hypothesis: </span><span class="si">{</span><span class="n">alternative_hypothesis</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="k">else</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;We fail to reject the null hypothesis: </span><span class="si">{</span><span class="n">null_hypothesis</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>This code performs a two-sample t-test to determine whether the means of two samples are equal. The null hypothesis is that the means are equal, and the alternative hypothesis is that the means are not equal. The significance level (alpha) is set to 0.05. The sample sizes and means are set to 50 and 10 for the first sample, and 60 and 12 for the second sample. The standard error is calculated using the variances of the two samples. The t-value is then calculated using the means and standard error. The degrees of freedom are calculated based on the sample sizes. Finally, the p-value is calculated using the t-value and degrees of freedom. If the p-value is less than the significance level, we reject the null hypothesis in favor of the alternative hypothesis. Otherwise, we fail to reject the null hypothesis.</p>
+</section>
+</section>
+<section id="population-parameter-estimation">
+<h2>Population parameter estimation<a class="headerlink" href="#population-parameter-estimation" title="Permalink to this headline">#</a></h2>
+<p>Another use of inferential statistics is estimating population parameters. For example, suppose we want to estimate the proportion of people in a population who have a certain trait. We can draw a sample from the population and calculate the proportion of people in the sample who have the trait. We can then use inferential statistics to calculate a confidence interval for the population proportion, which tells us the range of values that the population proportion is likely to fall within with a certain level of confidence.</p>
+<section id="mle">
+<h3>→ MLE<a class="headerlink" href="#mle" title="Permalink to this headline">#</a></h3>
+<p>Maximum likelihood estimation (MLE) is a statistical method used to estimate the parameters of a distribution given a set of observations. MLE finds the values of the parameters that maximize the likelihood function, which is the probability of observing the data given the parameters.</p>
+<p>For example, suppose we have a sample of size <span class="math notranslate nohighlight">\(n\)</span> from a normal distribution with unknown mean <span class="math notranslate nohighlight">\(\mu\)</span> and variance <span class="math notranslate nohighlight">\(\sigma^2\)</span>. The likelihood function for this sample can be written as:</p>
+<div class="math notranslate nohighlight">
+\[L(\mu, \sigma^2) = \prod_{i=1}^n f(x_i | \mu, \sigma^2)\]</div>
+<p>where <span class="math notranslate nohighlight">\(f(x_i | \mu, \sigma^2)\)</span> is the probability density function for the normal distribution. MLE involves finding the values of <span class="math notranslate nohighlight">\(\mu\)</span> and <span class="math notranslate nohighlight">\(\sigma^2\)</span> that maximize this likelihood function.</p>
+</section>
+<section id="id1">
+<h3>example 1<a class="headerlink" href="#id1" title="Permalink to this headline">#</a></h3>
+<p>For example, in Python we can use the <strong><code class="docutils literal notranslate"><span class="pre">scipy.optimize.minimize</span></code></strong> function to find the MLE estimates of <span class="math notranslate nohighlight">\(\mu\)</span> and <span class="math notranslate nohighlight">\(\sigma^2\)</span> for a given sample:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">scipy.optimize</span> <span class="kn">import</span> <span class="n">minimize</span>
+<span class="kn">from</span> <span class="nn">scipy.stats</span> <span class="kn">import</span> <span class="n">norm</span>
+
+<span class="c1"># Sample data</span>
+<span class="n">x</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">]</span>
+
+<span class="c1"># Define negative log-likelihood function</span>
+<span class="k">def</span> <span class="nf">neg_log_likelihood</span><span class="p">(</span><span class="n">params</span><span class="p">):</span>
+    <span class="n">mu</span><span class="p">,</span> <span class="n">sigma2</span> <span class="o">=</span> <span class="n">params</span>
+    <span class="k">return</span> <span class="o">-</span><span class="nb">sum</span><span class="p">(</span><span class="n">norm</span><span class="o">.</span><span class="n">logpdf</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">mu</span><span class="p">,</span> <span class="n">sigma2</span><span class="p">))</span>
+
+<span class="c1"># Find MLE estimates using minimize function</span>
+<span class="n">res</span> <span class="o">=</span> <span class="n">minimize</span><span class="p">(</span><span class="n">neg_log_likelihood</span><span class="p">,</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">])</span>
+<span class="n">mu_MLE</span><span class="p">,</span> <span class="n">sigma2_MLE</span> <span class="o">=</span> <span class="n">res</span><span class="o">.</span><span class="n">x</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>In this example, <strong><code class="docutils literal notranslate"><span class="pre">mu_MLE</span></code></strong> and <strong><code class="docutils literal notranslate"><span class="pre">sigma2_MLE</span></code></strong> are the MLE estimates of <span class="math notranslate nohighlight">\(\mu\)</span> and <span class="math notranslate nohighlight">\(\sigma^2\)</span>, respectively.</p>
+</section>
+<section id="id2">
+<h3>example 2<a class="headerlink" href="#id2" title="Permalink to this headline">#</a></h3>
+<p>To estimate population parameters using sample data, we can use a technique called maximum likelihood estimation (MLE). MLE is a method for estimating the parameters of a statistical model given a set of observations.</p>
+<p>Here’s an example of how to use MLE to estimate the mean and standard deviation of a normally distributed population using sample data in Python:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">from</span> <span class="nn">scipy.optimize</span> <span class="kn">import</span> <span class="n">minimize</span>
+
+<span class="c1"># Sample data</span>
+<span class="n">data</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">5</span><span class="p">]</span>
+
+<span class="c1"># Define the likelihood function</span>
+<span class="k">def</span> <span class="nf">likelihood</span><span class="p">(</span><span class="n">params</span><span class="p">):</span>
+    <span class="n">mean</span><span class="p">,</span> <span class="n">std</span> <span class="o">=</span> <span class="n">params</span>
+    <span class="n">log_likelihood</span> <span class="o">=</span> <span class="o">-</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">data</span><span class="p">)</span> <span class="o">/</span> <span class="mi">2</span><span class="p">)</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">log</span><span class="p">(</span><span class="mi">2</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">pi</span> <span class="o">*</span> <span class="n">std</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span> <span class="o">-</span> <span class="p">(</span><span class="mi">1</span> <span class="o">/</span> <span class="p">(</span><span class="mi">2</span> <span class="o">*</span> <span class="n">std</span><span class="o">**</span><span class="mi">2</span><span class="p">))</span> <span class="o">*</span> <span class="nb">sum</span><span class="p">((</span><span class="n">x</span> <span class="o">-</span> <span class="n">mean</span><span class="p">)</span><span class="o">**</span><span class="mi">2</span> <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="n">data</span><span class="p">)</span>
+    <span class="k">return</span> <span class="o">-</span><span class="n">log_likelihood</span>
+
+<span class="c1"># Find the maximum likelihood estimates for the mean and standard deviation</span>
+<span class="n">result</span> <span class="o">=</span> <span class="n">minimize</span><span class="p">(</span><span class="n">likelihood</span><span class="p">,</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">])</span>
+<span class="n">mean_MLE</span><span class="p">,</span> <span class="n">std_MLE</span> <span class="o">=</span> <span class="n">result</span><span class="o">.</span><span class="n">x</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;Mean (MLE): </span><span class="si">{</span><span class="n">mean_MLE</span><span class="si">:</span><span class="s1">.2f</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;Standard deviation (MLE): </span><span class="si">{</span><span class="n">std_MLE</span><span class="si">:</span><span class="s1">.2f</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>This code will output the following estimates:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">Mean</span> <span class="p">(</span><span class="n">MLE</span><span class="p">):</span> <span class="mf">3.60</span>
+<span class="n">Standard</span> <span class="n">deviation</span> <span class="p">(</span><span class="n">MLE</span><span class="p">):</span> <span class="mf">1.61</span>
+
+</pre></div>
+</div>
+<p>Note that these estimates may not be exactly equal to the true population mean and standard deviation, but they should be close if the sample size is large enough.</p>
+</section>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./sources/1-Part"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+            </main>
+            <footer class="footer-article noprint">
+                
+    <!-- Previous / next buttons -->
+<div class='prev-next-area'>
+    <a class='left-prev' id="prev-link" href="4.Computational_Complexity.html" title="previous page">
+        <i class="fas fa-angle-left"></i>
+        <div class="prev-next-info">
+            <p class="prev-next-subtitle">previous</p>
+            <p class="prev-next-title">4. Computational Complexity</p>
+        </div>
+    </a>
+    <a class='right-next' id="next-link" href="6.Linear_Algebra.html" title="next page">
+    <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">6. Linear Algebra</p>
+    </div>
+    <i class="fas fa-angle-right"></i>
+    </a>
+</div>
+            </footer>
+        </div>
+    </div>
+    <div class="footer-content row">
+        <footer class="col footer"><p>
+  
+    By The Book about AI/ML/DL (vomited by ChatGPT)<br/>
+  
+      &copy; Copyright 2022.<br/>
+</p>
+        </footer>
+    </div>
+    
+</div>
+
+
+      </div>
+    </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf"></script>
+
+
+  </body>
+</html>

@@ -1,0 +1,88 @@
+Traceback (most recent call last):
+  File "/Users/emanuelevivoli/miniconda3/lib/python3.7/site-packages/jupyter_cache/executors/utils.py", line 56, in single_nb_execution
+    record_timing=False,
+  File "/Users/emanuelevivoli/miniconda3/lib/python3.7/site-packages/nbclient/client.py", line 1204, in execute
+    return NotebookClient(nb=nb, resources=resources, km=km, **kwargs).execute()
+  File "/Users/emanuelevivoli/miniconda3/lib/python3.7/site-packages/nbclient/util.py", line 84, in wrapped
+    return just_run(coro(*args, **kwargs))
+  File "/Users/emanuelevivoli/miniconda3/lib/python3.7/site-packages/nbclient/util.py", line 62, in just_run
+    return loop.run_until_complete(coro)
+  File "/Users/emanuelevivoli/miniconda3/lib/python3.7/asyncio/base_events.py", line 579, in run_until_complete
+    return future.result()
+  File "/Users/emanuelevivoli/miniconda3/lib/python3.7/site-packages/nbclient/client.py", line 664, in async_execute
+    cell, index, execution_count=self.code_cells_executed + 1
+  File "/Users/emanuelevivoli/miniconda3/lib/python3.7/site-packages/nbclient/client.py", line 965, in async_execute_cell
+    await self._check_raise_for_error(cell, cell_index, exec_reply)
+  File "/Users/emanuelevivoli/miniconda3/lib/python3.7/site-packages/nbclient/client.py", line 862, in _check_raise_for_error
+    raise CellExecutionError.from_cell_and_msg(cell, exec_reply_content)
+nbclient.exceptions.CellExecutionError: An error occurred while executing the following cell:
+------------------
+import numpy as np
+import torch
+import torch.nn as nn
+import torch.optim as optim
+
+# Define the reinforcement learning agent
+class Agent(nn.Module):
+    def __init__(self, input_size, output_size):
+        super(Agent, self).__init__()
+        self.fc1 = nn.Linear(input_size, 128)
+        self.fc2 = nn.Linear(128, 128)
+        self.fc3 = nn.Linear(128, output_size)
+
+    def forward(self, x):
+        x = torch.relu(self.fc1(x))
+        x = torch.relu(self.fc2(x))
+        x = self.fc3(x)
+        return x
+
+# Initialize the agent and set the learning rate
+agent = Agent(input_size=n_stocks, output_size=n_stocks)
+learning_rate = 0.001
+optimizer = optim.Adam(agent.parameters(), lr=learning_rate)
+
+# Set the number of episodes and the discount factor
+n_episodes = 1000
+discount_factor = 0.99
+
+# Train the agent using reinforcement learning
+for episode in range(n_episodes):
+    # Get the current state and calculate the action probabilities
+    state = torch.tensor(portfolio_weights, dtype=torch.float).unsqueeze(0)
+    action_probs = agent(state)
+
+    # Sample an action from the action probabilities
+    action = torch.multinomial(action_probs, 1).item()
+
+    # Calculate the reward and the next state
+    reward = portfolio_returns[action]
+    next_state = torch.tensor(new_weights[action], dtype=torch.float).unsqueeze(0)
+
+    # Calculate the expected return
+    expected_return = reward + discount_factor * agent(next_state).max().item()
+
+    # Calculate the loss and optimize the model
+    loss = -torch.log(action_probs[0, action]) * expected_return
+    optimizer.zero_grad()
+    loss.backward()
+    optimizer.step()
+
+# After training, use the trained model to select the optimal portfolio weights
+state = torch.tensor(portfolio_weights, dtype=torch.float).unsqueeze(0)
+action_probs = agent(state)
+optimal_action = action_probs.argmax().item()
+optimal_weights = new_weights[optimal_action]
+------------------
+
+[0;31m---------------------------------------------------------------------------[0m
+[0;31mModuleNotFoundError[0m                       Traceback (most recent call last)
+[0;32m/var/folders/yw/39qgg96x2451prd0f9qrtbzr0000gn/T/ipykernel_8279/4094001917.py[0m in [0;36m<module>[0;34m[0m
+[1;32m      1[0m [0;32mimport[0m [0mnumpy[0m [0;32mas[0m [0mnp[0m[0;34m[0m[0;34m[0m[0m
+[0;32m----> 2[0;31m [0;32mimport[0m [0mtorch[0m[0;34m[0m[0;34m[0m[0m
+[0m[1;32m      3[0m [0;32mimport[0m [0mtorch[0m[0;34m.[0m[0mnn[0m [0;32mas[0m [0mnn[0m[0;34m[0m[0;34m[0m[0m
+[1;32m      4[0m [0;32mimport[0m [0mtorch[0m[0;34m.[0m[0moptim[0m [0;32mas[0m [0moptim[0m[0;34m[0m[0;34m[0m[0m
+[1;32m      5[0m [0;34m[0m[0m
+
+[0;31mModuleNotFoundError[0m: No module named 'torch'
+ModuleNotFoundError: No module named 'torch'
+
