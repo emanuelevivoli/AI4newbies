@@ -1,0 +1,1081 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+    <title>6. Linear Algebra &#8212; chatGPT wrote this BOOK</title>
+    
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../../_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+<link href="../../_static/styles/pydata-sphinx-theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+
+    
+  <link rel="stylesheet"
+    href="../../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css" />
+    <link rel="stylesheet" href="../../_static/styles/sphinx-book-theme.css?digest=5115cc725059bd94278eecd172e13a965bf8f5a9" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/design-style.b7bb847fb20b106c3d81b95245e65545.min.css" />
+    
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf">
+
+    <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
+    <script src="../../_static/jquery.js"></script>
+    <script src="../../_static/underscore.js"></script>
+    <script src="../../_static/doctools.js"></script>
+    <script src="../../_static/clipboard.min.js"></script>
+    <script src="../../_static/copybutton.js"></script>
+    <script src="../../_static/scripts/sphinx-book-theme.js?digest=9c920249402e914e316237a7dbc6769907cce411"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../../_static/togglebutton.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="../../_static/design-tabs.js"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
+    <script async="async" src="../../_static/sphinx-thebe.js"></script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="7. Geometry" href="7.Geometry.html" />
+    <link rel="prev" title="5. Statistics" href="5.Statistics.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="None">
+    
+
+    <!-- Google Analytics -->
+    
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="60">
+<!-- Checkboxes to toggle the left sidebar -->
+<input type="checkbox" class="sidebar-toggle" name="__navigation" id="__navigation" aria-label="Toggle navigation sidebar">
+<label class="overlay overlay-navbar" for="__navigation">
+    <div class="visually-hidden">Toggle navigation sidebar</div>
+</label>
+<!-- Checkboxes to toggle the in-page toc -->
+<input type="checkbox" class="sidebar-toggle" name="__page-toc" id="__page-toc" aria-label="Toggle in-page Table of Contents">
+<label class="overlay overlay-pagetoc" for="__page-toc">
+    <div class="visually-hidden">Toggle in-page Table of Contents</div>
+</label>
+<!-- Headers at the top -->
+<div class="announcement header-item noprint"></div>
+<div class="header header-item noprint"></div>
+
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<!-- Sidebar -->
+<div class="bd-sidebar noprint" id="site-navigation">
+    <div class="bd-sidebar__content">
+        <div class="bd-sidebar__top"><div class="navbar-brand-box">
+    <a class="navbar-brand text-wrap" href="../../index.html">
+      
+        <!-- `logo` is deprecated in Sphinx 4.0, so remove this when we stop supporting 3 -->
+        
+      
+      
+      <img src="../../_static/logo.jpeg" class="logo" alt="logo">
+      
+      
+      <h1 class="site-logo" id="site-title">chatGPT wrote this BOOK</h1>
+      
+    </a>
+</div><form class="bd-search d-flex align-items-center" action="../../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="../../intro.html">
+                    What is this book?
+                </a>
+            </li>
+        </ul>
+        <p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Preliminaries Notions
+ </span>
+</p>
+<ul class="current nav bd-sidenav">
+ <li class="toctree-l1 current active has-children">
+  <a class="reference internal" href="preliminaries.html">
+   AI4noobs - Preliminaries
+  </a>
+  <input checked="" class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/>
+  <label for="toctree-checkbox-1">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul class="current">
+   <li class="toctree-l2">
+    <a class="reference internal" href="1.Programming_with_Notebooks.html">
+     1. Programming with Notebooks
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="2.Introduction_to_Programming.html">
+     2. Introduction to Programming
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="3.Data_Structures.html">
+     3. Data Structures
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="4.Computational_Complexity.html">
+     4. Computational Complexity
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="5.Statistics.html">
+     5. Statistics
+    </a>
+   </li>
+   <li class="toctree-l2 current active">
+    <a class="current reference internal" href="#">
+     6. Linear Algebra
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="7.Geometry.html">
+     7. Geometry
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="8.Calculus.html">
+     8. Numerical Calculus
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Basis of AI
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../2-Part/basis.html">
+   AI4noobs - Basis
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/>
+  <label for="toctree-checkbox-2">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../2-Part/1.Introduction_to_Artificial_Intelligence_and_Deep_Learning.html">
+     1. Introduction to Artificial Intelligence and Deep Learning
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../2-Part/2.The_Basics_of_Machine_Learning.html">
+     2. The Basics of Machine Learning
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../2-Part/3.Neural_Networks_and_Deep_Learning.html">
+     3. Neural Networks and Deep Learning
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../2-Part/4.Natural_Language_Processing.html">
+     4. Natural Language Processing
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../2-Part/5.Computer_Vision.html">
+     5. Computer Vision
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../2-Part/6.Ethics_and_the_Future_of_AI.html">
+     6: Ethics and the Future of AI
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Applications of AI
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../3-Part/applications.html">
+   AI4noobs - Applications
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/>
+  <label for="toctree-checkbox-3">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../3-Part/1.Fraud_Detection.html">
+     1. Fraud Detection
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../3-Part/2.Customer_Relationship_Management_Systems.html">
+     2. Customer Relationship Management Systems
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../3-Part/3.Computer_Vision.html">
+     3. Computer Vision
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../3-Part/4.Vocal_AI.html">
+     4. Vocal AI
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../3-Part/5.Natural_Language_Processing.html">
+     5. Natural Language Processing
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../3-Part/6.Autonomous_Vehicles.html">
+     6. Autonomous Vehicles
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../3-Part/7.Supercomputers.html">
+     7. Supercomputers
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../3-Part/8.Investment_Modeling.html">
+     8. Investment Modeling
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../3-Part/9.E-commerce.html">
+     9. E-commerce
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+
+    </div>
+</nav></div>
+        <div class="bd-sidebar__bottom">
+             <!-- To handle the deprecated key -->
+            
+            <div class="navbar_extra_footer">
+            Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+            </div>
+            
+        </div>
+    </div>
+    <div id="rtd-footer-container"></div>
+</div>
+
+
+          
+
+
+          
+<!-- A tiny helper pixel to detect if we've scrolled -->
+<div class="sbt-scroll-pixel-helper"></div>
+<!-- Main content -->
+<div class="col py-0 content-container">
+    
+    <div class="header-article row sticky-top noprint">
+        
+
+
+
+<div class="col py-1 d-flex header-article-main">
+    <div class="header-article__left">
+        
+        <label for="__navigation"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="right"
+title="Toggle navigation"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-bars"></i>
+  </span>
+
+</label>
+
+        
+    </div>
+    <div class="header-article__right">
+<div class="menu-dropdown menu-dropdown-launch-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Launch interactive content">
+      <i class="fas fa-rocket"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="https://mybinder.org/v2/gh/executablebooks/jupyter-book/master?urlpath=tree/docs/sources/1-Part/6.Linear_Algebra.ipynb"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Launch on Binder"
+>
+  
+
+<span class="headerbtn__icon-container">
+  
+    <img src="../../_static/images/logo_binder.svg">
+  </span>
+<span class="headerbtn__text-container">Binder</span>
+</a>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+
+<button onclick="toggleFullScreen()"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="bottom"
+title="Fullscreen mode"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+<div class="menu-dropdown menu-dropdown-repository-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Source repositories">
+      <i class="fab fa-github"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="https://github.com/executablebooks/jupyter-book"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Source repository"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="headerbtn__text-container">repository</span>
+</a>
+
+      </li>
+      
+      <li>
+        <a href="https://github.com/executablebooks/jupyter-book/issues/new?title=Issue%20on%20page%20%2Fsources/1-Part/6.Linear_Algebra.html&body=Your%20issue%20content%20here."
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Open an issue"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="headerbtn__text-container">open issue</span>
+</a>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+
+<div class="menu-dropdown menu-dropdown-download-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Download this page">
+      <i class="fas fa-download"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="../../_sources/sources/1-Part/6.Linear_Algebra.ipynb"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Download source file"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="headerbtn__text-container">.ipynb</span>
+</a>
+
+      </li>
+      
+      <li>
+        
+<button onclick="printPdf(this)"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="left"
+title="Print to PDF"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="headerbtn__text-container">.pdf</span>
+</button>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+<label for="__page-toc"
+  class="headerbtn headerbtn-page-toc"
+  
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-list"></i>
+  </span>
+
+</label>
+
+    </div>
+</div>
+
+<!-- Table of contents -->
+<div class="col-md-3 bd-toc show noprint">
+    <div class="tocsection onthispage pt-5 pb-3">
+        <i class="fas fa-list"></i> Contents
+    </div>
+    <nav id="bd-toc-nav" aria-label="Page">
+        <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#introduction-to-linear-algebra">
+   6.1 Introduction to linear algebra
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#example">
+     Example
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#python-example">
+     Python Example
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#vectors-and-matrices">
+   6.2 Vectors and Matrices
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#vectors">
+     Vectors
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#matrices">
+     Matrices
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#operations-on-matrices-and-vectors">
+   6.3 Operations on matrices and vectors
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#matrix-addition-and-subtraction">
+     Matrix addition and subtraction
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#matrix-vector-multiplication">
+     Matrix-vector multiplication
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#systems-of-linear-equations">
+   6.4 Systems of linear equations
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#elimination-method">
+     → Elimination Method
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#substitution-method">
+     → Substitution Method
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#eigenvalues-and-eigenvectors">
+   6.5 Eigenvalues and eigenvectors
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#importance">
+     → importance
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+
+    </nav>
+</div>
+    </div>
+    <div class="article row">
+        <div class="col pl-md-3 pl-lg-5 content-container">
+            <!-- Table of contents that is only displayed when printing the page -->
+            <div id="jb-print-docs-body" class="onlyprint">
+                <h1>6. Linear Algebra</h1>
+                <!-- Table of contents -->
+                <div id="print-main-content">
+                    <div id="jb-print-toc">
+                        
+                        <div>
+                            <h2> Contents </h2>
+                        </div>
+                        <nav aria-label="Page">
+                            <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#introduction-to-linear-algebra">
+   6.1 Introduction to linear algebra
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#example">
+     Example
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#python-example">
+     Python Example
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#vectors-and-matrices">
+   6.2 Vectors and Matrices
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#vectors">
+     Vectors
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#matrices">
+     Matrices
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#operations-on-matrices-and-vectors">
+   6.3 Operations on matrices and vectors
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#matrix-addition-and-subtraction">
+     Matrix addition and subtraction
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#matrix-vector-multiplication">
+     Matrix-vector multiplication
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#systems-of-linear-equations">
+   6.4 Systems of linear equations
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#elimination-method">
+     → Elimination Method
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#substitution-method">
+     → Substitution Method
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#eigenvalues-and-eigenvectors">
+   6.5 Eigenvalues and eigenvectors
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#importance">
+     → importance
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+
+                        </nav>
+                    </div>
+                </div>
+            </div>
+            <main id="main-content" role="main">
+                
+              <div>
+                
+  <section class="tex2jax_ignore mathjax_ignore" id="linear-algebra">
+<h1>6. Linear Algebra<a class="headerlink" href="#linear-algebra" title="Permalink to this headline">#</a></h1>
+<section id="introduction-to-linear-algebra">
+<h2>6.1 Introduction to linear algebra<a class="headerlink" href="#introduction-to-linear-algebra" title="Permalink to this headline">#</a></h2>
+<p>Linear algebra is a branch of mathematics that deals with linear equations and linear transformations. It is a fundamental mathematical tool used in many fields, including machine learning and artificial intelligence.</p>
+<p>In linear algebra, a <strong>vector</strong> is a sequence of numbers, typically represented as an array. For example, the vector [1, 2, 3] represents a sequence of three numbers. A <strong>matrix</strong> is a two-dimensional array of numbers. For example, the matrix:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\begin{bmatrix} 1 &amp; 2 \\ 3 &amp; 4 \\ 5 &amp; 6 \end{bmatrix}
+\end{split}\]</div>
+<p>represents a 2x3 matrix with three rows and two columns.</p>
+<p>Linear algebra is used to solve systems of linear equations and to perform matrix operations such as addition, subtraction, and multiplication. These operations are used in machine learning to perform tasks such as linear regression, logistic regression, and matrix factorization.</p>
+<section id="example">
+<h3>Example<a class="headerlink" href="#example" title="Permalink to this headline">#</a></h3>
+<p>Consider the system of linear equations:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+2x + 3y = 6\\
+4x + 6y = 12
+\end{split}\]</div>
+<p>To solve this system using linear algebra, we can represent the equations as the matrix equation:</p>
+<p>This equation can be solved using matrix operations to find the values of <span class="math notranslate nohighlight">\(x\)</span> and <span class="math notranslate nohighlight">\(y\)</span>.</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\begin{bmatrix} 2 &amp; 3 \\ 4 &amp; 6 \end{bmatrix} \begin{bmatrix} x \\ y \end{bmatrix} = \begin{bmatrix} 6 \\ 12 \end{bmatrix}
+\end{split}\]</div>
+</section>
+<section id="python-example">
+<h3>Python Example<a class="headerlink" href="#python-example" title="Permalink to this headline">#</a></h3>
+<p>To solve the system of linear equations using Python, we can use the <strong><code class="docutils literal notranslate"><span class="pre">numpy</span></code></strong> library to perform matrix operations:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+
+<span class="c1"># Define the matrix of coefficients</span>
+<span class="n">A</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([[</span><span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">],</span> <span class="p">[</span><span class="mi">4</span><span class="p">,</span> <span class="mi">6</span><span class="p">]])</span>
+
+<span class="c1"># Define the vector of constant terms</span>
+<span class="n">b</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mi">6</span><span class="p">,</span> <span class="mi">12</span><span class="p">])</span>
+
+<span class="c1"># Solve the system of equations using the linalg.solve function</span>
+<span class="n">x</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linalg</span><span class="o">.</span><span class="n">solve</span><span class="p">(</span><span class="n">A</span><span class="p">,</span> <span class="n">b</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>  <span class="c1"># Output: [1. 2.]</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">LinAlgError</span><span class="g g-Whitespace">                               </span>Traceback (most recent call last)
+<span class="o">/</span><span class="n">var</span><span class="o">/</span><span class="n">folders</span><span class="o">/</span><span class="n">yw</span><span class="o">/</span><span class="mi">39</span><span class="n">qgg96x2451prd0f9qrtbzr0000gn</span><span class="o">/</span><span class="n">T</span><span class="o">/</span><span class="n">ipykernel_6464</span><span class="o">/</span><span class="mf">1558594933.</span><span class="n">py</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
+<span class="g g-Whitespace">      </span><span class="mi">8</span> 
+<span class="g g-Whitespace">      </span><span class="mi">9</span> <span class="c1"># Solve the system of equations using the linalg.solve function</span>
+<span class="ne">---&gt; </span><span class="mi">10</span> <span class="n">x</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linalg</span><span class="o">.</span><span class="n">solve</span><span class="p">(</span><span class="n">A</span><span class="p">,</span> <span class="n">b</span><span class="p">)</span>
+<span class="g g-Whitespace">     </span><span class="mi">11</span> 
+<span class="g g-Whitespace">     </span><span class="mi">12</span> <span class="nb">print</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>  <span class="c1"># Output: [1. 2.]</span>
+
+<span class="nn">&lt;__array_function__ internals&gt;</span> in <span class="ni">solve</span><span class="nt">(*args, **kwargs)</span>
+
+<span class="nn">~/miniconda3/lib/python3.7/site-packages/numpy/linalg/linalg.py</span> in <span class="ni">solve</span><span class="nt">(a, b)</span>
+<span class="g g-Whitespace">    </span><span class="mi">391</span>     <span class="n">signature</span> <span class="o">=</span> <span class="s1">&#39;DD-&gt;D&#39;</span> <span class="k">if</span> <span class="n">isComplexType</span><span class="p">(</span><span class="n">t</span><span class="p">)</span> <span class="k">else</span> <span class="s1">&#39;dd-&gt;d&#39;</span>
+<span class="g g-Whitespace">    </span><span class="mi">392</span>     <span class="n">extobj</span> <span class="o">=</span> <span class="n">get_linalg_error_extobj</span><span class="p">(</span><span class="n">_raise_linalgerror_singular</span><span class="p">)</span>
+<span class="ne">--&gt; </span><span class="mi">393</span>     <span class="n">r</span> <span class="o">=</span> <span class="n">gufunc</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">,</span> <span class="n">signature</span><span class="o">=</span><span class="n">signature</span><span class="p">,</span> <span class="n">extobj</span><span class="o">=</span><span class="n">extobj</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">394</span> 
+<span class="g g-Whitespace">    </span><span class="mi">395</span>     <span class="k">return</span> <span class="n">wrap</span><span class="p">(</span><span class="n">r</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="n">result_t</span><span class="p">,</span> <span class="n">copy</span><span class="o">=</span><span class="kc">False</span><span class="p">))</span>
+
+<span class="nn">~/miniconda3/lib/python3.7/site-packages/numpy/linalg/linalg.py</span> in <span class="ni">_raise_linalgerror_singular</span><span class="nt">(err, flag)</span>
+<span class="g g-Whitespace">     </span><span class="mi">86</span> 
+<span class="g g-Whitespace">     </span><span class="mi">87</span> <span class="k">def</span> <span class="nf">_raise_linalgerror_singular</span><span class="p">(</span><span class="n">err</span><span class="p">,</span> <span class="n">flag</span><span class="p">):</span>
+<span class="ne">---&gt; </span><span class="mi">88</span>     <span class="k">raise</span> <span class="n">LinAlgError</span><span class="p">(</span><span class="s2">&quot;Singular matrix&quot;</span><span class="p">)</span>
+<span class="g g-Whitespace">     </span><span class="mi">89</span> 
+<span class="g g-Whitespace">     </span><span class="mi">90</span> <span class="k">def</span> <span class="nf">_raise_linalgerror_nonposdef</span><span class="p">(</span><span class="n">err</span><span class="p">,</span> <span class="n">flag</span><span class="p">):</span>
+
+<span class="ne">LinAlgError</span>: Singular matrix
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+</section>
+<section id="vectors-and-matrices">
+<h2>6.2 Vectors and Matrices<a class="headerlink" href="#vectors-and-matrices" title="Permalink to this headline">#</a></h2>
+<p>Linear algebra is a branch of mathematics that deals with linear equations and their representations in vector and matrix form. Vectors and matrices are fundamental mathematical objects in linear algebra and are used to represent and manipulate data in many areas of science, engineering, and computer science.</p>
+<section id="vectors">
+<h3>Vectors<a class="headerlink" href="#vectors" title="Permalink to this headline">#</a></h3>
+<p>A vector is a collection of numbers arranged in a particular order. Vectors can be represented as a list of numbers, or as an arrow in a coordinate system. The length of the vector is the number of elements it contains, and the magnitude of a vector is the length of the arrow representing it.</p>
+<p>In Python, we can represent a vector as a list or a NumPy array:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">vector1</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">]</span>
+<span class="n">vector2</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">])</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>We can perform basic operations on vectors, such as addition and subtraction:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">vector1</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">]</span>
+<span class="n">vector2</span> <span class="o">=</span> <span class="p">[</span><span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">6</span><span class="p">]</span>
+
+<span class="c1"># Vector addition</span>
+<span class="n">vector_sum</span> <span class="o">=</span> <span class="p">[</span><span class="n">x</span> <span class="o">+</span> <span class="n">y</span> <span class="k">for</span> <span class="n">x</span><span class="p">,</span> <span class="n">y</span> <span class="ow">in</span> <span class="nb">zip</span><span class="p">(</span><span class="n">vector1</span><span class="p">,</span> <span class="n">vector2</span><span class="p">)]</span>
+
+<span class="c1"># Vector subtraction</span>
+<span class="n">vector_diff</span> <span class="o">=</span> <span class="p">[</span><span class="n">x</span> <span class="o">-</span> <span class="n">y</span> <span class="k">for</span> <span class="n">x</span><span class="p">,</span> <span class="n">y</span> <span class="ow">in</span> <span class="nb">zip</span><span class="p">(</span><span class="n">vector1</span><span class="p">,</span> <span class="n">vector2</span><span class="p">)]</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>We can also take the dot product of two vectors, which is a scalar value that measures the similarity between the two vectors:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">vector1</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">]</span>
+<span class="n">vector2</span> <span class="o">=</span> <span class="p">[</span><span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">6</span><span class="p">]</span>
+
+<span class="n">dot_product</span> <span class="o">=</span> <span class="nb">sum</span><span class="p">([</span><span class="n">x</span> <span class="o">*</span> <span class="n">y</span> <span class="k">for</span> <span class="n">x</span><span class="p">,</span> <span class="n">y</span> <span class="ow">in</span> <span class="nb">zip</span><span class="p">(</span><span class="n">vector1</span><span class="p">,</span> <span class="n">vector2</span><span class="p">)])</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="matrices">
+<h3>Matrices<a class="headerlink" href="#matrices" title="Permalink to this headline">#</a></h3>
+<p>A matrix is a two-dimensional array of numbers. Matrices are often used to represent and manipulate data in the form of rows and columns. The dimensions of a matrix are the number of rows and columns it contains.</p>
+<p>In Python, we can represent a matrix as a list of lists or a NumPy array:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">matrix1</span> <span class="o">=</span> <span class="p">[[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">],</span> <span class="p">[</span><span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">6</span><span class="p">]]</span>
+<span class="n">matrix2</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">],</span> <span class="p">[</span><span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">6</span><span class="p">]])</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>We can perform basic operations on matrices, such as addition and subtraction:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">matrix1</span> <span class="o">=</span> <span class="p">[[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">],</span> <span class="p">[</span><span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">6</span><span class="p">]]</span>
+<span class="n">matrix2</span> <span class="o">=</span> <span class="p">[[</span><span class="mi">7</span><span class="p">,</span> <span class="mi">8</span><span class="p">,</span> <span class="mi">9</span><span class="p">],</span> <span class="p">[</span><span class="mi">10</span><span class="p">,</span> <span class="mi">11</span><span class="p">,</span> <span class="mi">12</span><span class="p">]]</span>
+
+<span class="c1"># Matrix addition</span>
+<span class="n">matrix_sum</span> <span class="o">=</span> <span class="p">[[</span><span class="n">x</span> <span class="o">+</span> <span class="n">y</span> <span class="k">for</span> <span class="n">x</span><span class="p">,</span> <span class="n">y</span> <span class="ow">in</span> <span class="nb">zip</span><span class="p">(</span><span class="n">row1</span><span class="p">,</span> <span class="n">row2</span><span class="p">)]</span> <span class="k">for</span> <span class="n">row1</span><span class="p">,</span> <span class="n">row2</span> <span class="ow">in</span> <span class="nb">zip</span><span class="p">(</span><span class="n">matrix1</span><span class="p">,</span> <span class="n">matrix2</span><span class="p">)]</span>
+
+<span class="c1"># Matrix subtraction</span>
+<span class="n">matrix_diff</span> <span class="o">=</span> <span class="p">[[</span><span class="n">x</span> <span class="o">-</span> <span class="n">y</span> <span class="k">for</span> <span class="n">x</span><span class="p">,</span> <span class="n">y</span> <span class="ow">in</span> <span class="nb">zip</span><span class="p">(</span><span class="n">row1</span><span class="p">,</span> <span class="n">row2</span><span class="p">)]</span> <span class="k">for</span> <span class="n">row1</span><span class="p">,</span> <span class="n">row2</span> <span class="ow">in</span> <span class="nb">zip</span><span class="p">(</span><span class="n">matrix1</span><span class="p">,</span> <span class="n">matrix2</span><span class="p">)]</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>We can also take the dot product of two matrices, which is a matrix that results from multiplying two matrices element-wise:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">matrix1</span> <span class="o">=</span> <span class="p">[[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">],</span> <span class="p">[</span><span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">6</span><span class="p">]]</span>
+<span class="n">matrix2</span> <span class="o">=</span> <span class="p">[[</span><span class="mi">7</span><span class="p">,</span> <span class="mi">8</span><span class="p">,</span> <span class="mi">9</span><span class="p">],</span> <span class="p">[</span><span class="mi">10</span><span class="p">,</span> <span class="mi">11</span><span class="p">,</span> <span class="mi">12</span><span class="p">]]</span>
+
+<span class="n">dot_product</span> <span class="o">=</span> <span class="p">[[</span><span class="nb">sum</span><span class="p">([</span><span class="n">x</span> <span class="o">*</span> <span class="n">y</span> <span class="k">for</span> <span class="n">x</span><span class="p">,</span> <span class="n">y</span> <span class="ow">in</span> <span class="nb">zip</span><span class="p">(</span><span class="n">row1</span><span class="p">,</span> <span class="n">column2</span><span class="p">)])</span> <span class="k">for</span> <span class="n">column2</span> <span class="ow">in</span> <span class="nb">zip</span><span class="p">(</span><span class="o">*</span><span class="n">matrix2</span><span class="p">)]</span> <span class="k">for</span> <span class="n">row1</span> <span class="ow">in</span> <span class="n">matrix1</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+</section>
+<section id="operations-on-matrices-and-vectors">
+<h2>6.3 Operations on matrices and vectors<a class="headerlink" href="#operations-on-matrices-and-vectors" title="Permalink to this headline">#</a></h2>
+<p>In this section, we will look at some common operations that can be performed on matrices and vectors. These operations are essential for many machine learning algorithms and are used to manipulate and transform data.</p>
+<section id="matrix-addition-and-subtraction">
+<h3>Matrix addition and subtraction<a class="headerlink" href="#matrix-addition-and-subtraction" title="Permalink to this headline">#</a></h3>
+<p>Two matrices can be added or subtracted if they have the same dimensions. To add two matrices, we simply add their corresponding elements. For example, given two matrices A and B with the same dimensions, we can add them as follows:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+C = A + B = \begin{bmatrix} a_{1,1} &amp; a_{1,2} &amp; \cdots &amp; a_{1,n} \\ a_{2,1} &amp; a_{2,2} &amp; \cdots &amp; a_{2,n} \\ \vdots &amp; \vdots &amp; \ddots &amp; \vdots \\ a_{m,1} &amp; a_{m,2} &amp; \cdots &amp; a_{m,n} \end{bmatrix} + \begin{bmatrix} b_{1,1} &amp; b_{1,2} &amp; \cdots &amp; b_{1,n} \\ b_{2,1} &amp; b_{2,2} &amp; \cdots &amp; b_{2,n} \\ \vdots &amp; \vdots &amp; \ddots &amp; \vdots \\ b_{m,1} &amp; b_{m,2} &amp; \cdots &amp; b_{m,n} \end{bmatrix} = \begin{bmatrix} a_{1,1} + b_{1,1} &amp; a_{1,2} + b_{1,2} &amp; \cdots &amp; a_{1,n} + b_{1,n} \\ a_{2,1} + b_{2,1} &amp; a_{2,2} + b_{2,2} &amp; \cdots &amp; a_{2,n} + b_{2,n} \\ \vdots &amp; \vdots &amp; \ddots &amp; \vdots \\ a_{m,1} + b_{m,1} &amp; a_{m,2} + b_{m,2} &amp; \cdots &amp; a_{m,n} + b_{m,n} \end{bmatrix}
+\end{split}\]</div>
+<p>Subtraction works in a similar way, with the corresponding elements being subtracted rather than added.</p>
+</section>
+<section id="matrix-vector-multiplication">
+<h3>Matrix-vector multiplication<a class="headerlink" href="#matrix-vector-multiplication" title="Permalink to this headline">#</a></h3>
+<p>A matrix can be multiplied by a vector if the number of columns in the matrix is the same as the number of elements in the vector. The result is a new vector with the same number of elements as the number of rows in the matrix.</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\begin{bmatrix} a_{1,1} &amp; a_{1,2} &amp; \cdots &amp; a_{1,n} \\ a_{2,1} &amp; a_{2,2} &amp; \cdots &amp; a_{2,n} \\ \vdots &amp; \vdots &amp; \ddots &amp; \vdots \\ a_{m,1} &amp; a_{m,2} &amp; \cdots &amp; a_{m,n} \end{bmatrix} \begin{bmatrix} x_1 \\ x_2 \\ \vdots \ x_n \end{bmatrix} = \begin{bmatrix} a_{1,1}x_1 + a_{1,2}x_2 + \cdots + a_{1,n}x_n \\ a_{2,1}x_1 + a_{2,2}x_2 + \cdots + a_{2,n}x_n \\ \vdots \\ a_{m,1}x_1 + a_{m,2}x_2 + \cdots + a_{m,n}x_n \end{bmatrix}
+\end{split}\]</div>
+<p>Matrix-vector multiplication is a fundamental operation in linear algebra and is frequently used in machine learning and deep learning. In this operation, a matrix is multiplied by a vector to produce a new vector. The resulting vector is typically used to represent a transformation of the original vector.</p>
+<p>The matrix-vector multiplication is defined as:</p>
+<div class="math notranslate nohighlight">
+\[
+ \mathbf{y} = \mathbf{A} \mathbf{x} 
+\]</div>
+<p>where <span class="math notranslate nohighlight">\(\mathbf{y}\)</span> is the resulting vector, <span class="math notranslate nohighlight">\(\mathbf{A}\)</span> is the matrix, and <span class="math notranslate nohighlight">\(\mathbf{x}\)</span> is the original vector.</p>
+<p>The element-wise product of the matrix and the vector is given by:</p>
+<div class="math notranslate nohighlight">
+\[
+ y_i = \sum_{j=1}^{m} A_{i,j} x_j 
+\]</div>
+<p>where <span class="math notranslate nohighlight">\(y_i\)</span> is the <span class="math notranslate nohighlight">\(i\)</span>-th element of the resulting vector, <span class="math notranslate nohighlight">\(A_{i,j}\)</span> is the element in the <span class="math notranslate nohighlight">\(i\)</span>-th row and <span class="math notranslate nohighlight">\(j\)</span>-th column of the matrix, and <span class="math notranslate nohighlight">\(x_j\)</span> is the <span class="math notranslate nohighlight">\(j\)</span>-th element of the vector.</p>
+<p>Here is an example of matrix-vector multiplication in Python using NumPy:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+
+<span class="c1"># Define matrix and vector</span>
+<span class="n">A</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">],</span> <span class="p">[</span><span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">]])</span>
+<span class="n">x</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">])</span>
+
+<span class="c1"># Perform matrix-vector multiplication</span>
+<span class="n">y</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">dot</span><span class="p">(</span><span class="n">A</span><span class="p">,</span> <span class="n">x</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">y</span><span class="p">)</span>  <span class="c1"># Output: [ 5 11]</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+</section>
+<section id="systems-of-linear-equations">
+<h2>6.4 Systems of linear equations<a class="headerlink" href="#systems-of-linear-equations" title="Permalink to this headline">#</a></h2>
+<p>Part One. Chapter “6. Linear Algebra”. Section: “6.4 Systems of linear equations”</p>
+<p>A system of linear equations is a collection of linear equations that can be solved simultaneously. A linear equation is an equation that can be written in the form <span class="math notranslate nohighlight">\(ax + b = 0\)</span>, where <span class="math notranslate nohighlight">\(a\)</span> and <span class="math notranslate nohighlight">\(b\)</span> are constants.</p>
+<p>To solve a system of linear equations, we can use either the elimination method or the substitution method.</p>
+<section id="elimination-method">
+<h3>→ Elimination Method<a class="headerlink" href="#elimination-method" title="Permalink to this headline">#</a></h3>
+<p>The elimination method involves adding or subtracting the equations in such a way as to eliminate one of the variables. For example, consider the following system of linear equations:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+2x + 3y = 8 \\ 4x - y = 2
+\end{split}\]</div>
+<p>We can eliminate the <span class="math notranslate nohighlight">\(y\)</span> variable by adding the two equations together:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+2x + 3y + 4x - y = 8 + 2 \\ 6x + 2 = 16 \\ x = \frac{2}{3}
+\end{split}\]</div>
+<p>Substituting this value back into either of the original equations allows us to solve for <span class="math notranslate nohighlight">\(y\)</span>:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+2x + 3y = 8 \\ 2 \cdot \frac{2}{3} + 3y = 8 \\ y = 2
+\end{split}\]</div>
+<p>Therefore, the solution to the system of linear equations is <span class="math notranslate nohighlight">\(x = \frac{2}{3}\)</span> and <span class="math notranslate nohighlight">\(y = 2\)</span>.</p>
+</section>
+<section id="substitution-method">
+<h3>→ Substitution Method<a class="headerlink" href="#substitution-method" title="Permalink to this headline">#</a></h3>
+<p>The substitution method involves solving one of the equations for one of the variables and substituting the result into the other equation. For example, consider the following system of linear equations:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+x + 2y = 6 \\ 3x - 4y = 2
+\end{split}\]</div>
+<p>We can solve the first equation for <span class="math notranslate nohighlight">\(x\)</span>:</p>
+<div class="math notranslate nohighlight">
+\[
+x = 6 - 2y
+\]</div>
+<p>Substituting this result into the second equation gives us:</p>
+<div class="math notranslate nohighlight">
+\[
+3(6 - 2y) - 4y = 2
+\]</div>
+<p>Solving this equation for <span class="math notranslate nohighlight">\(y\)</span> yields:</p>
+<div class="math notranslate nohighlight">
+\[
+y = \frac{4}{7}
+\]</div>
+<p>Substituting this result back into the first equation allows us to solve for <span class="math notranslate nohighlight">\(x\)</span>:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+x + 2y = 6 \\ x + 2 \cdot \frac{4}{7} = 6 \\ x = \frac{6}{7}
+\end{split}\]</div>
+<p>Therefore, the solution to the system of linear equations is <span class="math notranslate nohighlight">\(x = \frac{6}{7}\)</span> and <span class="math notranslate nohighlight">\(y = \frac{4}{7}\)</span>.</p>
+<p><strong>Example in Python Notebook:</strong></p>
+<p>We can use the <strong><code class="docutils literal notranslate"><span class="pre">numpy</span></code></strong> library to solve systems of linear equations in Python. For example, consider the following system of linear equations:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+2x - 3y = 1 \\ 5x + 2y = 3
+\end{split}\]</div>
+<p>We can solve this system using the <strong><code class="docutils literal notranslate"><span class="pre">numpy.linalg.solve</span></code></strong> function:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+
+<span class="n">A</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([[</span><span class="mi">2</span><span class="p">,</span> <span class="o">-</span><span class="mi">3</span><span class="p">],</span> <span class="p">[</span><span class="mi">5</span><span class="p">,</span> <span class="mi">2</span><span class="p">]])</span>
+<span class="n">b</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span> <span class="mi">3</span><span class="p">])</span>
+
+<span class="n">x</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linalg</span><span class="o">.</span><span class="n">solve</span><span class="p">(</span><span class="n">A</span><span class="p">,</span> <span class="n">b</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>This will output the solution <strong><code class="docutils literal notranslate"><span class="pre">[0.63636364</span> <span class="pre">0.90909091]</span></code></strong>, which corresponds to <span class="math notranslate nohighlight">\(x = \frac{7}{11}\)</span> and <span class="math notranslate nohighlight">\(y = \frac{5}{11}\)</span>.</p>
+</section>
+</section>
+<section id="eigenvalues-and-eigenvectors">
+<h2>6.5 Eigenvalues and eigenvectors<a class="headerlink" href="#eigenvalues-and-eigenvectors" title="Permalink to this headline">#</a></h2>
+<p>In linear algebra, an eigenvalue and an eigenvector of a linear transformation are a scalar and a non-zero vector respectively that, when the transformation is applied to the vector, change only by a scalar factor.</p>
+<p>Formally, if <span class="math notranslate nohighlight">\(T\)</span> is a linear transformation and <span class="math notranslate nohighlight">\(\mathbf{v}\)</span> is a non-zero vector, then <span class="math notranslate nohighlight">\(\mathbf{v}\)</span> is an eigenvector of <span class="math notranslate nohighlight">\(T\)</span> if there exists a scalar <span class="math notranslate nohighlight">\(\lambda\)</span> such that:</p>
+<div class="math notranslate nohighlight">
+\[
+T(\mathbf{v}) = \lambda\mathbf{v}
+\]</div>
+<p>The scalar <span class="math notranslate nohighlight">\(\lambda\)</span> is called the eigenvalue corresponding to the eigenvector <span class="math notranslate nohighlight">\(\mathbf{v}\)</span>.</p>
+<p>Eigenvalues and eigenvectors are important in many areas of mathematics and physics, as they provide insight into the behavior of linear transformations. In machine learning and deep learning, eigenvalues and eigenvectors are used in the analysis of covariance matrices, principal component analysis, and spectral clustering.</p>
+<p>Here is an example in Python of finding the eigenvalues and eigenvectors of a matrix:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+
+<span class="c1"># Define a matrix</span>
+<span class="n">A</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([[</span><span class="mi">3</span><span class="p">,</span> <span class="mi">2</span><span class="p">],</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">]])</span>
+
+<span class="c1"># Find the eigenvalues and eigenvectors of A</span>
+<span class="n">eigenvalues</span><span class="p">,</span> <span class="n">eigenvectors</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linalg</span><span class="o">.</span><span class="n">eig</span><span class="p">(</span><span class="n">A</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Eigenvalues:&quot;</span><span class="p">,</span> <span class="n">eigenvalues</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Eigenvectors:&quot;</span><span class="p">,</span> <span class="n">eigenvectors</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>This will output:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">Eigenvalues</span><span class="p">:</span> <span class="p">[</span> <span class="mf">3.</span> <span class="o">-</span><span class="mf">1.</span><span class="p">]</span>
+<span class="n">Eigenvectors</span><span class="p">:</span> <span class="p">[[</span> <span class="mf">0.89442719</span> <span class="o">-</span><span class="mf">0.70710678</span><span class="p">]</span>
+               <span class="p">[</span> <span class="mf">0.4472136</span>   <span class="mf">0.70710678</span><span class="p">]]</span>
+</pre></div>
+</div>
+<section id="importance">
+<h3>→ importance<a class="headerlink" href="#importance" title="Permalink to this headline">#</a></h3>
+<p>Eigenvalues and eigenvectors play a significant role in deep learning because they allow us to analyze and understand the properties of a matrix. In particular, they are used in many techniques for dimensionality reduction, such as principal component analysis (PCA).</p>
+<p>Eigenvalues represent the scaling factor of a matrix and can be used to determine its stability or instability. Eigenvectors, on the other hand, represent the direction in which a matrix stretches or compresses space. By understanding the eigenvalues and eigenvectors of a matrix, we can better understand how it transforms data and how it can be used in machine learning algorithms.</p>
+<p>In deep learning, eigenvalues and eigenvectors are used in a variety of applications, including the analysis of neural networks, the design of efficient loss functions, and the optimization of deep learning models.</p>
+</section>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./sources/1-Part"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+            </main>
+            <footer class="footer-article noprint">
+                
+    <!-- Previous / next buttons -->
+<div class='prev-next-area'>
+    <a class='left-prev' id="prev-link" href="5.Statistics.html" title="previous page">
+        <i class="fas fa-angle-left"></i>
+        <div class="prev-next-info">
+            <p class="prev-next-subtitle">previous</p>
+            <p class="prev-next-title">5. Statistics</p>
+        </div>
+    </a>
+    <a class='right-next' id="next-link" href="7.Geometry.html" title="next page">
+    <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">7. Geometry</p>
+    </div>
+    <i class="fas fa-angle-right"></i>
+    </a>
+</div>
+            </footer>
+        </div>
+    </div>
+    <div class="footer-content row">
+        <footer class="col footer"><p>
+  
+    By The Book about AI/ML/DL (vomited by ChatGPT)<br/>
+  
+      &copy; Copyright 2022.<br/>
+</p>
+        </footer>
+    </div>
+    
+</div>
+
+
+      </div>
+    </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf"></script>
+
+
+  </body>
+</html>

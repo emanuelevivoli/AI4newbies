@@ -1,0 +1,978 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+    <title>5. Computer Vision &#8212; chatGPT wrote this BOOK</title>
+    
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../../_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+<link href="../../_static/styles/pydata-sphinx-theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+
+    
+  <link rel="stylesheet"
+    href="../../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css" />
+    <link rel="stylesheet" href="../../_static/styles/sphinx-book-theme.css?digest=5115cc725059bd94278eecd172e13a965bf8f5a9" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/design-style.b7bb847fb20b106c3d81b95245e65545.min.css" />
+    
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf">
+
+    <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
+    <script src="../../_static/jquery.js"></script>
+    <script src="../../_static/underscore.js"></script>
+    <script src="../../_static/doctools.js"></script>
+    <script src="../../_static/clipboard.min.js"></script>
+    <script src="../../_static/copybutton.js"></script>
+    <script src="../../_static/scripts/sphinx-book-theme.js?digest=9c920249402e914e316237a7dbc6769907cce411"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../../_static/togglebutton.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="../../_static/design-tabs.js"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
+    <script async="async" src="../../_static/sphinx-thebe.js"></script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="6: Ethics and the Future of AI" href="6.Ethics_and_the_Future_of_AI.html" />
+    <link rel="prev" title="4. Natural Language Processing" href="4.Natural_Language_Processing.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="None">
+    
+
+    <!-- Google Analytics -->
+    
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="60">
+<!-- Checkboxes to toggle the left sidebar -->
+<input type="checkbox" class="sidebar-toggle" name="__navigation" id="__navigation" aria-label="Toggle navigation sidebar">
+<label class="overlay overlay-navbar" for="__navigation">
+    <div class="visually-hidden">Toggle navigation sidebar</div>
+</label>
+<!-- Checkboxes to toggle the in-page toc -->
+<input type="checkbox" class="sidebar-toggle" name="__page-toc" id="__page-toc" aria-label="Toggle in-page Table of Contents">
+<label class="overlay overlay-pagetoc" for="__page-toc">
+    <div class="visually-hidden">Toggle in-page Table of Contents</div>
+</label>
+<!-- Headers at the top -->
+<div class="announcement header-item noprint"></div>
+<div class="header header-item noprint"></div>
+
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<!-- Sidebar -->
+<div class="bd-sidebar noprint" id="site-navigation">
+    <div class="bd-sidebar__content">
+        <div class="bd-sidebar__top"><div class="navbar-brand-box">
+    <a class="navbar-brand text-wrap" href="../../index.html">
+      
+        <!-- `logo` is deprecated in Sphinx 4.0, so remove this when we stop supporting 3 -->
+        
+      
+      
+      <img src="../../_static/logo.jpeg" class="logo" alt="logo">
+      
+      
+      <h1 class="site-logo" id="site-title">chatGPT wrote this BOOK</h1>
+      
+    </a>
+</div><form class="bd-search d-flex align-items-center" action="../../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="../../intro.html">
+                    What is this book?
+                </a>
+            </li>
+        </ul>
+        <p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Preliminaries Notions
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../1-Part/preliminaries.html">
+   AI4noobs - Preliminaries
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/>
+  <label for="toctree-checkbox-1">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../1-Part/1.Programming_with_Notebooks.html">
+     1. Programming with Notebooks
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../1-Part/2.Introduction_to_Programming.html">
+     2. Introduction to Programming
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../1-Part/3.Data_Structures.html">
+     3. Data Structures
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../1-Part/4.Computational_Complexity.html">
+     4. Computational Complexity
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../1-Part/5.Statistics.html">
+     5. Statistics
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../1-Part/6.Linear_Algebra.html">
+     6. Linear Algebra
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../1-Part/7.Geometry.html">
+     7. Geometry
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../1-Part/8.Calculus.html">
+     8. Numerical Calculus
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Basis of AI
+ </span>
+</p>
+<ul class="current nav bd-sidenav">
+ <li class="toctree-l1 current active has-children">
+  <a class="reference internal" href="basis.html">
+   AI4noobs - Basis
+  </a>
+  <input checked="" class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/>
+  <label for="toctree-checkbox-2">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul class="current">
+   <li class="toctree-l2">
+    <a class="reference internal" href="1.Introduction_to_Artificial_Intelligence_and_Deep_Learning.html">
+     1. Introduction to Artificial Intelligence and Deep Learning
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="2.The_Basics_of_Machine_Learning.html">
+     2. The Basics of Machine Learning
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="3.Neural_Networks_and_Deep_Learning.html">
+     3. Neural Networks and Deep Learning
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="4.Natural_Language_Processing.html">
+     4. Natural Language Processing
+    </a>
+   </li>
+   <li class="toctree-l2 current active">
+    <a class="current reference internal" href="#">
+     5. Computer Vision
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="6.Ethics_and_the_Future_of_AI.html">
+     6: Ethics and the Future of AI
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Applications of AI
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../3-Part/applications.html">
+   AI4noobs - Applications
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/>
+  <label for="toctree-checkbox-3">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../3-Part/1.Fraud_Detection.html">
+     1. Fraud Detection
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../3-Part/2.Customer_Relationship_Management_Systems.html">
+     2. Customer Relationship Management Systems
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../3-Part/3.Computer_Vision.html">
+     3. Computer Vision
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../3-Part/4.Vocal_AI.html">
+     4. Vocal AI
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../3-Part/5.Natural_Language_Processing.html">
+     5. Natural Language Processing
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../3-Part/6.Autonomous_Vehicles.html">
+     6. Autonomous Vehicles
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../3-Part/7.Supercomputers.html">
+     7. Supercomputers
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../3-Part/8.Investment_Modeling.html">
+     8. Investment Modeling
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../3-Part/9.E-commerce.html">
+     9. E-commerce
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+
+    </div>
+</nav></div>
+        <div class="bd-sidebar__bottom">
+             <!-- To handle the deprecated key -->
+            
+            <div class="navbar_extra_footer">
+            Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+            </div>
+            
+        </div>
+    </div>
+    <div id="rtd-footer-container"></div>
+</div>
+
+
+          
+
+
+          
+<!-- A tiny helper pixel to detect if we've scrolled -->
+<div class="sbt-scroll-pixel-helper"></div>
+<!-- Main content -->
+<div class="col py-0 content-container">
+    
+    <div class="header-article row sticky-top noprint">
+        
+
+
+
+<div class="col py-1 d-flex header-article-main">
+    <div class="header-article__left">
+        
+        <label for="__navigation"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="right"
+title="Toggle navigation"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-bars"></i>
+  </span>
+
+</label>
+
+        
+    </div>
+    <div class="header-article__right">
+<div class="menu-dropdown menu-dropdown-launch-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Launch interactive content">
+      <i class="fas fa-rocket"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="https://mybinder.org/v2/gh/executablebooks/jupyter-book/master?urlpath=tree/docs/sources/2-Part/5.Computer_Vision.ipynb"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Launch on Binder"
+>
+  
+
+<span class="headerbtn__icon-container">
+  
+    <img src="../../_static/images/logo_binder.svg">
+  </span>
+<span class="headerbtn__text-container">Binder</span>
+</a>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+
+<button onclick="toggleFullScreen()"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="bottom"
+title="Fullscreen mode"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+<div class="menu-dropdown menu-dropdown-repository-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Source repositories">
+      <i class="fab fa-github"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="https://github.com/executablebooks/jupyter-book"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Source repository"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="headerbtn__text-container">repository</span>
+</a>
+
+      </li>
+      
+      <li>
+        <a href="https://github.com/executablebooks/jupyter-book/issues/new?title=Issue%20on%20page%20%2Fsources/2-Part/5.Computer_Vision.html&body=Your%20issue%20content%20here."
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Open an issue"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="headerbtn__text-container">open issue</span>
+</a>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+
+<div class="menu-dropdown menu-dropdown-download-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Download this page">
+      <i class="fas fa-download"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="../../_sources/sources/2-Part/5.Computer_Vision.ipynb"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Download source file"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="headerbtn__text-container">.ipynb</span>
+</a>
+
+      </li>
+      
+      <li>
+        
+<button onclick="printPdf(this)"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="left"
+title="Print to PDF"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="headerbtn__text-container">.pdf</span>
+</button>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+<label for="__page-toc"
+  class="headerbtn headerbtn-page-toc"
+  
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-list"></i>
+  </span>
+
+</label>
+
+    </div>
+</div>
+
+<!-- Table of contents -->
+<div class="col-md-3 bd-toc show noprint">
+    <div class="tocsection onthispage pt-5 pb-3">
+        <i class="fas fa-list"></i> Contents
+    </div>
+    <nav id="bd-toc-nav" aria-label="Page">
+        <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#introduction">
+   5.1 Introduction
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#image-classification">
+   5.2
+   <strong>
+    <strong>
+     Image Classification
+    </strong>
+   </strong>
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#traditional-approaches">
+     Traditional Approaches
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#recent-approaches">
+     Recent Approaches
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#summary">
+     summary
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#object-detection">
+   5.3 Object Detection
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id1">
+     Traditional Approaches
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id2">
+     Recent Approaches
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#conclusion">
+     Conclusion
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#image-segmentation">
+   5.4 Image Segmentation
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id3">
+     Traditional Approaches
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id4">
+     Recent Approaches
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id5">
+     Conclusion
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#image-generation">
+   5.5 Image Generation
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#autoencoders">
+     5.5.1 Autoencoders
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#variational-autoencoders-vaes">
+     5.5.2 Variational Autoencoders (VAEs)
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#denoising-diffusion-probabilistic-models">
+     5.5.3 Denoising Diffusion Probabilistic Models
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id6">
+     Conclusion
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#id7">
+   5.6 Conclusion
+  </a>
+ </li>
+</ul>
+
+    </nav>
+</div>
+    </div>
+    <div class="article row">
+        <div class="col pl-md-3 pl-lg-5 content-container">
+            <!-- Table of contents that is only displayed when printing the page -->
+            <div id="jb-print-docs-body" class="onlyprint">
+                <h1>5. Computer Vision</h1>
+                <!-- Table of contents -->
+                <div id="print-main-content">
+                    <div id="jb-print-toc">
+                        
+                        <div>
+                            <h2> Contents </h2>
+                        </div>
+                        <nav aria-label="Page">
+                            <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#introduction">
+   5.1 Introduction
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#image-classification">
+   5.2
+   <strong>
+    <strong>
+     Image Classification
+    </strong>
+   </strong>
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#traditional-approaches">
+     Traditional Approaches
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#recent-approaches">
+     Recent Approaches
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#summary">
+     summary
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#object-detection">
+   5.3 Object Detection
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id1">
+     Traditional Approaches
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id2">
+     Recent Approaches
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#conclusion">
+     Conclusion
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#image-segmentation">
+   5.4 Image Segmentation
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id3">
+     Traditional Approaches
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id4">
+     Recent Approaches
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id5">
+     Conclusion
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#image-generation">
+   5.5 Image Generation
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#autoencoders">
+     5.5.1 Autoencoders
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#variational-autoencoders-vaes">
+     5.5.2 Variational Autoencoders (VAEs)
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#denoising-diffusion-probabilistic-models">
+     5.5.3 Denoising Diffusion Probabilistic Models
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id6">
+     Conclusion
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#id7">
+   5.6 Conclusion
+  </a>
+ </li>
+</ul>
+
+                        </nav>
+                    </div>
+                </div>
+            </div>
+            <main id="main-content" role="main">
+                
+              <div>
+                
+  <section class="tex2jax_ignore mathjax_ignore" id="computer-vision">
+<h1>5. Computer Vision<a class="headerlink" href="#computer-vision" title="Permalink to this headline">#</a></h1>
+<section id="introduction">
+<h2>5.1 Introduction<a class="headerlink" href="#introduction" title="Permalink to this headline">#</a></h2>
+<blockquote>
+<div><p>Computer vision is the field of artificial intelligence that focuses on enabling computers to interpret and understand visual data from the world. It involves techniques for processing, analyzing, and understanding images and video. Some key applications of computer vision include object recognition, face detection, and image segmentation.</p>
+</div></blockquote>
+</section>
+<section id="image-classification">
+<h2>5.2 <strong><strong>Image Classification</strong></strong><a class="headerlink" href="#image-classification" title="Permalink to this headline">#</a></h2>
+<p>Image classification is the task of assigning a label or category to an image. It is used in applications such as image search engines, where the goal is to return images that are relevant to a given query, and image tagging, where the goal is to assign descriptive tags to images.</p>
+<section id="traditional-approaches">
+<h3>Traditional Approaches<a class="headerlink" href="#traditional-approaches" title="Permalink to this headline">#</a></h3>
+<p>One common approach to image classification is to use convolutional neural networks (CNNs), which are neural networks designed to process data with a grid-like topology. CNNs are particularly well-suited for image classification tasks because they can learn local patterns and features in the image data.</p>
+<p>CNNs are trained using an objective function such as cross-entropy loss, which measures the difference between the predicted label and the true label. For example, suppose we have a dataset of images of animals, and we want to classify the images into different categories such as “dog”, “cat”, “bird”, etc. The cross-entropy loss function might be defined as follows:</p>
+<div class="math notranslate nohighlight">
+\[
+J = - \sum_{i=1}^{N} y_i \log p(y_i | x_i) + (1 - y_i) \log (1 - p(y_i | x_i))
+\]</div>
+<p>Where <span class="math notranslate nohighlight">\(N\)</span> is the number of images in the dataset, <span class="math notranslate nohighlight">\(y_i\)</span> is the true label of image <span class="math notranslate nohighlight">\(i\)</span> (represented as a one-hot vector), <span class="math notranslate nohighlight">\(x_i\)</span> is the input image, and <span class="math notranslate nohighlight">\(p(y_i | x_i)\)</span> is the predicted probability of the true label given the input image.</p>
+<p>Once the CNN has been trained, it can be used to classify new images by passing the images through the network and using the output layer to predict the label.</p>
+</section>
+<section id="recent-approaches">
+<h3>Recent Approaches<a class="headerlink" href="#recent-approaches" title="Permalink to this headline">#</a></h3>
+<p>In recent years, there have been a number of advances in the field of image classification, including the development of deeper CNN architectures such as ResNets and Inception networks, and the use of techniques such as batch normalization and dropout to improve model generalization.</p>
+<p>Another popular approach is to use a transformer architecture, which was originally developed for natural language processing tasks but has also been applied to image classification. The transformer architecture uses self-attention mechanisms to allow the model to attend to different parts of the input image at different times, which allows it to capture global dependencies in the image data.</p>
+<p>The transformer architecture can be trained using an objective function such as cross-entropy loss, which measures the difference between the predicted labels and the true labels. For example, suppose we have a dataset of images and we want to train a transformer architecture to classify the images into different categories. The cross-entropy loss function might be defined as follows:</p>
+<div class="math notranslate nohighlight">
+\[
+J = - \sum_{i=1}^{N} y_i \log p(y_i | x_i) + (1 - y_i) \log (1 - p(y_i | x_i))
+\]</div>
+<p>Where <span class="math notranslate nohighlight">\(N\)</span> is the number of images in the dataset, <span class="math notranslate nohighlight">\(y_i\)</span> is the true label of image <span class="math notranslate nohighlight">\(i\)</span> (represented as a one-hot vector), <span class="math notranslate nohighlight">\(x_i\)</span> is the input image, and <span class="math notranslate nohighlight">\(p(y_i | x_i)\)</span> is the predicted probability of the true label given the input image.</p>
+<p>Once the transformer architecture has been trained, it can be used to classify new images by passing the images through the network and using the output layer to predict the label.</p>
+</section>
+<section id="summary">
+<h3>summary<a class="headerlink" href="#summary" title="Permalink to this headline">#</a></h3>
+<p>In this section, we have explored the task of image classification and some of the approaches that have been developed to tackle this problem. We have seen how convolutional neural networks (CNNs) and transformer architectures can be used to classify images, and how these models can be trained using cross-entropy loss. We have also seen how techniques such as batch normalization and dropout can be used to improve model generalization.</p>
+</section>
+</section>
+<section id="object-detection">
+<h2>5.3 Object Detection<a class="headerlink" href="#object-detection" title="Permalink to this headline">#</a></h2>
+<p>Object detection is the task of detecting and classifying objects in images or videos. It is used in applications such as object tracking, where the goal is to follow the movement of objects in a video stream, and image retrieval, where the goal is to find images that contain a specific object.</p>
+<section id="id1">
+<h3>Traditional Approaches<a class="headerlink" href="#id1" title="Permalink to this headline">#</a></h3>
+<p>One common approach to object detection is to use a region proposal network (RPN) in conjunction with a convolutional neural network (CNN). The RPN generates a set of candidate regions or “proposals” in the image, and the CNN classifies the proposals as either object or background.</p>
+<p>The RPN is typically trained using a binary classification loss such as log loss, which measures the difference between the predicted and true labels of the proposals. For example, suppose we have a dataset of images and we want to train an RPN to classify proposals as either object or background. The log loss function might be defined as follows:</p>
+<div class="math notranslate nohighlight">
+\[
+J = - \sum_{i=1}^{N} y_i \log p(y_i | x_i) + (1 - y_i) \log (1 - p(y_i | x_i))
+\]</div>
+<p>Where <span class="math notranslate nohighlight">\(N\)</span> is the number of proposals in the dataset, <span class="math notranslate nohighlight">\(y_i\)</span> is the true label of proposal <span class="math notranslate nohighlight">\(i\)</span> (either object or background), <span class="math notranslate nohighlight">\(x_i\)</span> is the input proposal, and <span class="math notranslate nohighlight">\(p(y_i | x_i)\)</span> is the predicted probability of the true label given the input proposal.</p>
+<p>The CNN is trained using a multi-class classification loss such as cross-entropy loss, which measures the difference between the predicted class labels and the true class labels. For example, suppose we have a dataset of images and we want to train a CNN to classify proposals as one of several object categories. The cross-entropy loss function might be defined as follows:</p>
+<div class="math notranslate nohighlight">
+\[
+J = - \sum_{i=1}^{N} y_i \log p(y_i | x_i) + (1 - y_i) \log (1 - p(y_i | x_i))
+\]</div>
+<p>Where <span class="math notranslate nohighlight">\(N\)</span> is the number of proposals in the dataset, <span class="math notranslate nohighlight">\(y_i\)</span> is the true class label of proposal <span class="math notranslate nohighlight">\(i\)</span> (represented as a one-hot vector), <span class="math notranslate nohighlight">\(x_i\)</span> is the input proposal, and <span class="math notranslate nohighlight">\(p(y_i | x_i)\)</span> is the predicted probability of the true class label given the input proposal.</p>
+<p>The RPN and CNN are often trained jointly, using a combination of the binary classification loss and the multi-class classification loss, weighed by a hyperparameter <span class="math notranslate nohighlight">\(\alpha\)</span>:</p>
+<div class="math notranslate nohighlight">
+\[
+J = \alpha J_{RPN} + (1 - \alpha) J_{CNN}
+\]</div>
+<p>Once the object detection model has been trained, it can be used to detect and classify objects in new images by passing the images through the CNN and RPN, and using the classifier to predict the class labels and locations of the objects.</p>
+</section>
+<section id="id2">
+<h3>Recent Approaches<a class="headerlink" href="#id2" title="Permalink to this headline">#</a></h3>
+<p>In recent years, there have been a number of advances in the field of object detection, including the development of newer CNN architectures such as ResNets and Inception networks, and the use of techniques such as anchor boxes and non-maximum suppression to improve the efficiency of the object detection process.</p>
+<p>Another popular approach is to use a transformer architecture, which was originally developed for natural language processing tasks but has also been applied to object detection. The transformer architecture uses self-attention mechanisms to allow the model to attend to different parts of the input image at different times, which allows it to capture global dependencies in the image data.</p>
+<p>The transformer architecture can be trained using an objective function such as cross-entropy loss, which measures the difference between the predicted labels and the true labels. For example, suppose we have a dataset of images and we want to train a transformer architecture to detect and classify objects in the images. The cross-entropy loss function might be defined as follows:</p>
+<div class="math notranslate nohighlight">
+\[
+J = - \sum_{i=1}^{N} y_i \log p(y_i | x_i) + (1 - y_i) \log (1 - p(y_i | x_i))
+\]</div>
+<p>Where <span class="math notranslate nohighlight">\(N\)</span> is the number of objects in the dataset, <span class="math notranslate nohighlight">\(y_i\)</span> is the true class label of object <span class="math notranslate nohighlight">\(i\)</span> (represented as a one-hot vector), <span class="math notranslate nohighlight">\(x_i\)</span> is the input object, and <span class="math notranslate nohighlight">\(p(y_i | x_i)\)</span> is the predicted probability of the true class label given the input object.</p>
+<p>The transformer architecture can also be trained to predict the locations of the objects, using a regression loss such as mean squared error (MSE), which measures the difference between the predicted and true locations of the objects:</p>
+<div class="math notranslate nohighlight">
+\[
+J = \frac{1}{N} \sum_{i=1}^{N} (y_i - \hat{y_i})^2
+\]</div>
+<p>Where <span class="math notranslate nohighlight">\(N\)</span> is the number of objects in the dataset, <span class="math notranslate nohighlight">\(y_i\)</span> is the true location of object <span class="math notranslate nohighlight">\(i\)</span>, and <span class="math notranslate nohighlight">\(\hat{y_i}\)</span> is the predicted location of object <span class="math notranslate nohighlight">\(i\)</span>.</p>
+<p>Once the transformer architecture has been trained, it can be used to detect and classify objects in new images by passing the images through the network and using the output layer to predict the class labels and locations of the objects.</p>
+</section>
+<section id="conclusion">
+<h3>Conclusion<a class="headerlink" href="#conclusion" title="Permalink to this headline">#</a></h3>
+<p>In this section, we have explored the task of object detection and some of the approaches that have been developed to tackle this problem. We have seen how region proposal networks (RPNs) and convolutional neural networks (CNNs) can be used to detect and classify objects in images, and how these models can be trained using binary classification and multi-class classification loss functions. We have also seen how techniques such as anchor boxes and non-maximum suppression can be used to improve the efficiency of the object detection process. We have also discussed how transformer architectures can be used for object detection, and how they can be trained using cross-entropy loss and regression loss.</p>
+</section>
+</section>
+<section id="image-segmentation">
+<h2>5.4 Image Segmentation<a class="headerlink" href="#image-segmentation" title="Permalink to this headline">#</a></h2>
+<p>Image segmentation is the task of dividing an image into multiple regions or “segments,” each of which corresponds to a different object or background. It is used in applications such as object tracking, where the goal is to follow the movement of objects in a video stream, and image retrieval, where the goal is to find images that contain a specific object.</p>
+<section id="id3">
+<h3>Traditional Approaches<a class="headerlink" href="#id3" title="Permalink to this headline">#</a></h3>
+<p>One common approach to image segmentation is to use a fully convolutional neural network (FCN), which is a CNN that has been modified to take an input image of any size and produce an output image of the same size. The FCN is trained to predict a class label for each pixel in the output image, based on the pixel’s location and the surrounding context in the input image.</p>
+<p>The FCN is typically trained using a multi-class classification loss such as cross-entropy loss, which measures the difference between the predicted class labels and the true class labels. For example, suppose we have a dataset of images and we want to train an FCN to segment the images into multiple classes. The cross-entropy loss function might be defined as follows:</p>
+<div class="math notranslate nohighlight">
+\[
+J = - \sum_{i=1}^{N} y_i \log p(y_i | x_i) + (1 - y_i) \log (1 - p(y_i | x_i))
+\]</div>
+<p>Where <span class="math notranslate nohighlight">\(N\)</span> is the number of pixels in the dataset, <span class="math notranslate nohighlight">\(y_i\)</span> is the true class label of pixel <span class="math notranslate nohighlight">\(i\)</span> (represented as a one-hot vector), <span class="math notranslate nohighlight">\(x_i\)</span> is the input pixel, and <span class="math notranslate nohighlight">\(p(y_i | x_i)\)</span> is the predicted probability of the true class label given the input pixel.</p>
+<p>Once the FCN has been trained, it can be used to segment new images by passing the images through the network and using the output layer to predict the class labels of the pixels.</p>
+</section>
+<section id="id4">
+<h3>Recent Approaches<a class="headerlink" href="#id4" title="Permalink to this headline">#</a></h3>
+<p>In recent years, there have been a number of advances in the field of image segmentation, including the development of newer CNN architectures such as ResNets and Inception networks, and the use of techniques such as skip connections and upsampling to improve the accuracy of the segmentation process.</p>
+<p>Another popular approach is to use a transformer architecture, which was originally developed for natural language processing tasks but has also been applied to image segmentation. The transformer architecture uses self-attention mechanisms to allow the model to attend to different parts of the input image at different times, which allows it to capture global dependencies in the image data.</p>
+<p>The transformer architecture can be trained using an objective function such as cross-entropy loss, which measures the difference between the predicted labels and the true labels. For example, suppose we have a dataset of images and we want to train a transformer architecture to segment the images into multiple classes. The cross-entropy loss function might be defined as follows:</p>
+<div class="math notranslate nohighlight">
+\[
+J = - \sum_{i=1}^{N} y_i \log p(y_i | x_i) + (1 - y_i) \log (1 - p(y_i | x_i))
+\]</div>
+<p>Where <span class="math notranslate nohighlight">\(N\)</span> is the number of pixels in the dataset, <span class="math notranslate nohighlight">\(y_i\)</span> is the true class label of pixel <span class="math notranslate nohighlight">\(i\)</span> (represented as a one-hot vector), <span class="math notranslate nohighlight">\(x_i\)</span> is the input pixel, and <span class="math notranslate nohighlight">\(p(y_i | x_i)\)</span> is the predicted probability of the true class label given the input pixel.</p>
+<p>Once the transformer architecture has been trained, it can be used to segment new images by passing the images through the network and using the output layer to predict the class labels of the pixels.</p>
+</section>
+<section id="id5">
+<h3>Conclusion<a class="headerlink" href="#id5" title="Permalink to this headline">#</a></h3>
+<p>In this section, we have explored the task of image segmentation and some of the approaches that have been developed to tackle this problem. We have seen how fully convolutional neural networks (FCNs) can be used to segment images into multiple classes, and how these models can be trained using multi-class classification loss functions. We have also seen how techniques such as skip connections and upsampling can be used to improve the accuracy of the segmentation process. We have also discussed how transformer architectures can be used for image segmentation, and how they can be trained using cross-entropy loss.</p>
+</section>
+</section>
+<section id="image-generation">
+<h2>5.5 Image Generation<a class="headerlink" href="#image-generation" title="Permalink to this headline">#</a></h2>
+<p>Image generation is the task of creating new images using a computer program. It has a wide range of applications, including generating realistic images for use in computer graphics and creating images that are similar to a given input image.</p>
+<section id="autoencoders">
+<h3>5.5.1 Autoencoders<a class="headerlink" href="#autoencoders" title="Permalink to this headline">#</a></h3>
+<p>One approach to image generation is to use an autoencoder, which is a neural network that is trained to reconstruct an input image from a lower-dimensional representation, or “code.” An autoencoder typically consists of two parts: an encoder that maps the input image to a code, and a decoder that maps the code back to an output image.</p>
+<p>The autoencoder is trained to minimize the reconstruction error between the input and output images, using an objective function such as mean squared error (MSE), which measures the difference between the two images:</p>
+<div class="math notranslate nohighlight">
+\[
+J = \frac{1}{N} \sum_{i=1}^{N} (x_i - \hat{x_i})^2
+\]</div>
+<p>Where <span class="math notranslate nohighlight">\(N\)</span> is the number of pixels in the input image, <span class="math notranslate nohighlight">\(x_i\)</span> is the value of pixel <span class="math notranslate nohighlight">\(i\)</span> in the input image, and <span class="math notranslate nohighlight">\(\hat{x_i}\)</span> is the value of pixel <span class="math notranslate nohighlight">\(i\)</span> in the output image.</p>
+<p>Once the autoencoder has been trained, it can be used to generate new images by encoding random noise or other input data and then decoding the resulting code.</p>
+</section>
+<section id="variational-autoencoders-vaes">
+<h3>5.5.2 Variational Autoencoders (VAEs)<a class="headerlink" href="#variational-autoencoders-vaes" title="Permalink to this headline">#</a></h3>
+<p>A variant of the autoencoder is the variational autoencoder (VAE), which is a generative model that is trained to learn a distribution over the space of input images. The VAE consists of an encoder that maps the input image to a set of latent variables, and a decoder that maps the latent variables back to an output image.</p>
+<p>The VAE is trained to maximize the likelihood of the input data, using an objective function such as the negative log-likelihood, which measures the difference between the true distribution of the input data and the distribution learned by the VAE:</p>
+<div class="math notranslate nohighlight">
+\[
+J = - \sum_{i=1}^{N} \log p(x_i | z_i)
+\]</div>
+<p>Where <span class="math notranslate nohighlight">\(N\)</span> is the number of images in the dataset, <span class="math notranslate nohighlight">\(x_i\)</span> is the input image, and <span class="math notranslate nohighlight">\(z_i\)</span> is the latent variable corresponding to the input image.</p>
+<p>Once the VAE has been trained, it can be used to generate new images by sampling latent variables from the learned distribution and decoding them to generate output images.</p>
+</section>
+<section id="denoising-diffusion-probabilistic-models">
+<h3>5.5.3 Denoising Diffusion Probabilistic Models<a class="headerlink" href="#denoising-diffusion-probabilistic-models" title="Permalink to this headline">#</a></h3>
+<p>Denoising diffusion probabilistic models are a class of image generation algorithms that are based on the idea of diffusing probability mass over the image grid to remove noise from an input image. These models are typically implemented using a convolutional neural network (CNN) that is trained to learn a function that maps an input image to an output image with reduced noise.</p>
+<p>The forward step of the denoising diffusion probabilistic model involves passing the input image through the CNN to generate an output image:</p>
+<div class="math notranslate nohighlight">
+\[
+\hat{x} = f(x)
+\]</div>
+<p>Where <span class="math notranslate nohighlight">\(x\)</span> is the input image and <span class="math notranslate nohighlight">\(\hat{x}\)</span> is the output image.</p>
+<p>The backward step involves computing the gradient of the objective function with respect to the input image and using this gradient to update the weights of the CNN:</p>
+<div class="math notranslate nohighlight">
+\[
+\frac{\partial J}{\partial x} = \frac{\partial J}{\partial \hat{x}} \frac{\partial \hat{x}}{\partial x}
+\]</div>
+<p>Where <span class="math notranslate nohighlight">\(J\)</span> is the objective function (e.g., mean squared error (MSE)), <span class="math notranslate nohighlight">\(\frac{\partial J}{\partial \hat{x}}\)</span> is the gradient of the objective function with respect to the output image, and <span class="math notranslate nohighlight">\(\frac{\partial \hat{x}}{\partial x}\)</span> is the gradient of the output image with respect to the input image.</p>
+<p>The denoising diffusion probabilistic model is trained to minimize the objective function, using an optimization algorithm such as stochastic gradient descent (SGD). Once the model has been trained, it can be used to denoise new images by passing the images through the CNN and using the output image to remove noise.</p>
+<p>Denoising diffusion probabilistic models are a powerful tool for removing noise from images. They can be implemented using a convolutional neural network (CNN) and trained using an objective function such as mean squared error (MSE) and an optimization algorithm such as stochastic gradient descent (SGD). Once trained, these models can be used to denoise new images by passing the images through the CNN and using the output image to remove noise.</p>
+</section>
+<section id="id6">
+<h3>Conclusion<a class="headerlink" href="#id6" title="Permalink to this headline">#</a></h3>
+<p>In this section, we have explored several approaches to image generation, including autoencoders, variational autoencoders (VAEs), and probabilistic diffusion models. We have seen how these models can be trained using objective functions such as mean squared error (MSE) and negative log-likelihood, and how they can be used to generate new images from noise or other input data.</p>
+</section>
+</section>
+<section id="id7">
+<h2>5.6 Conclusion<a class="headerlink" href="#id7" title="Permalink to this headline">#</a></h2>
+<p>In this chapter, we have explored some key applications of computer vision, including image classification, object detection, and image segmentation. We have seen how these tasks can be tackled using convolutional neural networks (CNNs) and fully convolutional networks (FCNs), and how these models can be trained using appropriate objective functions.</p>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./sources/2-Part"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+            </main>
+            <footer class="footer-article noprint">
+                
+    <!-- Previous / next buttons -->
+<div class='prev-next-area'>
+    <a class='left-prev' id="prev-link" href="4.Natural_Language_Processing.html" title="previous page">
+        <i class="fas fa-angle-left"></i>
+        <div class="prev-next-info">
+            <p class="prev-next-subtitle">previous</p>
+            <p class="prev-next-title">4. Natural Language Processing</p>
+        </div>
+    </a>
+    <a class='right-next' id="next-link" href="6.Ethics_and_the_Future_of_AI.html" title="next page">
+    <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">6: Ethics and the Future of AI</p>
+    </div>
+    <i class="fas fa-angle-right"></i>
+    </a>
+</div>
+            </footer>
+        </div>
+    </div>
+    <div class="footer-content row">
+        <footer class="col footer"><p>
+  
+    By The Book about AI/ML/DL (vomited by ChatGPT)<br/>
+  
+      &copy; Copyright 2022.<br/>
+</p>
+        </footer>
+    </div>
+    
+</div>
+
+
+      </div>
+    </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf"></script>
+
+
+  </body>
+</html>

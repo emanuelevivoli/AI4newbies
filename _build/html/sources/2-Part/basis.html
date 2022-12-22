@@ -1,0 +1,736 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+    <title>AI4noobs - Basis &#8212; chatGPT wrote this BOOK</title>
+    
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../../_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+<link href="../../_static/styles/pydata-sphinx-theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+
+    
+  <link rel="stylesheet"
+    href="../../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css" />
+    <link rel="stylesheet" href="../../_static/styles/sphinx-book-theme.css?digest=5115cc725059bd94278eecd172e13a965bf8f5a9" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/design-style.b7bb847fb20b106c3d81b95245e65545.min.css" />
+    
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf">
+
+    <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
+    <script src="../../_static/jquery.js"></script>
+    <script src="../../_static/underscore.js"></script>
+    <script src="../../_static/doctools.js"></script>
+    <script src="../../_static/clipboard.min.js"></script>
+    <script src="../../_static/copybutton.js"></script>
+    <script src="../../_static/scripts/sphinx-book-theme.js?digest=9c920249402e914e316237a7dbc6769907cce411"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../../_static/togglebutton.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="../../_static/design-tabs.js"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
+    <script async="async" src="../../_static/sphinx-thebe.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="1. Introduction to Artificial Intelligence and Deep Learning" href="1.Introduction_to_Artificial_Intelligence_and_Deep_Learning.html" />
+    <link rel="prev" title="8. Numerical Calculus" href="../1-Part/8.Calculus.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="None">
+    
+
+    <!-- Google Analytics -->
+    
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="60">
+<!-- Checkboxes to toggle the left sidebar -->
+<input type="checkbox" class="sidebar-toggle" name="__navigation" id="__navigation" aria-label="Toggle navigation sidebar">
+<label class="overlay overlay-navbar" for="__navigation">
+    <div class="visually-hidden">Toggle navigation sidebar</div>
+</label>
+<!-- Checkboxes to toggle the in-page toc -->
+<input type="checkbox" class="sidebar-toggle" name="__page-toc" id="__page-toc" aria-label="Toggle in-page Table of Contents">
+<label class="overlay overlay-pagetoc" for="__page-toc">
+    <div class="visually-hidden">Toggle in-page Table of Contents</div>
+</label>
+<!-- Headers at the top -->
+<div class="announcement header-item noprint"></div>
+<div class="header header-item noprint"></div>
+
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<!-- Sidebar -->
+<div class="bd-sidebar noprint" id="site-navigation">
+    <div class="bd-sidebar__content">
+        <div class="bd-sidebar__top"><div class="navbar-brand-box">
+    <a class="navbar-brand text-wrap" href="../../index.html">
+      
+        <!-- `logo` is deprecated in Sphinx 4.0, so remove this when we stop supporting 3 -->
+        
+      
+      
+      <img src="../../_static/logo.jpeg" class="logo" alt="logo">
+      
+      
+      <h1 class="site-logo" id="site-title">chatGPT wrote this BOOK</h1>
+      
+    </a>
+</div><form class="bd-search d-flex align-items-center" action="../../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="../../intro.html">
+                    What is this book?
+                </a>
+            </li>
+        </ul>
+        <p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Preliminaries Notions
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../1-Part/preliminaries.html">
+   AI4noobs - Preliminaries
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/>
+  <label for="toctree-checkbox-1">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../1-Part/1.Programming_with_Notebooks.html">
+     1. Programming with Notebooks
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../1-Part/2.Introduction_to_Programming.html">
+     2. Introduction to Programming
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../1-Part/3.Data_Structures.html">
+     3. Data Structures
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../1-Part/4.Computational_Complexity.html">
+     4. Computational Complexity
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../1-Part/5.Statistics.html">
+     5. Statistics
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../1-Part/6.Linear_Algebra.html">
+     6. Linear Algebra
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../1-Part/7.Geometry.html">
+     7. Geometry
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../1-Part/8.Calculus.html">
+     8. Numerical Calculus
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Basis of AI
+ </span>
+</p>
+<ul class="current nav bd-sidenav">
+ <li class="toctree-l1 current active has-children">
+  <a class="current reference internal" href="#">
+   AI4noobs - Basis
+  </a>
+  <input checked="" class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/>
+  <label for="toctree-checkbox-2">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="1.Introduction_to_Artificial_Intelligence_and_Deep_Learning.html">
+     1. Introduction to Artificial Intelligence and Deep Learning
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="2.The_Basics_of_Machine_Learning.html">
+     2. The Basics of Machine Learning
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="3.Neural_Networks_and_Deep_Learning.html">
+     3. Neural Networks and Deep Learning
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="4.Natural_Language_Processing.html">
+     4. Natural Language Processing
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="5.Computer_Vision.html">
+     5. Computer Vision
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="6.Ethics_and_the_Future_of_AI.html">
+     6: Ethics and the Future of AI
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Applications of AI
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../3-Part/applications.html">
+   AI4noobs - Applications
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/>
+  <label for="toctree-checkbox-3">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../3-Part/1.Fraud_Detection.html">
+     1. Fraud Detection
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../3-Part/2.Customer_Relationship_Management_Systems.html">
+     2. Customer Relationship Management Systems
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../3-Part/3.Computer_Vision.html">
+     3. Computer Vision
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../3-Part/4.Vocal_AI.html">
+     4. Vocal AI
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../3-Part/5.Natural_Language_Processing.html">
+     5. Natural Language Processing
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../3-Part/6.Autonomous_Vehicles.html">
+     6. Autonomous Vehicles
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../3-Part/7.Supercomputers.html">
+     7. Supercomputers
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../3-Part/8.Investment_Modeling.html">
+     8. Investment Modeling
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../3-Part/9.E-commerce.html">
+     9. E-commerce
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+
+    </div>
+</nav></div>
+        <div class="bd-sidebar__bottom">
+             <!-- To handle the deprecated key -->
+            
+            <div class="navbar_extra_footer">
+            Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+            </div>
+            
+        </div>
+    </div>
+    <div id="rtd-footer-container"></div>
+</div>
+
+
+          
+
+
+          
+<!-- A tiny helper pixel to detect if we've scrolled -->
+<div class="sbt-scroll-pixel-helper"></div>
+<!-- Main content -->
+<div class="col py-0 content-container">
+    
+    <div class="header-article row sticky-top noprint">
+        
+
+
+
+<div class="col py-1 d-flex header-article-main">
+    <div class="header-article__left">
+        
+        <label for="__navigation"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="right"
+title="Toggle navigation"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-bars"></i>
+  </span>
+
+</label>
+
+        
+    </div>
+    <div class="header-article__right">
+<button onclick="toggleFullScreen()"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="bottom"
+title="Fullscreen mode"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+<div class="menu-dropdown menu-dropdown-repository-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Source repositories">
+      <i class="fab fa-github"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="https://github.com/executablebooks/jupyter-book"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Source repository"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="headerbtn__text-container">repository</span>
+</a>
+
+      </li>
+      
+      <li>
+        <a href="https://github.com/executablebooks/jupyter-book/issues/new?title=Issue%20on%20page%20%2Fsources/2-Part/basis.html&body=Your%20issue%20content%20here."
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Open an issue"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="headerbtn__text-container">open issue</span>
+</a>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+
+<div class="menu-dropdown menu-dropdown-download-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Download this page">
+      <i class="fas fa-download"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="../../_sources/sources/2-Part/basis.md"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Download source file"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="headerbtn__text-container">.md</span>
+</a>
+
+      </li>
+      
+      <li>
+        
+<button onclick="printPdf(this)"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="left"
+title="Print to PDF"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="headerbtn__text-container">.pdf</span>
+</button>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+<label for="__page-toc"
+  class="headerbtn headerbtn-page-toc"
+  
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-list"></i>
+  </span>
+
+</label>
+
+    </div>
+</div>
+
+<!-- Table of contents -->
+<div class="col-md-3 bd-toc show noprint">
+    <div class="tocsection onthispage pt-5 pb-3">
+        <i class="fas fa-list"></i> Contents
+    </div>
+    <nav id="bd-toc-nav" aria-label="Page">
+        <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#chapters">
+   Chapters
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#introduction-to-artificial-intelligence-and-deep-learning">
+     1.
+     <span class="xref myst">
+      Introduction to Artificial Intelligence and Deep Learning
+     </span>
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#the-basics-of-machine-learning">
+     2.
+     <span class="xref myst">
+      The Basics of Machine Learning
+     </span>
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#neural-networks-and-deep-learning">
+     3.
+     <span class="xref myst">
+      Neural Networks and Deep Learning
+     </span>
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#natural-language-processing">
+     4.
+     <span class="xref myst">
+      Natural Language Processing
+     </span>
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#computer-vision">
+     5.
+     <span class="xref myst">
+      Computer Vision
+     </span>
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#ethics-and-the-future-of-ai">
+     6.
+     <span class="xref myst">
+      Ethics and the Future of AI
+     </span>
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+
+    </nav>
+</div>
+    </div>
+    <div class="article row">
+        <div class="col pl-md-3 pl-lg-5 content-container">
+            <!-- Table of contents that is only displayed when printing the page -->
+            <div id="jb-print-docs-body" class="onlyprint">
+                <h1>AI4noobs - Basis</h1>
+                <!-- Table of contents -->
+                <div id="print-main-content">
+                    <div id="jb-print-toc">
+                        
+                        <div>
+                            <h2> Contents </h2>
+                        </div>
+                        <nav aria-label="Page">
+                            <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#chapters">
+   Chapters
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#introduction-to-artificial-intelligence-and-deep-learning">
+     1.
+     <span class="xref myst">
+      Introduction to Artificial Intelligence and Deep Learning
+     </span>
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#the-basics-of-machine-learning">
+     2.
+     <span class="xref myst">
+      The Basics of Machine Learning
+     </span>
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#neural-networks-and-deep-learning">
+     3.
+     <span class="xref myst">
+      Neural Networks and Deep Learning
+     </span>
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#natural-language-processing">
+     4.
+     <span class="xref myst">
+      Natural Language Processing
+     </span>
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#computer-vision">
+     5.
+     <span class="xref myst">
+      Computer Vision
+     </span>
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#ethics-and-the-future-of-ai">
+     6.
+     <span class="xref myst">
+      Ethics and the Future of AI
+     </span>
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+
+                        </nav>
+                    </div>
+                </div>
+            </div>
+            <main id="main-content" role="main">
+                
+              <div>
+                
+  <section class="tex2jax_ignore mathjax_ignore" id="ai4noobs-basis">
+<h1>AI4noobs - Basis<a class="headerlink" href="#ai4noobs-basis" title="Permalink to this headline">#</a></h1>
+<table class="colwidths-auto table">
+<thead>
+<tr class="row-odd"><th class="head"><p>Chapter</p></th>
+<th class="head"><p>Title</p></th>
+<th class="head"><p>Section names</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>1</p></td>
+<td><p>Introduction to Artificial Intelligence and Deep Learning</p></td>
+<td><p>History of AI, Key Applications of AI, Challenges in AI, Key Formulas</p></td>
+</tr>
+<tr class="row-odd"><td><p>2</p></td>
+<td><p>The Basics of Machine Learning</p></td>
+<td><p>Introduction, Supervised learning, Unsupervised learning, Dimensionality reduction</p></td>
+</tr>
+<tr class="row-even"><td><p>3</p></td>
+<td><p>Neural Networks and Deep Learning</p></td>
+<td><p>Introduction, Single layer perceptron, Multilayer perceptron, Convolutional neural networks (CNNs), Recurrent neural networks (RNNs), Deep Learning</p></td>
+</tr>
+<tr class="row-odd"><td><p>4</p></td>
+<td><p>Natural Language Processing</p></td>
+<td><p>Introduction, Word Embeddings, Language Translation, Text Classification, Information Extraction, Transformer Architecture</p></td>
+</tr>
+<tr class="row-even"><td><p>5</p></td>
+<td><p>Computer Vision</p></td>
+<td><p>Introduction, Image Classification, Object Detection, Image Segmentation, Image Generation (Auto Encoder, VAE, Probabilistic Diffusion Models)</p></td>
+</tr>
+<tr class="row-odd"><td><p>6</p></td>
+<td><p>Ethics and the Future of AI</p></td>
+<td><p>Introduction, Bias in AI, Privacy and Security, Autonomy and Control, Economic and Social Impacts, The Future of AI, Conclusion</p></td>
+</tr>
+</tbody>
+</table>
+<section id="chapters">
+<h2>Chapters<a class="headerlink" href="#chapters" title="Permalink to this headline">#</a></h2>
+<section id="introduction-to-artificial-intelligence-and-deep-learning">
+<h3>1. <a class="reference internal" href="1.Introduction_to_Artificial_Intelligence_and_Deep_Learning.html"><span class="doc std std-doc">Introduction to Artificial Intelligence and Deep Learning</span></a><a class="headerlink" href="#introduction-to-artificial-intelligence-and-deep-learning" title="Permalink to this headline">#</a></h3>
+<p>In this Chapter we will introduce the reader to the history of Artificial Intelligence, the key applications of AI, the challenges in AI, and the key formulas.</p>
+</section>
+<section id="the-basics-of-machine-learning">
+<h3>2. <a class="reference internal" href="2.The_Basics_of_Machine_Learning.html"><span class="doc std std-doc">The Basics of Machine Learning</span></a><a class="headerlink" href="#the-basics-of-machine-learning" title="Permalink to this headline">#</a></h3>
+<p>In this Chapter we will introduce the reader to the basics of machine learning. We will start with the basics of supervised and unsupervised learning, and then we will introduce the reader to dimensionality reduction.</p>
+</section>
+<section id="neural-networks-and-deep-learning">
+<h3>3. <a class="reference internal" href="3.Neural_Networks_and_Deep_Learning.html"><span class="doc std std-doc">Neural Networks and Deep Learning</span></a><a class="headerlink" href="#neural-networks-and-deep-learning" title="Permalink to this headline">#</a></h3>
+<p>In this Chapter we will introduce the reader to the basics of neural networks and deep learning. We will start with the basics of single layer perceptron, and then we will introduce the reader to multilayer perceptron, convolutional neural networks (CNNs), recurrent neural networks (RNNs), and deep learning.</p>
+</section>
+<section id="natural-language-processing">
+<h3>4. <a class="reference internal" href="4.Natural_Language_Processing.html"><span class="doc std std-doc">Natural Language Processing</span></a><a class="headerlink" href="#natural-language-processing" title="Permalink to this headline">#</a></h3>
+<p>In this Chapter we will introduce the reader to the basics of natural language processing. We will start with the basics of word embeddings, and then we will introduce the reader to language translation, text classification, information extraction, and the transformer architecture.</p>
+</section>
+<section id="computer-vision">
+<h3>5. <a class="reference internal" href="5.Computer_Vision.html"><span class="doc std std-doc">Computer Vision</span></a><a class="headerlink" href="#computer-vision" title="Permalink to this headline">#</a></h3>
+<p>In this Chapter we will introduce the reader to the basics of computer vision. We will start with the basics of image classification, and then we will introduce the reader to object detection, image segmentation, and image generation (auto encoder, VAE, probabilistic diffusion models).</p>
+</section>
+<section id="ethics-and-the-future-of-ai">
+<h3>6. <a class="reference internal" href="6.Ethics_and_the_Future_of_AI.html"><span class="doc std std-doc">Ethics and the Future of AI</span></a><a class="headerlink" href="#ethics-and-the-future-of-ai" title="Permalink to this headline">#</a></h3>
+<p>In this Chapter we will introduce the reader to the basics of ethics and the future of AI. We will start with the basics of bias in AI, and then we will introduce the reader to privacy and security, autonomy and control, economic and social impacts, and the future of AI.</p>
+</section>
+</section>
+<div class="toctree-wrapper compound">
+</div>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./sources/2-Part"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+            </main>
+            <footer class="footer-article noprint">
+                
+    <!-- Previous / next buttons -->
+<div class='prev-next-area'>
+    <a class='left-prev' id="prev-link" href="../1-Part/8.Calculus.html" title="previous page">
+        <i class="fas fa-angle-left"></i>
+        <div class="prev-next-info">
+            <p class="prev-next-subtitle">previous</p>
+            <p class="prev-next-title">8. Numerical Calculus</p>
+        </div>
+    </a>
+    <a class='right-next' id="next-link" href="1.Introduction_to_Artificial_Intelligence_and_Deep_Learning.html" title="next page">
+    <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">1. Introduction to Artificial Intelligence and Deep Learning</p>
+    </div>
+    <i class="fas fa-angle-right"></i>
+    </a>
+</div>
+            </footer>
+        </div>
+    </div>
+    <div class="footer-content row">
+        <footer class="col footer"><p>
+  
+    By The Book about AI/ML/DL (vomited by ChatGPT)<br/>
+  
+      &copy; Copyright 2022.<br/>
+</p>
+        </footer>
+    </div>
+    
+</div>
+
+
+      </div>
+    </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf"></script>
+
+
+  </body>
+</html>

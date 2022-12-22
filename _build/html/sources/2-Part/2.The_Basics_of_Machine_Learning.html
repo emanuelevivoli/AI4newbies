@@ -1,0 +1,754 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+    <title>2. The Basics of Machine Learning &#8212; chatGPT wrote this BOOK</title>
+    
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../../_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+<link href="../../_static/styles/pydata-sphinx-theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+
+    
+  <link rel="stylesheet"
+    href="../../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css" />
+    <link rel="stylesheet" href="../../_static/styles/sphinx-book-theme.css?digest=5115cc725059bd94278eecd172e13a965bf8f5a9" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/design-style.b7bb847fb20b106c3d81b95245e65545.min.css" />
+    
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf">
+
+    <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
+    <script src="../../_static/jquery.js"></script>
+    <script src="../../_static/underscore.js"></script>
+    <script src="../../_static/doctools.js"></script>
+    <script src="../../_static/clipboard.min.js"></script>
+    <script src="../../_static/copybutton.js"></script>
+    <script src="../../_static/scripts/sphinx-book-theme.js?digest=9c920249402e914e316237a7dbc6769907cce411"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../../_static/togglebutton.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="../../_static/design-tabs.js"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
+    <script async="async" src="../../_static/sphinx-thebe.js"></script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="3. Neural Networks and Deep Learning" href="3.Neural_Networks_and_Deep_Learning.html" />
+    <link rel="prev" title="1. Introduction to Artificial Intelligence and Deep Learning" href="1.Introduction_to_Artificial_Intelligence_and_Deep_Learning.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="None">
+    
+
+    <!-- Google Analytics -->
+    
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="60">
+<!-- Checkboxes to toggle the left sidebar -->
+<input type="checkbox" class="sidebar-toggle" name="__navigation" id="__navigation" aria-label="Toggle navigation sidebar">
+<label class="overlay overlay-navbar" for="__navigation">
+    <div class="visually-hidden">Toggle navigation sidebar</div>
+</label>
+<!-- Checkboxes to toggle the in-page toc -->
+<input type="checkbox" class="sidebar-toggle" name="__page-toc" id="__page-toc" aria-label="Toggle in-page Table of Contents">
+<label class="overlay overlay-pagetoc" for="__page-toc">
+    <div class="visually-hidden">Toggle in-page Table of Contents</div>
+</label>
+<!-- Headers at the top -->
+<div class="announcement header-item noprint"></div>
+<div class="header header-item noprint"></div>
+
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<!-- Sidebar -->
+<div class="bd-sidebar noprint" id="site-navigation">
+    <div class="bd-sidebar__content">
+        <div class="bd-sidebar__top"><div class="navbar-brand-box">
+    <a class="navbar-brand text-wrap" href="../../index.html">
+      
+        <!-- `logo` is deprecated in Sphinx 4.0, so remove this when we stop supporting 3 -->
+        
+      
+      
+      <img src="../../_static/logo.jpeg" class="logo" alt="logo">
+      
+      
+      <h1 class="site-logo" id="site-title">chatGPT wrote this BOOK</h1>
+      
+    </a>
+</div><form class="bd-search d-flex align-items-center" action="../../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="../../intro.html">
+                    What is this book?
+                </a>
+            </li>
+        </ul>
+        <p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Preliminaries Notions
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../1-Part/preliminaries.html">
+   AI4noobs - Preliminaries
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/>
+  <label for="toctree-checkbox-1">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../1-Part/1.Programming_with_Notebooks.html">
+     1. Programming with Notebooks
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../1-Part/2.Introduction_to_Programming.html">
+     2. Introduction to Programming
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../1-Part/3.Data_Structures.html">
+     3. Data Structures
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../1-Part/4.Computational_Complexity.html">
+     4. Computational Complexity
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../1-Part/5.Statistics.html">
+     5. Statistics
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../1-Part/6.Linear_Algebra.html">
+     6. Linear Algebra
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../1-Part/7.Geometry.html">
+     7. Geometry
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../1-Part/8.Calculus.html">
+     8. Numerical Calculus
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Basis of AI
+ </span>
+</p>
+<ul class="current nav bd-sidenav">
+ <li class="toctree-l1 current active has-children">
+  <a class="reference internal" href="basis.html">
+   AI4noobs - Basis
+  </a>
+  <input checked="" class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/>
+  <label for="toctree-checkbox-2">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul class="current">
+   <li class="toctree-l2">
+    <a class="reference internal" href="1.Introduction_to_Artificial_Intelligence_and_Deep_Learning.html">
+     1. Introduction to Artificial Intelligence and Deep Learning
+    </a>
+   </li>
+   <li class="toctree-l2 current active">
+    <a class="current reference internal" href="#">
+     2. The Basics of Machine Learning
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="3.Neural_Networks_and_Deep_Learning.html">
+     3. Neural Networks and Deep Learning
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="4.Natural_Language_Processing.html">
+     4. Natural Language Processing
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="5.Computer_Vision.html">
+     5. Computer Vision
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="6.Ethics_and_the_Future_of_AI.html">
+     6: Ethics and the Future of AI
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Applications of AI
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../3-Part/applications.html">
+   AI4noobs - Applications
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/>
+  <label for="toctree-checkbox-3">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../3-Part/1.Fraud_Detection.html">
+     1. Fraud Detection
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../3-Part/2.Customer_Relationship_Management_Systems.html">
+     2. Customer Relationship Management Systems
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../3-Part/3.Computer_Vision.html">
+     3. Computer Vision
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../3-Part/4.Vocal_AI.html">
+     4. Vocal AI
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../3-Part/5.Natural_Language_Processing.html">
+     5. Natural Language Processing
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../3-Part/6.Autonomous_Vehicles.html">
+     6. Autonomous Vehicles
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../3-Part/7.Supercomputers.html">
+     7. Supercomputers
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../3-Part/8.Investment_Modeling.html">
+     8. Investment Modeling
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../3-Part/9.E-commerce.html">
+     9. E-commerce
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+
+    </div>
+</nav></div>
+        <div class="bd-sidebar__bottom">
+             <!-- To handle the deprecated key -->
+            
+            <div class="navbar_extra_footer">
+            Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+            </div>
+            
+        </div>
+    </div>
+    <div id="rtd-footer-container"></div>
+</div>
+
+
+          
+
+
+          
+<!-- A tiny helper pixel to detect if we've scrolled -->
+<div class="sbt-scroll-pixel-helper"></div>
+<!-- Main content -->
+<div class="col py-0 content-container">
+    
+    <div class="header-article row sticky-top noprint">
+        
+
+
+
+<div class="col py-1 d-flex header-article-main">
+    <div class="header-article__left">
+        
+        <label for="__navigation"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="right"
+title="Toggle navigation"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-bars"></i>
+  </span>
+
+</label>
+
+        
+    </div>
+    <div class="header-article__right">
+<div class="menu-dropdown menu-dropdown-launch-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Launch interactive content">
+      <i class="fas fa-rocket"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="https://mybinder.org/v2/gh/executablebooks/jupyter-book/master?urlpath=tree/docs/sources/2-Part/2.The_Basics_of_Machine_Learning.ipynb"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Launch on Binder"
+>
+  
+
+<span class="headerbtn__icon-container">
+  
+    <img src="../../_static/images/logo_binder.svg">
+  </span>
+<span class="headerbtn__text-container">Binder</span>
+</a>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+
+<button onclick="toggleFullScreen()"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="bottom"
+title="Fullscreen mode"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+<div class="menu-dropdown menu-dropdown-repository-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Source repositories">
+      <i class="fab fa-github"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="https://github.com/executablebooks/jupyter-book"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Source repository"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="headerbtn__text-container">repository</span>
+</a>
+
+      </li>
+      
+      <li>
+        <a href="https://github.com/executablebooks/jupyter-book/issues/new?title=Issue%20on%20page%20%2Fsources/2-Part/2.The_Basics_of_Machine_Learning.html&body=Your%20issue%20content%20here."
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Open an issue"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="headerbtn__text-container">open issue</span>
+</a>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+
+<div class="menu-dropdown menu-dropdown-download-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Download this page">
+      <i class="fas fa-download"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="../../_sources/sources/2-Part/2.The_Basics_of_Machine_Learning.ipynb"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Download source file"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="headerbtn__text-container">.ipynb</span>
+</a>
+
+      </li>
+      
+      <li>
+        
+<button onclick="printPdf(this)"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="left"
+title="Print to PDF"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="headerbtn__text-container">.pdf</span>
+</button>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+<label for="__page-toc"
+  class="headerbtn headerbtn-page-toc"
+  
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-list"></i>
+  </span>
+
+</label>
+
+    </div>
+</div>
+
+<!-- Table of contents -->
+<div class="col-md-3 bd-toc show noprint">
+    <div class="tocsection onthispage pt-5 pb-3">
+        <i class="fas fa-list"></i> Contents
+    </div>
+    <nav id="bd-toc-nav" aria-label="Page">
+        <ul class="visible nav section-nav flex-column">
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#">
+   2. The Basics of Machine Learning
+  </a>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#introduction">
+   2.1
+   <strong>
+    Introduction
+   </strong>
+  </a>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#supervised-learning">
+   2.2
+   <strong>
+    Supervised learning
+   </strong>
+  </a>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#unsupervised-learning">
+   2.3
+   <strong>
+    Unsupervised learning
+   </strong>
+  </a>
+ </li>
+</ul>
+
+    </nav>
+</div>
+    </div>
+    <div class="article row">
+        <div class="col pl-md-3 pl-lg-5 content-container">
+            <!-- Table of contents that is only displayed when printing the page -->
+            <div id="jb-print-docs-body" class="onlyprint">
+                <h1>2. The Basics of Machine Learning</h1>
+                <!-- Table of contents -->
+                <div id="print-main-content">
+                    <div id="jb-print-toc">
+                        
+                        <div>
+                            <h2> Contents </h2>
+                        </div>
+                        <nav aria-label="Page">
+                            <ul class="visible nav section-nav flex-column">
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#">
+   2. The Basics of Machine Learning
+  </a>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#introduction">
+   2.1
+   <strong>
+    Introduction
+   </strong>
+  </a>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#supervised-learning">
+   2.2
+   <strong>
+    Supervised learning
+   </strong>
+  </a>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#unsupervised-learning">
+   2.3
+   <strong>
+    Unsupervised learning
+   </strong>
+  </a>
+ </li>
+</ul>
+
+                        </nav>
+                    </div>
+                </div>
+            </div>
+            <main id="main-content" role="main">
+                
+              <div>
+                
+  <section class="tex2jax_ignore mathjax_ignore" id="the-basics-of-machine-learning">
+<h1>2. The Basics of Machine Learning<a class="headerlink" href="#the-basics-of-machine-learning" title="Permalink to this headline">#</a></h1>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="introduction">
+<h1>2.1 <strong>Introduction</strong><a class="headerlink" href="#introduction" title="Permalink to this headline">#</a></h1>
+<blockquote>
+<div><p>Definition of machine learning: a set of techniques that allows machines to learn from data rather than being explicitly programmed</p>
+<p>Types of machine learning: supervised learning, unsupervised learning, semi-supervised learning, and reinforcement learning</p>
+<p>Key concepts: overfitting, underfitting, and bias-variance tradeoff</p>
+</div></blockquote>
+<p>Machine learning is a set of techniques that allows machines to learn from data rather than being explicitly programmed. It is a key tool in the field of artificial intelligence and has a wide range of applications, including natural language processing, computer vision, and robotics.</p>
+<p>There are four main types of machine learning: supervised learning, unsupervised learning, semi-supervised learning, and reinforcement learning.</p>
+<ul class="simple">
+<li><p>In supervised learning, the model is trained on labeled data (i.e. data with known input-output pairs). The goal is to learn a function that can predict the output for a new input based on the examples in the training data. Examples of supervised learning include linear regression, logistic regression, and support vector machines.</p></li>
+<li><p>In unsupervised learning, the model is not given any labeled data and must discover the underlying structure in the data. The goal is to find patterns or relationships in the data that may not be immediately obvious. Examples of unsupervised learning include clustering and dimensionality reduction.</p></li>
+<li><p>In semi-supervised learning, the model is given a small amount of labeled data and a large amount of unlabeled data. The goal is to learn from both the labeled and unlabeled data in order to improve the model’s performance.</p></li>
+<li><p>In reinforcement learning, the model learns by interacting with its environment and receiving feedback in the form of rewards or penalties. The goal is to learn a policy that maximizes the cumulative reward over time.</p></li>
+</ul>
+<p>When building machine learning models, it is important to consider three key concepts: overfitting, underfitting, and the bias-variance tradeoff.</p>
+<ul class="simple">
+<li><p>Overfitting occurs when the model is too complex and fits the training data too closely, resulting in poor generalization to new data.</p></li>
+<li><p>Underfitting occurs when the model is too simple and does not capture the underlying structure of the data, resulting in poor performance on the training data.</p></li>
+<li><p>The bias-variance tradeoff refers to the balance between the model’s ability to fit the training data well (low bias) and its ability to generalize to new data (low variance). Finding the right balance is key to building a successful machine learning model.</p></li>
+</ul>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="supervised-learning">
+<h1>2.2 <strong>Supervised learning</strong><a class="headerlink" href="#supervised-learning" title="Permalink to this headline">#</a></h1>
+<blockquote>
+<div><p>Definition: a type of machine learning in which the model is trained on labeled data (i.e. data with known input-output pairs)</p>
+<p>Examples: linear regression, logistic regression, support vector machines, decision trees</p>
+<p>Key formula: mean squared error (MSE) for evaluating models, defined as:
+$<span class="math notranslate nohighlight">\(MSE = \frac{1}{n} \sum_{i=1}^{n} (y_i - \hat{y_i})^2\)</span><span class="math notranslate nohighlight">\(
+where \)</span>y_i<span class="math notranslate nohighlight">\( is the true target value for the \)</span>i<span class="math notranslate nohighlight">\(th example, \)</span>\hat{y_i}<span class="math notranslate nohighlight">\( is the model's prediction for the \)</span>i<span class="math notranslate nohighlight">\(th example, and \)</span>n$ is the total number of examples.</p>
+</div></blockquote>
+<p>Supervised learning is a type of machine learning in which the model is trained on labeled data (i.e. data with known input-output pairs). The goal is to learn a function that can predict the output for a new input based on the examples in the training data.</p>
+<p>Some examples of supervised learning algorithms include:</p>
+<ul class="simple">
+<li><p>Linear regression: Linear regression is a method for modeling the relationship between a dependent variable <span class="math notranslate nohighlight">\(y\)</span> and one or more independent variables <span class="math notranslate nohighlight">\(x\)</span> using a linear equation of the form:</p></li>
+</ul>
+<div class="math notranslate nohighlight">
+\[
+y = \beta_0 + \beta_1x + \epsilon
+\]</div>
+<p>where <span class="math notranslate nohighlight">\(\beta_0\)</span> and <span class="math notranslate nohighlight">\(\beta_1\)</span> are the model parameters (also called the intercept and slope, respectively) and <span class="math notranslate nohighlight">\(\epsilon\)</span> is the error term. The goal of linear regression is to find the values of <span class="math notranslate nohighlight">\(\beta_0\)</span> and <span class="math notranslate nohighlight">\(\beta_1\)</span> that minimize the error between the model’s predictions and the true values of <span class="math notranslate nohighlight">\(y\)</span>.</p>
+<ul class="simple">
+<li><p>Logistic regression: Logistic regression is a method for binary classification (i.e. predicting a binary outcome such as “yes” or “no”). It is similar to linear regression, but instead of predicting a continuous value, it predicts the probability that an example belongs to a particular class. The prediction is made using the following formula:</p></li>
+</ul>
+<div class="math notranslate nohighlight">
+\[
+\hat{y} = \frac{1}{1 + e^{-(\beta_0 + \beta_1x)}}
+\]</div>
+<p>where <span class="math notranslate nohighlight">\(\hat{y}\)</span> is the predicted probability, <span class="math notranslate nohighlight">\(\beta_0\)</span> and <span class="math notranslate nohighlight">\(\beta_1\)</span> are the model parameters, and <span class="math notranslate nohighlight">\(x\)</span> is the input. The model makes a prediction by thresholding the probability: if the probability is greater than 0.5, the prediction is “yes,” and if it is less than 0.5, the prediction is “no.”</p>
+<ul class="simple">
+<li><p>Support vector machines (SVMs): SVMs are a method for binary classification that seeks to find the hyperplane in a high-dimensional space that maximally separates the two classes. The algorithm works by finding the support vectors (i.e. the points closest to the hyperplane) and using them to define the hyperplane.</p></li>
+<li><p>Decision trees: Decision trees are a method for classification and regression that involves building a tree-like model of decisions based on the features of the input data. At each internal node of the tree, the algorithm selects the feature that maximally splits the data, and then recursively builds the tree on the resulting subgroups. The final predictions are made based on the leaves of the tree.</p></li>
+</ul>
+<p>When evaluating the performance of a supervised learning model, it is common to use a metric such as the mean squared error (MSE) or the mean absolute error (MAE).</p>
+<p>The MSE is defined as:</p>
+<div class="math notranslate nohighlight">
+\[
+MSE = \frac{1}{n} \sum_{i=1}^{n} (y_i - \hat{y_i})^2
+\]</div>
+<p>where <span class="math notranslate nohighlight">\(y_i\)</span> is the true target value for the <span class="math notranslate nohighlight">\(i\)</span>th example, <span class="math notranslate nohighlight">\(\hat{y_i}\)</span> is the model’s prediction for the <span class="math notranslate nohighlight">\(i\)</span>th example, and <span class="math notranslate nohighlight">\(n\)</span> is the total number of examples.</p>
+<p>The MAE is defined as:</p>
+<div class="math notranslate nohighlight">
+\[
+MAE = \frac{1}{n} \sum_{i=1}^{n} |y_i - \hat{y_i}|
+\]</div>
+<p>where <span class="math notranslate nohighlight">\(y_i\)</span>, <span class="math notranslate nohighlight">\(\hat{y_i}\)</span>, and <span class="math notranslate nohighlight">\(n\)</span> are defined as above.</p>
+<p>In addition to these metrics, it is often helpful to evaluate the model using a confusion matrix, which shows the number of true positive, true negative, false positive, and false negative predictions made by the model.</p>
+<p>It is also important to consider the bias-variance tradeoff when building a supervised learning model. If the model has high bias (i.e. it is oversimplified and unable to capture the complexity of the data), it may underfit the training data and have poor generalization to new data. If the model has high variance (i.e. it is overly complex and sensitive to the noise in the training data), it may overfit the training data and also have poor generalization to new data. Finding the right balance between bias and variance is key to building a successful supervised learning model.</p>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="unsupervised-learning">
+<h1>2.3 <strong>Unsupervised learning</strong><a class="headerlink" href="#unsupervised-learning" title="Permalink to this headline">#</a></h1>
+<blockquote>
+<div><p>Definition: a type of machine learning in which the model is not given any labeled data and must discover the underlying structure in the data</p>
+</div></blockquote>
+<p>Examples: clustering, dimensionality reduction, anomaly detection</p>
+<p>Key formula: within-cluster sum of squares (WCSS) for</p>
+<p>Unsupervised learning is a type of machine learning in which the model is not given any labeled data and must discover the underlying structure in the data. The goal is to find patterns or relationships in the data that may not be immediately obvious.</p>
+<p>Some examples of unsupervised learning algorithms include:</p>
+<ul>
+<li><p>Clustering: Clustering is a method for grouping examples into “clusters” based on their similarity. There are many different clustering algorithms, including k-means, which seeks to minimize the within-cluster sum of squares (WCSS), defined as:</p>
+<div class="math notranslate nohighlight">
+\[
+    WCSS = \sum_{i=1}^{k} \sum_{x \in C_i} ||x - \mu_i||^2
+    \]</div>
+<p>where <span class="math notranslate nohighlight">\(k\)</span> is the number of clusters, <span class="math notranslate nohighlight">\(C_i\)</span> is the set of points in the <span class="math notranslate nohighlight">\(i\)</span>th cluster, and <span class="math notranslate nohighlight">\(\mu_i\)</span> is the mean of the points in the <span class="math notranslate nohighlight">\(i\)</span>th cluster.</p>
+</li>
+<li><p>Dimensionality reduction: Dimensionality reduction is a method for reducing the number of features in a dataset while preserving as much of the original information as possible. This can be useful when working with datasets that have a large number of features, as it can reduce the computational burden of building models, improve the interpretability of the results, and mitigate the risk of overfitting.</p>
+<p>One common method for dimensionality reduction is principal component analysis (PCA). PCA seeks to find the “principal components” of the data, which are the directions in which the data varies the most. These directions are defined by the eigenvectors of the covariance matrix of the data, and the corresponding eigenvalues represent the amount of variance explained by each eigenvector.</p>
+<p>PCA can be formulated as an optimization problem, in which the goal is to find the linear combination of the original features that maximizes the variance of the resulting projections. This can be done using the following formula:</p>
+<div class="math notranslate nohighlight">
+\[
+    Z = XW
+    \]</div>
+<p>where <span class="math notranslate nohighlight">\(X\)</span> is the original data matrix, <span class="math notranslate nohighlight">\(W\)</span> is the matrix of weights (i.e. the eigenvectors of the covariance matrix of <span class="math notranslate nohighlight">\(X\)</span>), and <span class="math notranslate nohighlight">\(Z\)</span> is the matrix of projections onto the principal components.</p>
+<p>PCA is an unsupervised method, as it does not require any labeled data. It is commonly used as a preprocessing step before building a supervised model, as it can help to reduce the dimensionality of the data and improve the model</p>
+</li>
+<li><p>Anomaly detection: Anomaly detection is a method for identifying unusual or unexpected patterns in the data. It is often used in situations where it is important to detect unusual events or observations, such as fraud detection or intrusion detection. There are many different methods for detecting anomalies, including density-based methods (which identify points that are far from the densest regions of the data) and distance-based methods (which identify points that are far from the majority of other points).</p></li>
+</ul>
+<p>Evaluating the performance of an unsupervised learning model can be challenging, as there are no known labels to compare the model’s predictions to. One common approach is to use an external measure of the “quality” of the clusters, such as the WCSS for k-means clustering. Another approach is to use visualizations to examine the structure of the data and the clusters that the model has discovered.</p>
+<p>It is also important to consider the bias-variance tradeoff when building an unsupervised learning model. If the model has high bias (i.e. it is oversimplified and unable to capture the complexity of the data), it may fail to discover important patterns in the data. If the model has high variance (i.e. it is overly sensitive to the noise in the data), it may discover patterns that are not representative of the underlying structure of the data. Finding the right balance between bias and variance is key to building a successful unsupervised learning model.</p>
+<p>Additionally, it is often helpful to use visualization techniques (such as scatterplots or heatmaps) to examine the structure of the data and the patterns that the model has discovered. This can provide insight into the strengths and limitations of the model and can help inform the selection of appropriate parameters or algorithms.</p>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./sources/2-Part"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+            </main>
+            <footer class="footer-article noprint">
+                
+    <!-- Previous / next buttons -->
+<div class='prev-next-area'>
+    <a class='left-prev' id="prev-link" href="1.Introduction_to_Artificial_Intelligence_and_Deep_Learning.html" title="previous page">
+        <i class="fas fa-angle-left"></i>
+        <div class="prev-next-info">
+            <p class="prev-next-subtitle">previous</p>
+            <p class="prev-next-title">1. Introduction to Artificial Intelligence and Deep Learning</p>
+        </div>
+    </a>
+    <a class='right-next' id="next-link" href="3.Neural_Networks_and_Deep_Learning.html" title="next page">
+    <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">3. Neural Networks and Deep Learning</p>
+    </div>
+    <i class="fas fa-angle-right"></i>
+    </a>
+</div>
+            </footer>
+        </div>
+    </div>
+    <div class="footer-content row">
+        <footer class="col footer"><p>
+  
+    By The Book about AI/ML/DL (vomited by ChatGPT)<br/>
+  
+      &copy; Copyright 2022.<br/>
+</p>
+        </footer>
+    </div>
+    
+</div>
+
+
+      </div>
+    </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf"></script>
+
+
+  </body>
+</html>

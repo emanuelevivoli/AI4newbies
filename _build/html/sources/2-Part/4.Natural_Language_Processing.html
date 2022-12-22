@@ -1,0 +1,855 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+    <title>4. Natural Language Processing &#8212; chatGPT wrote this BOOK</title>
+    
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../../_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+<link href="../../_static/styles/pydata-sphinx-theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+
+    
+  <link rel="stylesheet"
+    href="../../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css" />
+    <link rel="stylesheet" href="../../_static/styles/sphinx-book-theme.css?digest=5115cc725059bd94278eecd172e13a965bf8f5a9" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/design-style.b7bb847fb20b106c3d81b95245e65545.min.css" />
+    
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf">
+
+    <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
+    <script src="../../_static/jquery.js"></script>
+    <script src="../../_static/underscore.js"></script>
+    <script src="../../_static/doctools.js"></script>
+    <script src="../../_static/clipboard.min.js"></script>
+    <script src="../../_static/copybutton.js"></script>
+    <script src="../../_static/scripts/sphinx-book-theme.js?digest=9c920249402e914e316237a7dbc6769907cce411"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../../_static/togglebutton.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="../../_static/design-tabs.js"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
+    <script async="async" src="../../_static/sphinx-thebe.js"></script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="5. Computer Vision" href="5.Computer_Vision.html" />
+    <link rel="prev" title="3. Neural Networks and Deep Learning" href="3.Neural_Networks_and_Deep_Learning.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="None">
+    
+
+    <!-- Google Analytics -->
+    
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="60">
+<!-- Checkboxes to toggle the left sidebar -->
+<input type="checkbox" class="sidebar-toggle" name="__navigation" id="__navigation" aria-label="Toggle navigation sidebar">
+<label class="overlay overlay-navbar" for="__navigation">
+    <div class="visually-hidden">Toggle navigation sidebar</div>
+</label>
+<!-- Checkboxes to toggle the in-page toc -->
+<input type="checkbox" class="sidebar-toggle" name="__page-toc" id="__page-toc" aria-label="Toggle in-page Table of Contents">
+<label class="overlay overlay-pagetoc" for="__page-toc">
+    <div class="visually-hidden">Toggle in-page Table of Contents</div>
+</label>
+<!-- Headers at the top -->
+<div class="announcement header-item noprint"></div>
+<div class="header header-item noprint"></div>
+
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<!-- Sidebar -->
+<div class="bd-sidebar noprint" id="site-navigation">
+    <div class="bd-sidebar__content">
+        <div class="bd-sidebar__top"><div class="navbar-brand-box">
+    <a class="navbar-brand text-wrap" href="../../index.html">
+      
+        <!-- `logo` is deprecated in Sphinx 4.0, so remove this when we stop supporting 3 -->
+        
+      
+      
+      <img src="../../_static/logo.jpeg" class="logo" alt="logo">
+      
+      
+      <h1 class="site-logo" id="site-title">chatGPT wrote this BOOK</h1>
+      
+    </a>
+</div><form class="bd-search d-flex align-items-center" action="../../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="../../intro.html">
+                    What is this book?
+                </a>
+            </li>
+        </ul>
+        <p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Preliminaries Notions
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../1-Part/preliminaries.html">
+   AI4noobs - Preliminaries
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/>
+  <label for="toctree-checkbox-1">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../1-Part/1.Programming_with_Notebooks.html">
+     1. Programming with Notebooks
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../1-Part/2.Introduction_to_Programming.html">
+     2. Introduction to Programming
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../1-Part/3.Data_Structures.html">
+     3. Data Structures
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../1-Part/4.Computational_Complexity.html">
+     4. Computational Complexity
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../1-Part/5.Statistics.html">
+     5. Statistics
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../1-Part/6.Linear_Algebra.html">
+     6. Linear Algebra
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../1-Part/7.Geometry.html">
+     7. Geometry
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../1-Part/8.Calculus.html">
+     8. Numerical Calculus
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Basis of AI
+ </span>
+</p>
+<ul class="current nav bd-sidenav">
+ <li class="toctree-l1 current active has-children">
+  <a class="reference internal" href="basis.html">
+   AI4noobs - Basis
+  </a>
+  <input checked="" class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/>
+  <label for="toctree-checkbox-2">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul class="current">
+   <li class="toctree-l2">
+    <a class="reference internal" href="1.Introduction_to_Artificial_Intelligence_and_Deep_Learning.html">
+     1. Introduction to Artificial Intelligence and Deep Learning
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="2.The_Basics_of_Machine_Learning.html">
+     2. The Basics of Machine Learning
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="3.Neural_Networks_and_Deep_Learning.html">
+     3. Neural Networks and Deep Learning
+    </a>
+   </li>
+   <li class="toctree-l2 current active">
+    <a class="current reference internal" href="#">
+     4. Natural Language Processing
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="5.Computer_Vision.html">
+     5. Computer Vision
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="6.Ethics_and_the_Future_of_AI.html">
+     6: Ethics and the Future of AI
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Applications of AI
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../3-Part/applications.html">
+   AI4noobs - Applications
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/>
+  <label for="toctree-checkbox-3">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../3-Part/1.Fraud_Detection.html">
+     1. Fraud Detection
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../3-Part/2.Customer_Relationship_Management_Systems.html">
+     2. Customer Relationship Management Systems
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../3-Part/3.Computer_Vision.html">
+     3. Computer Vision
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../3-Part/4.Vocal_AI.html">
+     4. Vocal AI
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../3-Part/5.Natural_Language_Processing.html">
+     5. Natural Language Processing
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../3-Part/6.Autonomous_Vehicles.html">
+     6. Autonomous Vehicles
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../3-Part/7.Supercomputers.html">
+     7. Supercomputers
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../3-Part/8.Investment_Modeling.html">
+     8. Investment Modeling
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../3-Part/9.E-commerce.html">
+     9. E-commerce
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+
+    </div>
+</nav></div>
+        <div class="bd-sidebar__bottom">
+             <!-- To handle the deprecated key -->
+            
+            <div class="navbar_extra_footer">
+            Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+            </div>
+            
+        </div>
+    </div>
+    <div id="rtd-footer-container"></div>
+</div>
+
+
+          
+
+
+          
+<!-- A tiny helper pixel to detect if we've scrolled -->
+<div class="sbt-scroll-pixel-helper"></div>
+<!-- Main content -->
+<div class="col py-0 content-container">
+    
+    <div class="header-article row sticky-top noprint">
+        
+
+
+
+<div class="col py-1 d-flex header-article-main">
+    <div class="header-article__left">
+        
+        <label for="__navigation"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="right"
+title="Toggle navigation"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-bars"></i>
+  </span>
+
+</label>
+
+        
+    </div>
+    <div class="header-article__right">
+<button onclick="toggleFullScreen()"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="bottom"
+title="Fullscreen mode"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+<div class="menu-dropdown menu-dropdown-repository-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Source repositories">
+      <i class="fab fa-github"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="https://github.com/executablebooks/jupyter-book"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Source repository"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="headerbtn__text-container">repository</span>
+</a>
+
+      </li>
+      
+      <li>
+        <a href="https://github.com/executablebooks/jupyter-book/issues/new?title=Issue%20on%20page%20%2Fsources/2-Part/4.Natural_Language_Processing.html&body=Your%20issue%20content%20here."
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Open an issue"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="headerbtn__text-container">open issue</span>
+</a>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+
+<div class="menu-dropdown menu-dropdown-download-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Download this page">
+      <i class="fas fa-download"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="../../_sources/sources/2-Part/4.Natural_Language_Processing.ipynb"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Download source file"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="headerbtn__text-container">.ipynb</span>
+</a>
+
+      </li>
+      
+      <li>
+        
+<button onclick="printPdf(this)"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="left"
+title="Print to PDF"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="headerbtn__text-container">.pdf</span>
+</button>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+<label for="__page-toc"
+  class="headerbtn headerbtn-page-toc"
+  
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-list"></i>
+  </span>
+
+</label>
+
+    </div>
+</div>
+
+<!-- Table of contents -->
+<div class="col-md-3 bd-toc show noprint">
+    <div class="tocsection onthispage pt-5 pb-3">
+        <i class="fas fa-list"></i> Contents
+    </div>
+    <nav id="bd-toc-nav" aria-label="Page">
+        <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#introduction">
+   4.1
+   <strong>
+    Introduction
+   </strong>
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#word-embeddings">
+   4.2
+   <strong>
+    Word Embeddings
+   </strong>
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#language-translation">
+   4.3
+   <strong>
+    Language Translation
+   </strong>
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#tranformers">
+     tranformers
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#summary">
+     summary
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#text-classification">
+   4.4
+   <strong>
+    Text Classification
+   </strong>
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#transformers">
+     transformers
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id1">
+     summary
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#information-extraction">
+   4.5
+   <strong>
+    Information Extraction
+   </strong>
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id2">
+     transformers
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id3">
+     summary
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#nlp-summary">
+   NLP summary
+  </a>
+ </li>
+</ul>
+
+    </nav>
+</div>
+    </div>
+    <div class="article row">
+        <div class="col pl-md-3 pl-lg-5 content-container">
+            <!-- Table of contents that is only displayed when printing the page -->
+            <div id="jb-print-docs-body" class="onlyprint">
+                <h1>4. Natural Language Processing</h1>
+                <!-- Table of contents -->
+                <div id="print-main-content">
+                    <div id="jb-print-toc">
+                        
+                        <div>
+                            <h2> Contents </h2>
+                        </div>
+                        <nav aria-label="Page">
+                            <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#introduction">
+   4.1
+   <strong>
+    Introduction
+   </strong>
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#word-embeddings">
+   4.2
+   <strong>
+    Word Embeddings
+   </strong>
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#language-translation">
+   4.3
+   <strong>
+    Language Translation
+   </strong>
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#tranformers">
+     tranformers
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#summary">
+     summary
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#text-classification">
+   4.4
+   <strong>
+    Text Classification
+   </strong>
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#transformers">
+     transformers
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id1">
+     summary
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#information-extraction">
+   4.5
+   <strong>
+    Information Extraction
+   </strong>
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id2">
+     transformers
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id3">
+     summary
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#nlp-summary">
+   NLP summary
+  </a>
+ </li>
+</ul>
+
+                        </nav>
+                    </div>
+                </div>
+            </div>
+            <main id="main-content" role="main">
+                
+              <div>
+                
+  <section class="tex2jax_ignore mathjax_ignore" id="natural-language-processing">
+<h1>4. Natural Language Processing<a class="headerlink" href="#natural-language-processing" title="Permalink to this headline">#</a></h1>
+<p>Natural language processing (NLP) is a subfield of artificial intelligence that is concerned with the interaction between computers and human languages. It involves developing algorithms and systems that can understand, generate, and analyze natural language text and speech.</p>
+<section id="introduction">
+<h2>4.1 <strong>Introduction</strong><a class="headerlink" href="#introduction" title="Permalink to this headline">#</a></h2>
+<blockquote>
+<div><p>NLP has a wide range of applications, including language translation, text classification, and information extraction. It is a challenging field, due to the complexity and variability of natural languages, and the need to represent the meaning of words and phrases in a form that can be understood by computers.</p>
+</div></blockquote>
+<p>Natural language processing (NLP) is a subfield of artificial intelligence that is concerned with the interaction between computers and human languages. It involves developing algorithms and systems that can understand, generate, and analyze natural language text and speech.</p>
+<p>NLP has a wide range of applications, including language translation, text classification, and information extraction. It is a challenging field, due to the complexity and variability of natural languages, and the need to represent the meaning of words and phrases in a form that can be understood by computers.</p>
+<p>Language translation is the task of translating text from one language to another. It is important for enabling communication between people who speak different languages, and is used in applications such as machine translation systems, language learning platforms, and multilingual customer service centers.</p>
+<p>Text classification is the task of assigning a label or category to a piece of text. It is used in applications such as sentiment analysis, spam detection, and topic classification. By automating the classification process, it is possible to process large amounts of text quickly and accurately.</p>
+<p>Information extraction is the task of extracting structured information from unstructured text. It is used in applications such as named entity recognition, where the goal is to identify and classify named entities (such as people, organizations, and locations) in text, and relation extraction, where the goal is to identify relationships between entities in text. By extracting structured information from text, it is possible to perform tasks such as information retrieval and knowledge base construction.</p>
+<p>Overall, NLP has the potential to revolutionize how we interact with and process information in the digital world. By developing algorithms and systems that can understand, generate, and analyze natural language text and speech, we can enable more natural and efficient communication with computers, and gain insights from large amounts of text data.</p>
+</section>
+<section id="word-embeddings">
+<h2>4.2 <strong>Word Embeddings</strong><a class="headerlink" href="#word-embeddings" title="Permalink to this headline">#</a></h2>
+<blockquote>
+<div><p>One way to represent the meaning of natural language words and phrases is through the use of word embeddings. Word embeddings are dense, continuous representations of words in a low-dimensional space. They can be learned from large datasets of natural language text using techniques such as word2vec or GloVe.</p>
+</div></blockquote>
+<p>One way to represent the meaning of natural language words and phrases is through the use of word embeddings. Word embeddings are dense, continuous representations of words in a low-dimensional space. They can be learned from large datasets of natural language text using techniques such as word2vec or GloVe.</p>
+<p>Word embeddings are typically learned using an objective function that measures the similarity between words based on the context in which they appear. For example, the word2vec objective function is defined as follows:</p>
+<div class="math notranslate nohighlight">
+\[
+J = \sum_{t=1}^{T} \sum_{-m \leq j \leq m, j \neq 0} \log p(w_{t+j} | w_t)
+\]</div>
+<p>Where <span class="math notranslate nohighlight">\(T\)</span> is the number of words in the dataset, <span class="math notranslate nohighlight">\(m\)</span> is the size of the context window, and <span class="math notranslate nohighlight">\(p(w_{t+j} | w_t)\)</span> is the probability of predicting the word <span class="math notranslate nohighlight">\(w_{t+j}\)</span> given the context word <span class="math notranslate nohighlight">\(w_t\)</span>.</p>
+<p>The objective function is minimized during training using stochastic gradient descent, and the resulting word embeddings are learned such that words that appear in similar contexts will have similar embeddings.</p>
+<p>Once the word embeddings have been learned, they can be used to perform various NLP tasks. For example, they can be used to compute the similarity between words using a distance measure such as cosine similarity:</p>
+<div class="math notranslate nohighlight">
+\[
+sim(w_i, w_j) = \frac{w_i \cdot w_j}{||w_i|| ||w_j||}
+\]</div>
+<p>Where <span class="math notranslate nohighlight">\(w_i\)</span> and <span class="math notranslate nohighlight">\(w_j\)</span> are the word embeddings of words <span class="math notranslate nohighlight">\(i\)</span> and <span class="math notranslate nohighlight">\(j\)</span>, and <span class="math notranslate nohighlight">\(||\cdot||\)</span> is the Euclidean norm.</p>
+<p>In summary, word embeddings are a powerful way to represent the meaning of natural language words and phrases in a form that can be understood by computers. They can be learned from large datasets of natural language text using techniques such as word2vec or GloVe, and can be used to perform various NLP tasks such as computing word similarity.</p>
+</section>
+<section id="language-translation">
+<h2>4.3 <strong>Language Translation</strong><a class="headerlink" href="#language-translation" title="Permalink to this headline">#</a></h2>
+<blockquote>
+<div><p>Language translation is the task of translating text from one language to another. It can be performed using machine translation systems, which typically use a combination of rule-based and statistical techniques. One common approach is to use an encoder-decoder architecture, which involves encoding the source language text into a fixed-length representation using an encoder, and then decoding the representation into the target language using a decoder. The encoder and decoder are often implemented using recurrent neural networks (RNNs).</p>
+</div></blockquote>
+<p>Language translation is the task of translating text from one language to another. It is important for enabling communication between people who speak different languages, and is used in applications such as machine translation systems, language learning platforms, and multilingual customer service centers.</p>
+<p>There are two main approaches to language translation: rule-based and statistical. Rule-based translation systems rely on a set of rules that specify how to translate individual words and phrases from one language to another. They are typically accurate, but require a lot of manual effort to create and maintain the rules.</p>
+<p>Statistical translation systems, on the other hand, do not rely on explicit rules. Instead, they use statistical models that are trained on large amounts of parallel text (text in two languages that corresponds sentence-by-sentence). The models learn to translate text by predicting the most likely translation given the source language text.</p>
+<p>One common approach to statistical translation is to use an encoder-decoder architecture, which involves encoding the source language text into a fixed-length representation using an encoder, and then decoding the representation into the target language using a decoder. The encoder and decoder are often implemented using recurrent neural networks (RNNs).</p>
+<p>For example, suppose we want to translate the English sentence “The cat is on the mat” into French. We can represent the English sentence as a sequence of word embeddings <span class="math notranslate nohighlight">\(x = [x_1, x_2, x_3, x_4, x_5]\)</span>, and the French translation as a sequence of word embeddings <span class="math notranslate nohighlight">\(y = [y_1, y_2, y_3, y_4, y_5]\)</span>. The encoder RNN processes the input sequence <span class="math notranslate nohighlight">\(x\)</span> and produces a fixed-length representation <span class="math notranslate nohighlight">\(h\)</span>, which is passed to the decoder RNN. The decoder RNN then generates the output sequence <span class="math notranslate nohighlight">\(y\)</span> one word at a time, using the fixed-length representation <span class="math notranslate nohighlight">\(h\)</span> as context.</p>
+<p>The encoder-decoder architecture can be trained using an objective function such as cross-entropy loss:</p>
+<div class="math notranslate nohighlight">
+\[
+J = - \sum_{t=1}^{T} \log p(y_t | y_{1:t-1}, x)
+\]</div>
+<p>Where <span class="math notranslate nohighlight">\(T\)</span> is the length of the output sequence, <span class="math notranslate nohighlight">\(y_t\)</span> is the true translation at time step <span class="math notranslate nohighlight">\(t\)</span>, and <span class="math notranslate nohighlight">\(p(y_t | y_{1:t-1}, x)\)</span> is the predicted probability of the true translation given the previous translations and the input sequence. The objective function is minimized during training using stochastic gradient descent.</p>
+<p>Once the encoder-decoder architecture has been trained, it can be used to translate new text by encoding the source language text into a fixed-length representation using the encoder, and then decoding the representation into the target language using the decoder.</p>
+<section id="tranformers">
+<h3>tranformers<a class="headerlink" href="#tranformers" title="Permalink to this headline">#</a></h3>
+<p>One common approach to language translation is to use a transformer architecture, which is a type of neural network that is particularly well-suited for sequence-to-sequence tasks such as translation.</p>
+<p>The transformer architecture uses self-attention mechanisms to allow the model to attend to different parts of the input sequence at different times, which allows it to capture long-range dependencies in the data. It also uses multi-headed attention, which allows the model to attend to multiple parts of the input sequence simultaneously.</p>
+<p>The transformer architecture is typically trained using an objective function such as cross-entropy loss, which measures the difference between the predicted translation and the true translation. For example, suppose we have a dataset of parallel text (text in two languages that corresponds sentence-by-sentence), and we want to train a transformer architecture to translate from one language to the other. The objective function might be defined as follows:</p>
+<div class="math notranslate nohighlight">
+\[
+J = - \sum_{t=1}^{T} \log p(y_t | y_{1:t-1}, x)
+\]</div>
+<p>Where <span class="math notranslate nohighlight">\(T\)</span> is the length of the output sequence, <span class="math notranslate nohighlight">\(y_t\)</span> is the true translation at time step <span class="math notranslate nohighlight">\(t\)</span>, <span class="math notranslate nohighlight">\(x\)</span> is the input sequence, and <span class="math notranslate nohighlight">\(p(y_t | y_{1:t-1}, x)\)</span> is the predicted probability of the true translation given the previous translations and the input sequence.</p>
+<p>Once the transformer architecture has been trained, it can be used to translate new text by encoding the source language text into a fixed-length representation using the encoder, and then decoding the representation into the target language using the decoder.</p>
+</section>
+<section id="summary">
+<h3>summary<a class="headerlink" href="#summary" title="Permalink to this headline">#</a></h3>
+<p>In summary, language translation is the task of translating text from one language to another. It can be performed using machine translation systems, which typically use a combination of rule-based and statistical techniques. One common approach is to use an encoder-decoder architecture, which involves encoding the source language text into a fixed-length representation using an encoder, and then decoding the representation into the target language using a decoder. The encoder and decoder are often implemented using recurrent neural networks (RNNs), and can be trained using an objective function such as cross-entropy loss.</p>
+</section>
+</section>
+<section id="text-classification">
+<h2>4.4 <strong>Text Classification</strong><a class="headerlink" href="#text-classification" title="Permalink to this headline">#</a></h2>
+<blockquote>
+<div><p>Text classification is the task of assigning a label or category to a piece of text. It can be used for tasks such as sentiment analysis, spam detection, and topic classification. One common approach to text classification is to represent the text using a feature vector, and then train a classifier (such as a support vector machine or a logistic regression model) on the feature vectors.</p>
+</div></blockquote>
+<p>Text classification is the task of assigning a label or category to a piece of text. It is used in applications such as sentiment analysis, spam detection, and topic classification. By automating the classification process, it is possible to process large amounts of text quickly and accurately.</p>
+<p>One common approach to text classification is to represent the text using a feature vector, and then train a classifier (such as a support vector machine or a logistic regression model) on the feature vectors. The feature vectors can be created using various techniques, such as bag-of-words, n-grams, and word embeddings.</p>
+<p>For example, suppose we have a dataset of movie reviews, and we want to classify the reviews as positive or negative. We can represent each review as a feature vector, where each element of the vector corresponds to a word in the vocabulary. If a word appears in the review, the corresponding element is set to 1, otherwise it is set to 0. We can then train a classifier (such as a logistic regression model) on the feature vectors using an objective function such as cross-entropy loss:</p>
+<div class="math notranslate nohighlight">
+\[
+J = - \sum_{i=1}^{N} y_i \log p(y_i | x_i) + (1 - y_i) \log (1 - p(y_i | x_i))
+\]</div>
+<p>Where <span class="math notranslate nohighlight">\(N\)</span> is the number of reviews in the dataset, <span class="math notranslate nohighlight">\(y_i\)</span> is the true label of review <span class="math notranslate nohighlight">\(i\)</span> (0 for negative, 1 for positive), <span class="math notranslate nohighlight">\(x_i\)</span> is the feature vector for review <span class="math notranslate nohighlight">\(i\)</span>, and <span class="math notranslate nohighlight">\(p(y_i | x_i)\)</span> is the predicted probability of the true label given the feature vector. The objective function is minimized during training using stochastic gradient descent.</p>
+<p>Once the classifier has been trained, it can be used to classify new text by computing the predicted probability of the label given the feature vector.</p>
+<section id="transformers">
+<h3>transformers<a class="headerlink" href="#transformers" title="Permalink to this headline">#</a></h3>
+<p>Another common approach to text classification is to use a transformer architecture, which can be trained to predict the label of a piece of text given the words in the text. The transformer architecture uses self-attention mechanisms to allow the model to attend to different parts of the input sequence at different times, which allows it to capture the context and meaning of the words in the text.</p>
+<p>The transformer architecture can be trained using an objective function such as cross-entropy loss, which measures the difference between the predicted label and the true label. For example, suppose we have a dataset of movie reviews, and we want to classify the reviews as positive or negative. The objective function might be defined as follows:</p>
+<div class="math notranslate nohighlight">
+\[
+J = - \sum_{i=1}^{N} y_i \log p(y_i | x_i) + (1 - y_i) \log (1 - p(y_i | x_i))
+\]</div>
+<p>Where <span class="math notranslate nohighlight">\(N\)</span> is the number of reviews in the dataset, <span class="math notranslate nohighlight">\(y_i\)</span> is the true label of review <span class="math notranslate nohighlight">\(i\)</span> (0 for negative, 1 for positive), <span class="math notranslate nohighlight">\(x_i\)</span> is the input sequence for review <span class="math notranslate nohighlight">\(i\)</span>, and <span class="math notranslate nohighlight">\(p(y_i | x_i)\)</span> is the predicted probability of the true label given the input sequence.</p>
+<p>Once the transformer architecture has been trained, it can be used to classify new text by encoding the text into a fixed-length representation using the encoder, and then using the decoder to predict the label.</p>
+</section>
+<section id="id1">
+<h3>summary<a class="headerlink" href="#id1" title="Permalink to this headline">#</a></h3>
+<p>In summary, text classification is the task of assigning a label or category to a piece of text. It can be performed using a variety of approaches, including feature-based classifiers such as support vector machines and logistic regression models, which are trained on feature vectors created using techniques such as bag-of-words, n-grams, and word embeddings.</p>
+</section>
+</section>
+<section id="information-extraction">
+<h2>4.5 <strong>Information Extraction</strong><a class="headerlink" href="#information-extraction" title="Permalink to this headline">#</a></h2>
+<blockquote>
+<div><p>Information extraction is the task of extracting structured information from unstructured text. It can be used for tasks such as named entity recognition, where the goal is to identify and classify named entities (such as people, organizations, and locations) in text, and relation extraction, where the goal is to identify relationships between entities in text. Information extraction can be performed using techniques such as rule-based systems, regular expressions, and machine learning approaches.</p>
+</div></blockquote>
+<p>Information extraction is the task of extracting structured information from unstructured text. It is used in applications such as named entity recognition, where the goal is to identify and classify named entities (such as people, organizations, and locations) in text, and relation extraction, where the goal is to identify relationships between entities in text. By extracting structured information from text, it is possible to perform tasks such as information retrieval and knowledge base construction.</p>
+<p>One common approach to information extraction is to use a sequence labeling model, which assigns labels to the words in a text sequence. The labels can represent various types of entities or relationships, depending on the task. For example, in named entity recognition, the labels might represent person names, location names, and organization names. In relation extraction, the labels might represent relationships such as “works for” or “lives in”.</p>
+<p>Sequence labeling models can be implemented using various techniques, such as hidden Markov models, conditional random fields, and recurrent neural networks (RNNs). For example, an RNN-based sequence labeling model might use an encoder RNN to process the input sequence, and a decoder RNN to generate the output labels. The model can be trained using an objective function such as cross-entropy loss:</p>
+<div class="math notranslate nohighlight">
+\[J = - \sum_{t=1}^{T} \log p(y_t | y_{1:t-1}, x)\]</div>
+<p>Where <span class="math notranslate nohighlight">\(T\)</span> is the length of the input sequence, <span class="math notranslate nohighlight">\(y_t\)</span> is the true label at time step <span class="math notranslate nohighlight">\(t\)</span>, <span class="math notranslate nohighlight">\(x\)</span> is the input sequence, and <span class="math notranslate nohighlight">\(p(y_t | y_{1:t-1}, x)\)</span> is the predicted probability of the true label given the previous labels and the input sequence. The objective function is minimized during training using stochastic gradient descent.</p>
+<p>Once the sequence labeling model has been trained, it can be used to extract information from new text by generating labels for the words in the text.</p>
+<section id="id2">
+<h3>transformers<a class="headerlink" href="#id2" title="Permalink to this headline">#</a></h3>
+<p>A recent common approach to information extraction is to use a transformer architecture, which can be trained to identify named entities and relationships in text. The transformer architecture uses self-attention mechanisms to allow the model to attend to different parts of the input sequence at different times, which allows it to capture the context and meaning of the words in the text.</p>
+<p>The transformer architecture can be trained using an objective function such as cross-entropy loss, which measures the difference between the predicted labels and the true labels. For example, suppose we have a dataset of text containing named entities and relationships, and we want to train a transformer architecture to identify and classify the named entities and relationships. The objective function might be defined as follows:</p>
+<div class="math notranslate nohighlight">
+\[J = - \sum_{t=1}^{T} \log p(y_t | y_{1:t-1}, x)\]</div>
+<p>Where <span class="math notranslate nohighlight">\(T\)</span> is the length of the input sequence, <span class="math notranslate nohighlight">\(y_t\)</span> is the true label at time step <span class="math notranslate nohighlight">\(t\)</span>, <span class="math notranslate nohighlight">\(x\)</span> is the input sequence, and <span class="math notranslate nohighlight">\(p(y_t | y_{1:t-1}, x)\)</span> is the predicted probability of the true label given the previous labels and the input sequence.</p>
+<p>Once the transformer architecture has been trained, it can be used to extract information from new text by encoding the text into a fixed-length representation using the encoder, and then using the decoder to generate the labels for the words in the text.</p>
+</section>
+<section id="id3">
+<h3>summary<a class="headerlink" href="#id3" title="Permalink to this headline">#</a></h3>
+<p>In summary, information extraction is the task of extracting structured information from unstructured text. It can be performed using techniques such as sequence labeling, which involves assigning labels to the words in a text sequence using models such as hidden Markov models, conditional random fields, or recurrent neural networks (RNNs). The models can be trained using an objective function such as cross-entropy loss, and can be used to extract information from new text by generating labels for the words in the text.</p>
+</section>
+</section>
+<section id="nlp-summary">
+<h2>NLP summary<a class="headerlink" href="#nlp-summary" title="Permalink to this headline">#</a></h2>
+<p>In summary, natural language processing (NLP) is a subfield of artificial intelligence concerned with the interaction between computers and human languages. It involves developing algorithms and systems that can understand, generate, and analyze natural language text and speech. NLP tasks include language translation, text classification, and information extraction, and can be performed using a variety of approaches, including machine translation systems, feature-based classifiers, and rule-based systems.</p>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./sources/2-Part"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+            </main>
+            <footer class="footer-article noprint">
+                
+    <!-- Previous / next buttons -->
+<div class='prev-next-area'>
+    <a class='left-prev' id="prev-link" href="3.Neural_Networks_and_Deep_Learning.html" title="previous page">
+        <i class="fas fa-angle-left"></i>
+        <div class="prev-next-info">
+            <p class="prev-next-subtitle">previous</p>
+            <p class="prev-next-title">3. Neural Networks and Deep Learning</p>
+        </div>
+    </a>
+    <a class='right-next' id="next-link" href="5.Computer_Vision.html" title="next page">
+    <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">5. Computer Vision</p>
+    </div>
+    <i class="fas fa-angle-right"></i>
+    </a>
+</div>
+            </footer>
+        </div>
+    </div>
+    <div class="footer-content row">
+        <footer class="col footer"><p>
+  
+    By The Book about AI/ML/DL (vomited by ChatGPT)<br/>
+  
+      &copy; Copyright 2022.<br/>
+</p>
+        </footer>
+    </div>
+    
+</div>
+
+
+      </div>
+    </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf"></script>
+
+
+  </body>
+</html>

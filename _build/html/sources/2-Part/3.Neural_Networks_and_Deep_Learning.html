@@ -1,0 +1,907 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+    <title>3. Neural Networks and Deep Learning &#8212; chatGPT wrote this BOOK</title>
+    
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../../_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+<link href="../../_static/styles/pydata-sphinx-theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+
+    
+  <link rel="stylesheet"
+    href="../../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css" />
+    <link rel="stylesheet" href="../../_static/styles/sphinx-book-theme.css?digest=5115cc725059bd94278eecd172e13a965bf8f5a9" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/design-style.b7bb847fb20b106c3d81b95245e65545.min.css" />
+    
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf">
+
+    <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
+    <script src="../../_static/jquery.js"></script>
+    <script src="../../_static/underscore.js"></script>
+    <script src="../../_static/doctools.js"></script>
+    <script src="../../_static/clipboard.min.js"></script>
+    <script src="../../_static/copybutton.js"></script>
+    <script src="../../_static/scripts/sphinx-book-theme.js?digest=9c920249402e914e316237a7dbc6769907cce411"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../../_static/togglebutton.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="../../_static/design-tabs.js"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
+    <script async="async" src="../../_static/sphinx-thebe.js"></script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="4. Natural Language Processing" href="4.Natural_Language_Processing.html" />
+    <link rel="prev" title="2. The Basics of Machine Learning" href="2.The_Basics_of_Machine_Learning.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="None">
+    
+
+    <!-- Google Analytics -->
+    
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="60">
+<!-- Checkboxes to toggle the left sidebar -->
+<input type="checkbox" class="sidebar-toggle" name="__navigation" id="__navigation" aria-label="Toggle navigation sidebar">
+<label class="overlay overlay-navbar" for="__navigation">
+    <div class="visually-hidden">Toggle navigation sidebar</div>
+</label>
+<!-- Checkboxes to toggle the in-page toc -->
+<input type="checkbox" class="sidebar-toggle" name="__page-toc" id="__page-toc" aria-label="Toggle in-page Table of Contents">
+<label class="overlay overlay-pagetoc" for="__page-toc">
+    <div class="visually-hidden">Toggle in-page Table of Contents</div>
+</label>
+<!-- Headers at the top -->
+<div class="announcement header-item noprint"></div>
+<div class="header header-item noprint"></div>
+
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<!-- Sidebar -->
+<div class="bd-sidebar noprint" id="site-navigation">
+    <div class="bd-sidebar__content">
+        <div class="bd-sidebar__top"><div class="navbar-brand-box">
+    <a class="navbar-brand text-wrap" href="../../index.html">
+      
+        <!-- `logo` is deprecated in Sphinx 4.0, so remove this when we stop supporting 3 -->
+        
+      
+      
+      <img src="../../_static/logo.jpeg" class="logo" alt="logo">
+      
+      
+      <h1 class="site-logo" id="site-title">chatGPT wrote this BOOK</h1>
+      
+    </a>
+</div><form class="bd-search d-flex align-items-center" action="../../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="../../intro.html">
+                    What is this book?
+                </a>
+            </li>
+        </ul>
+        <p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Preliminaries Notions
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../1-Part/preliminaries.html">
+   AI4noobs - Preliminaries
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/>
+  <label for="toctree-checkbox-1">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../1-Part/1.Programming_with_Notebooks.html">
+     1. Programming with Notebooks
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../1-Part/2.Introduction_to_Programming.html">
+     2. Introduction to Programming
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../1-Part/3.Data_Structures.html">
+     3. Data Structures
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../1-Part/4.Computational_Complexity.html">
+     4. Computational Complexity
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../1-Part/5.Statistics.html">
+     5. Statistics
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../1-Part/6.Linear_Algebra.html">
+     6. Linear Algebra
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../1-Part/7.Geometry.html">
+     7. Geometry
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../1-Part/8.Calculus.html">
+     8. Numerical Calculus
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Basis of AI
+ </span>
+</p>
+<ul class="current nav bd-sidenav">
+ <li class="toctree-l1 current active has-children">
+  <a class="reference internal" href="basis.html">
+   AI4noobs - Basis
+  </a>
+  <input checked="" class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/>
+  <label for="toctree-checkbox-2">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul class="current">
+   <li class="toctree-l2">
+    <a class="reference internal" href="1.Introduction_to_Artificial_Intelligence_and_Deep_Learning.html">
+     1. Introduction to Artificial Intelligence and Deep Learning
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="2.The_Basics_of_Machine_Learning.html">
+     2. The Basics of Machine Learning
+    </a>
+   </li>
+   <li class="toctree-l2 current active">
+    <a class="current reference internal" href="#">
+     3. Neural Networks and Deep Learning
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="4.Natural_Language_Processing.html">
+     4. Natural Language Processing
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="5.Computer_Vision.html">
+     5. Computer Vision
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="6.Ethics_and_the_Future_of_AI.html">
+     6: Ethics and the Future of AI
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Applications of AI
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../3-Part/applications.html">
+   AI4noobs - Applications
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/>
+  <label for="toctree-checkbox-3">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../3-Part/1.Fraud_Detection.html">
+     1. Fraud Detection
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../3-Part/2.Customer_Relationship_Management_Systems.html">
+     2. Customer Relationship Management Systems
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../3-Part/3.Computer_Vision.html">
+     3. Computer Vision
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../3-Part/4.Vocal_AI.html">
+     4. Vocal AI
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../3-Part/5.Natural_Language_Processing.html">
+     5. Natural Language Processing
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../3-Part/6.Autonomous_Vehicles.html">
+     6. Autonomous Vehicles
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../3-Part/7.Supercomputers.html">
+     7. Supercomputers
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../3-Part/8.Investment_Modeling.html">
+     8. Investment Modeling
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../3-Part/9.E-commerce.html">
+     9. E-commerce
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+
+    </div>
+</nav></div>
+        <div class="bd-sidebar__bottom">
+             <!-- To handle the deprecated key -->
+            
+            <div class="navbar_extra_footer">
+            Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+            </div>
+            
+        </div>
+    </div>
+    <div id="rtd-footer-container"></div>
+</div>
+
+
+          
+
+
+          
+<!-- A tiny helper pixel to detect if we've scrolled -->
+<div class="sbt-scroll-pixel-helper"></div>
+<!-- Main content -->
+<div class="col py-0 content-container">
+    
+    <div class="header-article row sticky-top noprint">
+        
+
+
+
+<div class="col py-1 d-flex header-article-main">
+    <div class="header-article__left">
+        
+        <label for="__navigation"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="right"
+title="Toggle navigation"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-bars"></i>
+  </span>
+
+</label>
+
+        
+    </div>
+    <div class="header-article__right">
+<div class="menu-dropdown menu-dropdown-launch-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Launch interactive content">
+      <i class="fas fa-rocket"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="https://mybinder.org/v2/gh/executablebooks/jupyter-book/master?urlpath=tree/docs/sources/2-Part/3.Neural_Networks_and_Deep_Learning.ipynb"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Launch on Binder"
+>
+  
+
+<span class="headerbtn__icon-container">
+  
+    <img src="../../_static/images/logo_binder.svg">
+  </span>
+<span class="headerbtn__text-container">Binder</span>
+</a>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+
+<button onclick="toggleFullScreen()"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="bottom"
+title="Fullscreen mode"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+<div class="menu-dropdown menu-dropdown-repository-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Source repositories">
+      <i class="fab fa-github"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="https://github.com/executablebooks/jupyter-book"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Source repository"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="headerbtn__text-container">repository</span>
+</a>
+
+      </li>
+      
+      <li>
+        <a href="https://github.com/executablebooks/jupyter-book/issues/new?title=Issue%20on%20page%20%2Fsources/2-Part/3.Neural_Networks_and_Deep_Learning.html&body=Your%20issue%20content%20here."
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Open an issue"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="headerbtn__text-container">open issue</span>
+</a>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+
+<div class="menu-dropdown menu-dropdown-download-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Download this page">
+      <i class="fas fa-download"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="../../_sources/sources/2-Part/3.Neural_Networks_and_Deep_Learning.ipynb"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Download source file"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="headerbtn__text-container">.ipynb</span>
+</a>
+
+      </li>
+      
+      <li>
+        
+<button onclick="printPdf(this)"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="left"
+title="Print to PDF"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="headerbtn__text-container">.pdf</span>
+</button>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+<label for="__page-toc"
+  class="headerbtn headerbtn-page-toc"
+  
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-list"></i>
+  </span>
+
+</label>
+
+    </div>
+</div>
+
+<!-- Table of contents -->
+<div class="col-md-3 bd-toc show noprint">
+    <div class="tocsection onthispage pt-5 pb-3">
+        <i class="fas fa-list"></i> Contents
+    </div>
+    <nav id="bd-toc-nav" aria-label="Page">
+        <ul class="visible nav section-nav flex-column">
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#">
+   3. Neural Networks and Deep Learning
+  </a>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#introduction">
+   3.1
+   <strong>
+    Introduction
+   </strong>
+  </a>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#single-layer-perceptron">
+   3.2
+   <strong>
+    Single layer perceptron
+   </strong>
+  </a>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#multilayer-perceptron">
+   3.3
+   <strong>
+    Multilayer perceptron
+   </strong>
+  </a>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#convolutional-neural-networks-cnns">
+   3.4
+   <strong>
+    Convolutional neural networks (CNNs)
+   </strong>
+  </a>
+  <ul class="visible nav section-nav flex-column">
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#max-pooling">
+     Max pooling
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#average-pooling">
+     Average pooling
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#recurrent-neural-networks-rnns">
+   3.5
+   <strong>
+    Recurrent neural networks (RNNs)
+   </strong>
+  </a>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#deep-learning">
+   3.6
+   <strong>
+    Deep learning
+   </strong>
+  </a>
+ </li>
+</ul>
+
+    </nav>
+</div>
+    </div>
+    <div class="article row">
+        <div class="col pl-md-3 pl-lg-5 content-container">
+            <!-- Table of contents that is only displayed when printing the page -->
+            <div id="jb-print-docs-body" class="onlyprint">
+                <h1>3. Neural Networks and Deep Learning</h1>
+                <!-- Table of contents -->
+                <div id="print-main-content">
+                    <div id="jb-print-toc">
+                        
+                        <div>
+                            <h2> Contents </h2>
+                        </div>
+                        <nav aria-label="Page">
+                            <ul class="visible nav section-nav flex-column">
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#">
+   3. Neural Networks and Deep Learning
+  </a>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#introduction">
+   3.1
+   <strong>
+    Introduction
+   </strong>
+  </a>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#single-layer-perceptron">
+   3.2
+   <strong>
+    Single layer perceptron
+   </strong>
+  </a>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#multilayer-perceptron">
+   3.3
+   <strong>
+    Multilayer perceptron
+   </strong>
+  </a>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#convolutional-neural-networks-cnns">
+   3.4
+   <strong>
+    Convolutional neural networks (CNNs)
+   </strong>
+  </a>
+  <ul class="visible nav section-nav flex-column">
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#max-pooling">
+     Max pooling
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#average-pooling">
+     Average pooling
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#recurrent-neural-networks-rnns">
+   3.5
+   <strong>
+    Recurrent neural networks (RNNs)
+   </strong>
+  </a>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#deep-learning">
+   3.6
+   <strong>
+    Deep learning
+   </strong>
+  </a>
+ </li>
+</ul>
+
+                        </nav>
+                    </div>
+                </div>
+            </div>
+            <main id="main-content" role="main">
+                
+              <div>
+                
+  <section class="tex2jax_ignore mathjax_ignore" id="neural-networks-and-deep-learning">
+<h1>3. Neural Networks and Deep Learning<a class="headerlink" href="#neural-networks-and-deep-learning" title="Permalink to this headline">#</a></h1>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="introduction">
+<h1>3.1 <strong>Introduction</strong><a class="headerlink" href="#introduction" title="Permalink to this headline">#</a></h1>
+<blockquote>
+<div><p>Definition of neural networks: a type of machine learning algorithm inspired by the structure and function of the brain</p>
+<p>Key components of a neural network: input layer, hidden layer(s), output layer, and weights</p>
+<p>Activation functions: sigmoid, tanh, ReLU, etc.</p>
+<p>Backpropagation: an algorithm for training neural networks by adjusting the weights to minimize the error between the predicted and true outputs</p>
+</div></blockquote>
+<p>Neural networks are a type of machine learning algorithm inspired by the structure and function of the brain. They are composed of a series of interconnected “neurons” that can process and transmit information.</p>
+<p>A neural network consists of an input layer, one or more hidden layers, and an output layer. Each layer consists of a set of “neurons,” which are connected to the neurons in the next layer via a set of weights. The input layer receives the input data, and the output layer produces the final prediction or classification. The hidden layers are responsible for extracting features and patterns from the input data and passing them on to the output layer.</p>
+<p>The output of a neuron is computed using the following formula:</p>
+<div class="math notranslate nohighlight">
+\[
+y = f(w_1x_1 + w_2x_2 + ... + w_nx_n + b)
+\]</div>
+<p>where <span class="math notranslate nohighlight">\(y\)</span> is the output, <span class="math notranslate nohighlight">\(f\)</span> is the activation function, <span class="math notranslate nohighlight">\(x_1, x_2, ..., x_n\)</span> are the inputs, <span class="math notranslate nohighlight">\(w_1, w_2, ..., w_n\)</span> are the weights, and <span class="math notranslate nohighlight">\(b\)</span> is the bias term.</p>
+<p>Activation functions are used to introduce nonlinearity into the network. Common activation functions include the sigmoid function:</p>
+<div class="math notranslate nohighlight">
+\[
+sigmoid(x) = \frac{1}{1 + e^{-x}}
+\]</div>
+<p>the tanh function:</p>
+<div class="math notranslate nohighlight">
+\[
+tanh(x) = \frac{e^x - e^{-x}}{e^x + e^{-x}}
+\]</div>
+<p>and the rectified linear unit (ReLU) function:</p>
+<div class="math notranslate nohighlight">
+\[
+ReLU(x) = max(0, x)
+\]</div>
+<p>Backpropagation is an algorithm for training neural networks by adjusting the weights to minimize the error between the predicted and true outputs. It involves performing a forward pass through the network to compute the output, and then a backward pass through the network to compute the gradients of the weights with respect to the error.</p>
+<p>The gradients are then used to update the weights using an optimization algorithm, such as stochastic gradient descent. The update rule for the weights is:</p>
+<div class="math notranslate nohighlight">
+\[
+w_i = w_i - \alpha \frac{\partial E}{\partial w_i}
+\]</div>
+<p>where <span class="math notranslate nohighlight">\(w_i\)</span> is the weight, <span class="math notranslate nohighlight">\(\alpha\)</span> is the learning rate, and <span class="math notranslate nohighlight">\(\frac{\partial E}{\partial w_i}\)</span> is the gradient of the error with respect to the weight.</p>
+<p>In the following sections, we will explore various types of neural networks, including single layer perceptrons, multilayer perceptrons, convolutional neural networks (CNNs), and recurrent neural networks (RNNs). We will also discuss the concept of deep learning, which involves building very large and complex neural networks for tasks such as natural language processing, computer vision, and speech recognition.</p>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="single-layer-perceptron">
+<h1>3.2 <strong>Single layer perceptron</strong><a class="headerlink" href="#single-layer-perceptron" title="Permalink to this headline">#</a></h1>
+<blockquote>
+<div><p>Definition: a type of neural network with a single layer of weights</p>
+<p>Key formula: the perceptron learning rule, which updates the weights based on the error between the predicted and true outputs</p>
+</div></blockquote>
+<p>A single layer perceptron is a type of neural network with a single layer of weights. It is a simple model that is often used as a baseline for more complex models.</p>
+<p>The output of a single layer perceptron is computed using the following formula:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+y = \begin{cases} 1 &amp; \text{if } w_1x_1 + w_2x_2 + ... + w_nx_n + b &gt; 0 \\ 0 &amp;\text{otherwise} \end{cases}
+\end{split}\]</div>
+<p>where <span class="math notranslate nohighlight">\(y\)</span> is the output, <span class="math notranslate nohighlight">\(x_1, x_2, ..., x_n\)</span> are the inputs, <span class="math notranslate nohighlight">\(w_1, w_2, ..., w_n\)</span> are the weights, and <span class="math notranslate nohighlight">\(b\)</span> is the bias term.</p>
+<p>The single layer perceptron can be trained using the perceptron learning rule, which updates the weights based on the error between the predicted and true outputs. The update rule is:</p>
+<div class="math notranslate nohighlight">
+\[
+w_i = w_i + \alpha (y_{true} - y_{pred}) x_i
+\]</div>
+<p>where <span class="math notranslate nohighlight">\(w_i\)</span> is the weight, <span class="math notranslate nohighlight">\(\alpha\)</span> is the learning rate, <span class="math notranslate nohighlight">\(y_{true}\)</span> is the true output, <span class="math notranslate nohighlight">\(y_{pred}\)</span> is the predicted output, and <span class="math notranslate nohighlight">\(x_i\)</span> is the input.</p>
+<p>The single layer perceptron is a linear model, which means that it can only learn to separate the data using a linear boundary. This limits its ability to model more complex patterns in the data. However, it can still be a useful tool for simple classification tasks.</p>
+<p>One of the main drawbacks of the single layer perceptron is that it is prone to getting stuck in local minima, meaning that it may not find the optimal solution to the problem. This can be mitigated by using a more sophisticated optimization algorithm, such as stochastic gradient descent.</p>
+<p>It is also worth noting that the single layer perceptron is a binary classifier, meaning that it can only predict one of two classes. To classify data into more than two classes, a multi-class classifier such as a multilayer perceptron or a support vector machine (SVM) may be more appropriate.</p>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="multilayer-perceptron">
+<h1>3.3 <strong>Multilayer perceptron</strong><a class="headerlink" href="#multilayer-perceptron" title="Permalink to this headline">#</a></h1>
+<blockquote>
+<div><p>Definition: a type of neural network with multiple layers of weights</p>
+<p>Key formulas: the forward pass, which computes the output of the neural network given an input, and the backward pass, which updates the weights using backpropagation</p>
+</div></blockquote>
+<p>A multilayer perceptron (MLP) is a type of neural network with multiple layers of weights. It is a more powerful model than a single layer perceptron, as it can learn to model more complex patterns in the data.</p>
+<p>The output of an MLP is computed using the following formula:</p>
+<div class="math notranslate nohighlight">
+\[
+y = f(w_1x_1 + w_2x_2 + ... + w_nx_n + b)
+\]</div>
+<p>where <span class="math notranslate nohighlight">\(y\)</span> is the output, <span class="math notranslate nohighlight">\(f\)</span> is the activation function, <span class="math notranslate nohighlight">\(x_1, x_2, ..., x_n\)</span> are the inputs, <span class="math notranslate nohighlight">\(w_1, w_2, ..., w_n\)</span> are the weights, and <span class="math notranslate nohighlight">\(b\)</span> is the bias term.</p>
+<p>The weights of an MLP are trained using backpropagation, an algorithm for adjusting the weights to minimize the error between the predicted and true outputs. The process involves performing a forward pass through the network to compute the output, and then a backward pass through the network to compute the gradients of the weights with respect to the error. The gradients are then used to update the weights using an optimization algorithm, such as stochastic gradient descent.</p>
+<p>MLPs are commonly used for tasks such as classification and regression. They are often used in conjunction with other techniques, such as regularization (to prevent overfitting) and early stopping (to avoid training for too long).</p>
+<p>One of the main advantages of MLPs is that they are universal function approximators, meaning that they can learn to approximate any continuous function to arbitrary accuracy given enough hidden units and data.</p>
+<p>However, they can be prone to overfitting if the number of hidden units is too large or if the training data is insufficient. To mitigate this risk, it is often helpful to use techniques such as regularization (e.g. L2 regularization) and early stopping (to stop training before the model starts to overfit).</p>
+<p>MLPs can also be slow to train, especially on large datasets, due to the need to compute and backpropagate gradients through multiple layers. This can be mitigated by using more efficient optimization algorithms (such as Adam or RProp) or by using hardware accelerators such as graphics processing units (GPUs).</p>
+<p>In summary, multilayer perceptrons are a powerful and widely-used type of neural network that can be used for a variety of tasks. They are flexible and can model complex patterns in the data, but they can be prone to overfitting and may require careful tuning to achieve good performance.</p>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="convolutional-neural-networks-cnns">
+<h1>3.4 <strong>Convolutional neural networks (CNNs)</strong><a class="headerlink" href="#convolutional-neural-networks-cnns" title="Permalink to this headline">#</a></h1>
+<blockquote>
+<div><p>Definition: a type of neural network designed for image recognition tasks</p>
+<p>Key components: convolutional layers, pooling layers, and fully connected layers</p>
+<p>Key formula: the convolution operation, which extracts features from the input image using a set of filters</p>
+</div></blockquote>
+<p>Convolutional neural networks (CNNs) are a type of neural network designed specifically for image recognition tasks. They are particularly effective at extracting features and patterns from images, and have achieved state-of-the-art results on many benchmarks.</p>
+<p>CNNs are composed of three main types of layers: convolutional layers, pooling layers, and fully connected layers.</p>
+<ul class="simple">
+<li><p>Convolutional layers: These layers apply a set of filters to the input image, producing a feature map. The filters are learned during training and are responsible for extracting features from the image. The key formula for the convolution operation is:</p></li>
+</ul>
+<div class="math notranslate nohighlight">
+\[
+(f*g)(x,y) = \sum_{u=-\infty}^{\infty} \sum_{v=-\infty}^{\infty} f(u,v)g(x-u,y-v)
+\]</div>
+<p>where <span class="math notranslate nohighlight">\(f\)</span> is the input image, <span class="math notranslate nohighlight">\(g\)</span> is the filter, and <span class="math notranslate nohighlight">\((f*g)(x,y)\)</span> is the output feature map at position <span class="math notranslate nohighlight">\((x,y)\)</span>.</p>
+<ul>
+<li><p>Pooling layers: These layers downsample the feature maps produced by the convolutional layers, reducing the spatial resolution and increasing the invariance to translations. Common pooling operations include max pooling and average pooling.</p>
+<p>Pooling layers are used to downsample the feature maps produced by the convolutional layers, reducing the spatial resolution and increasing the invariance to translations. Common pooling operations include max pooling and average pooling.</p>
+</li>
+<li><p>Fully connected layers: These layers are similar to the fully connected layers in a standard multilayer perceptron. They take the flattened feature maps produced by the convolutional and pooling layers as input and output a prediction or classification.</p>
+<p>Fully connected layers in a CNN are similar to the fully connected layers in a standard multilayer perceptron (MLP). They take the flattened feature maps produced by the convolutional and pooling layers as input and output a prediction or classification.</p>
+<p>The output of a fully connected layer can be computed using the following formula:</p>
+<div class="math notranslate nohighlight">
+\[
+    y = f(w_1x_1 + w_2x_2 + ... + w_nx_n + b)
+    \]</div>
+<p>where <span class="math notranslate nohighlight">\(y\)</span> is the output, <span class="math notranslate nohighlight">\(f\)</span> is the activation function, <span class="math notranslate nohighlight">\(x_1, x_2, ..., x_n\)</span> are the inputs, <span class="math notranslate nohighlight">\(w_1, w_2, ..., w_n\)</span> are the weights, and <span class="math notranslate nohighlight">\(b\)</span> is the bias term.</p>
+<p>The weights of the fully connected layers are typically initialized using techniques such as Glorot initialization or He initialization, which help to prevent the “vanishing gradient” problem that can occur in deep networks. They are then trained using backpropagation, just like the weights in an MLP.</p>
+<p>Fully connected layers are often used in the final layers of a CNN to produce a prediction or classification. They can be used for tasks such as image classification, object detection, and segmentation.</p>
+<p>It is worth noting that fully connected layers can be computationally intensive to train, especially on large datasets. This can be mitigated by using more efficient optimization algorithms (such as Adam or RProp) or by using hardware accelerators such as graphics processing units (GPUs).</p>
+</li>
+</ul>
+<section id="max-pooling">
+<h2>Max pooling<a class="headerlink" href="#max-pooling" title="Permalink to this headline">#</a></h2>
+<p>Max pooling is a pooling operation that takes the maximum value from each pooling window. The output of a max pooling layer can be computed using the following formula:</p>
+<div class="math notranslate nohighlight">
+\[
+    y_{i,j} = \max_{k=0}^{K-1} \max_{l=0}^{L-1} x_{i+k,j+l}
+    \]</div>
+<p>where <span class="math notranslate nohighlight">\(y_{i,j}\)</span> is the output at position <span class="math notranslate nohighlight">\((i,j)\)</span>, <span class="math notranslate nohighlight">\(x\)</span> is the input feature map, and <span class="math notranslate nohighlight">\(K\)</span> and <span class="math notranslate nohighlight">\(L\)</span> are the pooling window sizes.</p>
+</section>
+<section id="average-pooling">
+<h2>Average pooling<a class="headerlink" href="#average-pooling" title="Permalink to this headline">#</a></h2>
+<p>Average pooling is a pooling operation that takes the average value from each pooling window. The output of an average pooling layer can be computed using the following formula:</p>
+<div class="math notranslate nohighlight">
+\[
+    y_{i,j} = \frac{1}{KL} \sum_{k=0}^{K-1} \sum_{l=0}^{L-1} x_{i+k,j+l}
+    \]</div>
+<p>where <span class="math notranslate nohighlight">\(y_{i,j}\)</span> is the output at position <span class="math notranslate nohighlight">\((i,j)\)</span>, <span class="math notranslate nohighlight">\(x\)</span> is the input feature map, and <span class="math notranslate nohighlight">\(K\)</span> and <span class="math notranslate nohighlight">\(L\)</span> are the pooling window sizes.</p>
+</section>
+<p>CNNs are trained using backpropagation, just like MLPs. However, the training process for CNNs is somewhat different due to the presence of the convolutional and pooling layers. In particular, the weights of the convolutional layers are typically initialized using techniques such as Glorot initialization or He initialization, which help to prevent the “vanishing gradient” problem that can occur in deep networks.</p>
+<p>CNNs are widely used in tasks such as image classification, object detection, and segmentation. They are particularly effective at recognizing patterns and features in images, and have been used to achieve state-of-the-art results on many benchmarks. However, they can be computationally intensive to train, especially on large datasets, and may require specialized hardware such as GPUs to achieve good performance.</p>
+<p>One of the key advantages of CNNs is their ability to learn hierarchical representations of the data. By using multiple layers of convolutional and pooling operations, a CNN can learn to recognize increasingly complex patterns in the data. This allows them to achieve very high accuracy on tasks such as image classification.</p>
+<p>Another advantage of CNNs is their ability to generalize well to new data. Because they learn hierarchical representations of the data, they are able to recognize patterns that are invariant to certain transformations, such as translations and rotations. This makes them robust to variations in the input data and allows them to perform well on unseen data.</p>
+<p>However, CNNs also have some limitations. One of the main limitations is their reliance on a fixed input size. Because the convolutional and pooling layers expect a fixed-size input, the input data must be resized or padded to fit the required dimensions. This can be a challenge when working with images of different sizes or when dealing with images that have been distorted or transformed in some way.</p>
+<p>In summary, convolutional neural networks are a powerful and widely-used type of neural network that are particularly effective at image recognition tasks. They are able to learn hierarchical representations of the data and are robust to variations in the input, but they are limited by their reliance on a fixed input size.</p>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="recurrent-neural-networks-rnns">
+<h1>3.5 <strong>Recurrent neural networks (RNNs)</strong><a class="headerlink" href="#recurrent-neural-networks-rnns" title="Permalink to this headline">#</a></h1>
+<blockquote>
+<div><p>Definition: a type of neural network designed for sequence modeling tasks</p>
+<p>Key components: recurrent layers (e.g. LSTM, GRU) and attention mechanisms</p>
+<p>Key formula: the attention mechanism, which allows the model to selectively focus on different parts of the input sequence</p>
+</div></blockquote>
+<p>Recurrent neural networks (RNNs) are a type of neural network designed to process sequential data. They are particularly useful for tasks such as language translation, language modeling, and time series prediction.</p>
+<p>RNNs are composed of recurrent units, which are responsible for maintaining an internal state that can be updated based on the input data. The output of an RNN at time step <span class="math notranslate nohighlight">\(t\)</span> is computed using the following formula:</p>
+<div class="math notranslate nohighlight">
+\[
+h_t = f(W_{hh}h_{t-1} + W_{xh}x_t + b_h)
+\]</div>
+<div class="math notranslate nohighlight">
+\[
+y_t = g(W_{hy}h_t + b_y)
+\]</div>
+<p>where <span class="math notranslate nohighlight">\(h_t\)</span> is the hidden state at time step <span class="math notranslate nohighlight">\(t\)</span>, <span class="math notranslate nohighlight">\(x_t\)</span> is the input at time step <span class="math notranslate nohighlight">\(t\)</span>, <span class="math notranslate nohighlight">\(y_t\)</span> is the output at time step <span class="math notranslate nohighlight">\(t\)</span>, <span class="math notranslate nohighlight">\(W_{hh}\)</span> and <span class="math notranslate nohighlight">\(W_{xh}\)</span> are the weights connecting the hidden state to itself and the input, respectively, <span class="math notranslate nohighlight">\(W_{hy}\)</span> is the weight connecting the hidden state to the output, <span class="math notranslate nohighlight">\(b_h\)</span> is the bias term for the hidden state, and <span class="math notranslate nohighlight">\(b_y\)</span> is the bias term for the output. <span class="math notranslate nohighlight">\(f\)</span> and <span class="math notranslate nohighlight">\(g\)</span> are the activation functions for the hidden state and output, respectively.</p>
+<p>The key advantage of RNNs is their ability to capture temporal dependencies in the data. By maintaining an internal state that can be updated based on the input data, RNNs can learn to model patterns that depend on the order of the data. This makes them particularly useful for tasks such as language translation and language modeling, where the meaning of a word or phrase can depend on the words that come before and after it.</p>
+<p>RNNs are trained using backpropagation through time (BPTT), which is a variant of standard backpropagation that allows the gradients to be propagated back through multiple time steps. The gradients are computed using the chain rule, and are used to update the weights using an optimization algorithm such as stochastic gradient descent.</p>
+<p>There are several variations of RNNs, including long short-term memory (LSTM) networks and gated recurrent units (GRUs). These variations are designed to address some of the limitations of standard RNNs, such as the vanishing gradient problem (which can make it difficult to train deep RNNs) and the difficulty in learning long-term dependencies (which can make it hard for RNNs to model patterns that span many time steps).</p>
+<p>LSTM networks are a type of RNN that use a special type of recurrent unit called a “memory cell” to store and update the internal state. The memory cell is controlled by three “gates” (an input gate, an output gate, and a forget gate), which determine which information is stored in the memory cell and which information is passed on to the output. This allows LSTMs to learn long-term dependencies and to avoid the vanishing gradient problem.</p>
+<p>GRUs are another type of RNN that use a simpler type of recurrent unit called a “gated recurrent unit.” They are similar to LSTMs in that they use gates to control the flow of information, but they have fewer parameters and are simpler to train.</p>
+<p>In summary, RNNs are a powerful type of neural network that are particularly useful for tasks that involve sequential data. They are able to capture temporal dependencies in the data and are useful for tasks such as language translation and language modeling. There are several variations of RNNs, including LSTM networks and GRUs, which are designed to address some of the limitations of standard RNNs.</p>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="deep-learning">
+<h1>3.6 <strong>Deep learning</strong><a class="headerlink" href="#deep-learning" title="Permalink to this headline">#</a></h1>
+<blockquote>
+<div><p>Definition: a subfield of machine learning that involves building very large and complex neural networks</p>
+<p>Key applications: natural language processing, computer vision, speech recognition, and more</p>
+<p>Key challenges: training and deploying deep learning models, avoiding overfitting, and interpretability</p>
+</div></blockquote>
+<p>Deep learning is a subfield of machine learning that is concerned with the design and development of deep neural networks. Deep neural networks are neural networks with a large number of layers (typically more than three), and are able to learn hierarchical representations of the data. They have been successful in a wide range of tasks, including image classification, object detection, natural language processing, and speech recognition.</p>
+<p>One of the key advantages of deep learning is its ability to learn features automatically from the data. In traditional machine learning approaches, the features are often hand-engineered by the practitioner. This can be a time-consuming and error-prone process, and may not always result in the best features for the task. In contrast, deep learning algorithms are able to learn the features directly from the data, allowing them to capture complex patterns and relationships in the data. This is often achieved using multiple layers of nonlinear transformations, such as convolutions and fully connected layers.</p>
+<p>Another advantage of deep learning is its ability to scale to large datasets. Because deep neural networks are able to learn from data in an incremental fashion, they are well-suited to tasks where the amount of data is very large. This has made them particularly effective for tasks such as image classification, where large datasets of labeled images are readily available.</p>
+<p>Despite their success, deep learning algorithms are not a panacea. They can be computationally intensive to train, and may require specialized hardware (such as graphics processing units) to achieve good performance. They can also be prone to overfitting, especially when the amount of data is limited. To mitigate these issues, practitioners often use techniques such as regularization, early stopping, and data augmentation.</p>
+<p>Regularization is a technique that helps to prevent overfitting by adding a penalty to the loss function during training. Common regularization techniques include weight decay, which adds a penalty proportional to the weights of the network, and dropout, which randomly sets a portion of the activations to zero during training.</p>
+<p>Early stopping is a technique that involves stopping the training process before the model has fully converged, in order to prevent overfitting. This is often done by monitoring the performance of the model on a validation set, and stopping training when the performance on the validation set starts to deteriorate.</p>
+<p>Data augmentation is a technique that involves generating additional training data by applying transformations to the existing training data. This can help to prevent overfitting and improve the generalization of the model. Common transformations include rotating and scaling images, or adding noise to audio signals.</p>
+<p>In summary, deep learning is a subfield of machine learning concerned with the design and development of deep neural networks. Deep neural networks are able to learn hierarchical representations of the data and are able to scale to large datasets, but can be computationally intensive to train and may be prone to overfitting. Techniques such as regularization, early stopping, and data augmentation can be used to mitigate these issues.</p>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./sources/2-Part"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+            </main>
+            <footer class="footer-article noprint">
+                
+    <!-- Previous / next buttons -->
+<div class='prev-next-area'>
+    <a class='left-prev' id="prev-link" href="2.The_Basics_of_Machine_Learning.html" title="previous page">
+        <i class="fas fa-angle-left"></i>
+        <div class="prev-next-info">
+            <p class="prev-next-subtitle">previous</p>
+            <p class="prev-next-title">2. The Basics of Machine Learning</p>
+        </div>
+    </a>
+    <a class='right-next' id="next-link" href="4.Natural_Language_Processing.html" title="next page">
+    <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">4. Natural Language Processing</p>
+    </div>
+    <i class="fas fa-angle-right"></i>
+    </a>
+</div>
+            </footer>
+        </div>
+    </div>
+    <div class="footer-content row">
+        <footer class="col footer"><p>
+  
+    By The Book about AI/ML/DL (vomited by ChatGPT)<br/>
+  
+      &copy; Copyright 2022.<br/>
+</p>
+        </footer>
+    </div>
+    
+</div>
+
+
+      </div>
+    </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf"></script>
+
+
+  </body>
+</html>

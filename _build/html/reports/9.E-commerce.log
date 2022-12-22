@@ -1,0 +1,107 @@
+Traceback (most recent call last):
+  File "/Users/emanuelevivoli/miniconda3/lib/python3.7/site-packages/jupyter_cache/executors/utils.py", line 56, in single_nb_execution
+    record_timing=False,
+  File "/Users/emanuelevivoli/miniconda3/lib/python3.7/site-packages/nbclient/client.py", line 1204, in execute
+    return NotebookClient(nb=nb, resources=resources, km=km, **kwargs).execute()
+  File "/Users/emanuelevivoli/miniconda3/lib/python3.7/site-packages/nbclient/util.py", line 84, in wrapped
+    return just_run(coro(*args, **kwargs))
+  File "/Users/emanuelevivoli/miniconda3/lib/python3.7/site-packages/nbclient/util.py", line 62, in just_run
+    return loop.run_until_complete(coro)
+  File "/Users/emanuelevivoli/miniconda3/lib/python3.7/asyncio/base_events.py", line 579, in run_until_complete
+    return future.result()
+  File "/Users/emanuelevivoli/miniconda3/lib/python3.7/site-packages/nbclient/client.py", line 664, in async_execute
+    cell, index, execution_count=self.code_cells_executed + 1
+  File "/Users/emanuelevivoli/miniconda3/lib/python3.7/site-packages/nbclient/client.py", line 965, in async_execute_cell
+    await self._check_raise_for_error(cell, cell_index, exec_reply)
+  File "/Users/emanuelevivoli/miniconda3/lib/python3.7/site-packages/nbclient/client.py", line 862, in _check_raise_for_error
+    raise CellExecutionError.from_cell_and_msg(cell, exec_reply_content)
+nbclient.exceptions.CellExecutionError: An error occurred while executing the following cell:
+------------------
+# First, we import the necessary libraries
+from sklearn.ensemble import RandomForestClassifier
+from sklearn.model_selection import train_test_split
+import pandas as pd
+
+# Next, we load the data into a Pandas DataFrame
+df = pd.read_csv('customer_data.csv')
+
+# We split the data into features (X) and target (y)
+X = df[['age', 'income', 'purchase_history']]
+y = df['will_purchase']
+
+# We split the data into training and testing sets
+X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2, random_state=42)
+
+# We create a Random Forest Classifier and train it on the training data
+clf = RandomForestClassifier(n_estimators=100, random_state=42)
+clf.fit(X_train, y_train)
+
+# We make predictions on the testing data
+y_pred = clf.predict(X_test)
+
+# We evaluate the model's performance using accuracy score
+accuracy = accuracy_score(y_test, y_pred)
+print(f'Accuracy: {accuracy:.2f}')
+------------------
+
+[0;31m---------------------------------------------------------------------------[0m
+[0;31mFileNotFoundError[0m                         Traceback (most recent call last)
+[0;32m/var/folders/yw/39qgg96x2451prd0f9qrtbzr0000gn/T/ipykernel_6623/1452662994.py[0m in [0;36m<module>[0;34m[0m
+[1;32m      5[0m [0;34m[0m[0m
+[1;32m      6[0m [0;31m# Next, we load the data into a Pandas DataFrame[0m[0;34m[0m[0;34m[0m[0;34m[0m[0m
+[0;32m----> 7[0;31m [0mdf[0m [0;34m=[0m [0mpd[0m[0;34m.[0m[0mread_csv[0m[0;34m([0m[0;34m'customer_data.csv'[0m[0;34m)[0m[0;34m[0m[0;34m[0m[0m
+[0m[1;32m      8[0m [0;34m[0m[0m
+[1;32m      9[0m [0;31m# We split the data into features (X) and target (y)[0m[0;34m[0m[0;34m[0m[0;34m[0m[0m
+
+[0;32m~/miniconda3/lib/python3.7/site-packages/pandas/io/parsers.py[0m in [0;36mread_csv[0;34m(filepath_or_buffer, sep, delimiter, header, names, index_col, usecols, squeeze, prefix, mangle_dupe_cols, dtype, engine, converters, true_values, false_values, skipinitialspace, skiprows, skipfooter, nrows, na_values, keep_default_na, na_filter, verbose, skip_blank_lines, parse_dates, infer_datetime_format, keep_date_col, date_parser, dayfirst, cache_dates, iterator, chunksize, compression, thousands, decimal, lineterminator, quotechar, quoting, doublequote, escapechar, comment, encoding, dialect, error_bad_lines, warn_bad_lines, delim_whitespace, low_memory, memory_map, float_precision, storage_options)[0m
+[1;32m    603[0m     [0mkwds[0m[0;34m.[0m[0mupdate[0m[0;34m([0m[0mkwds_defaults[0m[0;34m)[0m[0;34m[0m[0;34m[0m[0m
+[1;32m    604[0m [0;34m[0m[0m
+[0;32m--> 605[0;31m     [0;32mreturn[0m [0m_read[0m[0;34m([0m[0mfilepath_or_buffer[0m[0;34m,[0m [0mkwds[0m[0;34m)[0m[0;34m[0m[0;34m[0m[0m
+[0m[1;32m    606[0m [0;34m[0m[0m
+[1;32m    607[0m [0;34m[0m[0m
+
+[0;32m~/miniconda3/lib/python3.7/site-packages/pandas/io/parsers.py[0m in [0;36m_read[0;34m(filepath_or_buffer, kwds)[0m
+[1;32m    455[0m [0;34m[0m[0m
+[1;32m    456[0m     [0;31m# Create the parser.[0m[0;34m[0m[0;34m[0m[0;34m[0m[0m
+[0;32m--> 457[0;31m     [0mparser[0m [0;34m=[0m [0mTextFileReader[0m[0;34m([0m[0mfilepath_or_buffer[0m[0;34m,[0m [0;34m**[0m[0mkwds[0m[0;34m)[0m[0;34m[0m[0;34m[0m[0m
+[0m[1;32m    458[0m [0;34m[0m[0m
+[1;32m    459[0m     [0;32mif[0m [0mchunksize[0m [0;32mor[0m [0miterator[0m[0;34m:[0m[0;34m[0m[0;34m[0m[0m
+
+[0;32m~/miniconda3/lib/python3.7/site-packages/pandas/io/parsers.py[0m in [0;36m__init__[0;34m(self, f, engine, **kwds)[0m
+[1;32m    812[0m             [0mself[0m[0;34m.[0m[0moptions[0m[0;34m[[0m[0;34m"has_index_names"[0m[0;34m][0m [0;34m=[0m [0mkwds[0m[0;34m[[0m[0;34m"has_index_names"[0m[0;34m][0m[0;34m[0m[0;34m[0m[0m
+[1;32m    813[0m [0;34m[0m[0m
+[0;32m--> 814[0;31m         [0mself[0m[0;34m.[0m[0m_engine[0m [0;34m=[0m [0mself[0m[0;34m.[0m[0m_make_engine[0m[0;34m([0m[0mself[0m[0;34m.[0m[0mengine[0m[0;34m)[0m[0;34m[0m[0;34m[0m[0m
+[0m[1;32m    815[0m [0;34m[0m[0m
+[1;32m    816[0m     [0;32mdef[0m [0mclose[0m[0;34m([0m[0mself[0m[0;34m)[0m[0;34m:[0m[0;34m[0m[0;34m[0m[0m
+
+[0;32m~/miniconda3/lib/python3.7/site-packages/pandas/io/parsers.py[0m in [0;36m_make_engine[0;34m(self, engine)[0m
+[1;32m   1043[0m             )
+[1;32m   1044[0m         [0;31m# error: Too many arguments for "ParserBase"[0m[0;34m[0m[0;34m[0m[0;34m[0m[0m
+[0;32m-> 1045[0;31m         [0;32mreturn[0m [0mmapping[0m[0;34m[[0m[0mengine[0m[0;34m][0m[0;34m([0m[0mself[0m[0;34m.[0m[0mf[0m[0;34m,[0m [0;34m**[0m[0mself[0m[0;34m.[0m[0moptions[0m[0;34m)[0m  [0;31m# type: ignore[call-arg][0m[0;34m[0m[0;34m[0m[0m
+[0m[1;32m   1046[0m [0;34m[0m[0m
+[1;32m   1047[0m     [0;32mdef[0m [0m_failover_to_python[0m[0;34m([0m[0mself[0m[0;34m)[0m[0;34m:[0m[0;34m[0m[0;34m[0m[0m
+
+[0;32m~/miniconda3/lib/python3.7/site-packages/pandas/io/parsers.py[0m in [0;36m__init__[0;34m(self, src, **kwds)[0m
+[1;32m   1860[0m [0;34m[0m[0m
+[1;32m   1861[0m         [0;31m# open handles[0m[0;34m[0m[0;34m[0m[0;34m[0m[0m
+[0;32m-> 1862[0;31m         [0mself[0m[0;34m.[0m[0m_open_handles[0m[0;34m([0m[0msrc[0m[0;34m,[0m [0mkwds[0m[0;34m)[0m[0;34m[0m[0;34m[0m[0m
+[0m[1;32m   1863[0m         [0;32massert[0m [0mself[0m[0;34m.[0m[0mhandles[0m [0;32mis[0m [0;32mnot[0m [0;32mNone[0m[0;34m[0m[0;34m[0m[0m
+[1;32m   1864[0m         [0;32mfor[0m [0mkey[0m [0;32min[0m [0;34m([0m[0;34m"storage_options"[0m[0;34m,[0m [0;34m"encoding"[0m[0;34m,[0m [0;34m"memory_map"[0m[0;34m,[0m [0;34m"compression"[0m[0;34m)[0m[0;34m:[0m[0;34m[0m[0;34m[0m[0m
+
+[0;32m~/miniconda3/lib/python3.7/site-packages/pandas/io/parsers.py[0m in [0;36m_open_handles[0;34m(self, src, kwds)[0m
+[1;32m   1361[0m             [0mcompression[0m[0;34m=[0m[0mkwds[0m[0;34m.[0m[0mget[0m[0;34m([0m[0;34m"compression"[0m[0;34m,[0m [0;32mNone[0m[0;34m)[0m[0;34m,[0m[0;34m[0m[0;34m[0m[0m
+[1;32m   1362[0m             [0mmemory_map[0m[0;34m=[0m[0mkwds[0m[0;34m.[0m[0mget[0m[0;34m([0m[0;34m"memory_map"[0m[0;34m,[0m [0;32mFalse[0m[0;34m)[0m[0;34m,[0m[0;34m[0m[0;34m[0m[0m
+[0;32m-> 1363[0;31m             [0mstorage_options[0m[0;34m=[0m[0mkwds[0m[0;34m.[0m[0mget[0m[0;34m([0m[0;34m"storage_options"[0m[0;34m,[0m [0;32mNone[0m[0;34m)[0m[0;34m,[0m[0;34m[0m[0;34m[0m[0m
+[0m[1;32m   1364[0m         )
+[1;32m   1365[0m [0;34m[0m[0m
+
+[0;32m~/miniconda3/lib/python3.7/site-packages/pandas/io/common.py[0m in [0;36mget_handle[0;34m(path_or_buf, mode, encoding, compression, memory_map, is_text, errors, storage_options)[0m
+[1;32m    645[0m                 [0mencoding[0m[0;34m=[0m[0mioargs[0m[0;34m.[0m[0mencoding[0m[0;34m,[0m[0;34m[0m[0;34m[0m[0m
+[1;32m    646[0m                 [0merrors[0m[0;34m=[0m[0merrors[0m[0;34m,[0m[0;34m[0m[0;34m[0m[0m
+[0;32m--> 647[0;31m                 [0mnewline[0m[0;34m=[0m[0;34m""[0m[0;34m,[0m[0;34m[0m[0;34m[0m[0m
+[0m[1;32m    648[0m             )
+[1;32m    649[0m         [0;32melse[0m[0;34m:[0m[0;34m[0m[0;34m[0m[0m
+
+[0;31mFileNotFoundError[0m: [Errno 2] No such file or directory: 'customer_data.csv'
+FileNotFoundError: [Errno 2] No such file or directory: 'customer_data.csv'
+
