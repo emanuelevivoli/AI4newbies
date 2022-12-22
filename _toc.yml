@@ -1,0 +1,42 @@
+# Table of contents
+# Learn more at https://jupyterbook.org/customize/toc.html
+
+format: jb-book
+root: intro
+parts:
+  - caption: Preliminaries Notions
+    chapters:
+    - file: sources/1-Part/preliminaries.md
+      sections:
+      - file: sources/1-Part/1.Programming_with_Notebooks.ipynb
+      - file: sources/1-Part/2.Introduction_to_Programming.ipynb
+      - file: sources/1-Part/3.Data_Structures.ipynb
+      - file: sources/1-Part/4.Computational_Complexity.ipynb
+      - file: sources/1-Part/5.Statistics.ipynb
+      - file: sources/1-Part/6.Linear_Algebra.ipynb
+      - file: sources/1-Part/7.Geometry.ipynb
+      - file: sources/1-Part/8.Calculus.ipynb
+  - caption: Basis of AI
+    chapters:
+    - file: sources/2-Part/basis.md
+      sections:
+        - file: sources/2-Part/1.Introduction_to_Artificial_Intelligence_and_Deep_Learning.ipynb
+        - file: sources/2-Part/2.The_Basics_of_Machine_Learning.ipynb
+        - file: sources/2-Part/3.Neural_Networks_and_Deep_Learning.ipynb
+        - file: sources/2-Part/4.Natural_Language_Processing.ipynb
+        - file: sources/2-Part/5.Computer_Vision.ipynb
+        - file: sources/2-Part/6.Ethics_and_the_Future_of_AI.ipynb
+  - caption: Applications of AI
+    chapters:
+    - file: sources/3-Part/applications.md
+      sections:
+        - file: sources/3-Part/1.Fraud_Detection.ipynb
+        - file: sources/3-Part/2.Customer_Relationship_Management_Systems.ipynb
+        - file: sources/3-Part/3.Computer_Vision.ipynb
+        - file: sources/3-Part/4.Vocal_AI.ipynb
+        - file: sources/3-Part/5.Natural_Language_Processing.ipynb
+        - file: sources/3-Part/6.Autonomous_Vehicles.ipynb
+        - file: sources/3-Part/7.Supercomputers.ipynb
+        - file: sources/3-Part/8.Investment_Modeling.ipynb
+        - file: sources/3-Part/9.E-commerce.ipynb
+
